@@ -43,8 +43,9 @@ public class TelaAutenticacao extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 562));
+        setMinimumSize(new java.awt.Dimension(1000, 560));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 560));
         getContentPane().setLayout(null);
 
         txtLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

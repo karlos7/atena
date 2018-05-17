@@ -19,13 +19,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
-        jlUsuario.setText(usuario.getLoginUsuario());
-        jlPermissao.setText(usuario.getTipoDeAcessoUsuario());
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("administrador")) {
-            permissao();
-        }else{
-            menuDespesas.setVisible(false);
-        }
+        //jlUsuario.setText(usuario.getLoginUsuario());
+        //jlPermissao.setText(usuario.getTipoDeAcessoUsuario());
+//        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("administrador")) {
+//            permissao();
+//        }else{
+//            menuDespesas.setVisible(false);
+//        }
 
     }
 
@@ -71,8 +71,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuRelatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 559));
+        setMinimumSize(new java.awt.Dimension(900, 547));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(900, 547));
         getContentPane().setLayout(null);
 
         btLogout.setFont(new java.awt.Font("Bebas Neue", 1, 36)); // NOI18N
@@ -89,21 +90,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btLogout);
-        btLogout.setBounds(790, 410, 100, 120);
+        btLogout.setBounds(0, 330, 100, 120);
 
-        jlUsuario.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jlUsuario.setFont(new java.awt.Font("Bebas Neue", 0, 25)); // NOI18N
         jlUsuario.setText("???");
         getContentPane().add(jlUsuario);
-        jlUsuario.setBounds(720, 10, 160, 30);
+        jlUsuario.setBounds(510, 20, 330, 30);
 
-        jlNome3.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jlNome3.setText("Usuário.:");
+        jlNome3.setFont(new java.awt.Font("Bebas Neue", 0, 32)); // NOI18N
+        jlNome3.setText("USUÁRIO:");
         getContentPane().add(jlNome3);
-        jlNome3.setBounds(650, 10, 70, 30);
+        jlNome3.setBounds(410, 20, 100, 30);
 
-        jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/home.png"))); // NOI18N
+        jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/home.png"))); // NOI18N
         getContentPane().add(jlHome);
-        jlHome.setBounds(0, 0, 0, 450);
+        jlHome.setBounds(0, 0, 900, 450);
 
         jMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenu.setForeground(new java.awt.Color(51, 204, 0));
@@ -118,7 +119,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuCadastros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menuCadastros.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        subCadCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/adicionar10.png"))); // NOI18N
+        subCadCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
         subCadCurso.setText("Curso");
         subCadCurso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         subCadCurso.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +129,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         menuCadastros.add(subCadCurso);
 
-        subUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/adicionar10.png"))); // NOI18N
+        subUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
         subUsuario.setText("Usuário");
         subUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         subUsuario.addActionListener(new java.awt.event.ActionListener() {
