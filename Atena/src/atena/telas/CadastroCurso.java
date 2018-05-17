@@ -5,9 +5,10 @@
  */
 package atena.telas;
 
+import atena.curso.Curso;
+import atena.curso.CursoDAO;
+import atena.curso.CursoTableModel;
 import atena.usuario.Usuario;
-import atena.usuario.UsuarioDAO;
-import atena.usuario.UsuarioTableModel;
 import atena.util.Util;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -16,20 +17,17 @@ import javax.swing.JOptionPane;
  *
  * @author Adriano Lima
  */
-public class CadastroUsuario extends javax.swing.JDialog {
+public class CadastroCurso extends javax.swing.JDialog {
 
-    Usuario usuario = new Usuario();
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    Curso curso = new Curso();
+    CursoDAO cursoDAO;
 
-    /**
-     * Creates new form TelaCadastroUsuario
-     */
-    public CadastroUsuario(java.awt.Frame parent, boolean modal) {
+    
+    public CadastroCurso() {
         initComponents();
+        btExcluir.setVisible(true);
+        btExcluir.setEnabled(false);
         getRootPane().setDefaultButton(btSalvar);
-
-        btLimparActionPerformed(null);
-        setModal(true);
     }
 
     /**
@@ -41,65 +39,22 @@ public class CadastroUsuario extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlLogin = new javax.swing.JLabel();
-        jlSenha = new javax.swing.JLabel();
-        tfLogin = new javax.swing.JTextField();
-        tfSenha = new javax.swing.JPasswordField();
-        jlNomeUsuario = new javax.swing.JLabel();
-        tfNomeUsuario = new javax.swing.JTextField();
         btVoltar = new javax.swing.JButton();
         btPesquisar = new javax.swing.JButton();
         btExcluir = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
-        jLObrigatorioNome = new javax.swing.JLabel();
         btSalvar = new javax.swing.JButton();
-        jLObrigatorioLogin = new javax.swing.JLabel();
-        jLObrigatorioSenha = new javax.swing.JLabel();
+        txtCurso = new javax.swing.JTextField();
+        jlNomeUsuario3 = new javax.swing.JLabel();
+        jLObrigatorioNome2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(600, 421));
+        setMinimumSize(new java.awt.Dimension(580, 380));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(600, 421));
+        setPreferredSize(new java.awt.Dimension(580, 380));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jlLogin.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jlLogin.setText("Login:");
-        getContentPane().add(jlLogin);
-        jlLogin.setBounds(40, 170, 70, 19);
-
-        jlSenha.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jlSenha.setText("Senha:");
-        getContentPane().add(jlSenha);
-        jlSenha.setBounds(310, 170, 60, 19);
-
-        tfLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tfLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        getContentPane().add(tfLogin);
-        tfLogin.setBounds(40, 190, 250, 30);
-
-        tfSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tfSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        getContentPane().add(tfSenha);
-        tfSenha.setBounds(310, 190, 250, 30);
-
-        jlNomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jlNomeUsuario.setText("Nome do Usuário:");
-        getContentPane().add(jlNomeUsuario);
-        jlNomeUsuario.setBounds(40, 100, 150, 20);
-
-        tfNomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tfNomeUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        tfNomeUsuario.setMaximumSize(new java.awt.Dimension(8, 200));
-        tfNomeUsuario.setMinimumSize(new java.awt.Dimension(8, 200));
-        tfNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNomeUsuarioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tfNomeUsuario);
-        tfNomeUsuario.setBounds(40, 120, 520, 30);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -114,7 +69,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(20, 340, 90, 70);
+        btVoltar.setBounds(9, 300, 80, 70);
 
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/search.png"))); // NOI18N
@@ -129,7 +84,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btPesquisar);
-        btPesquisar.setBounds(260, 340, 99, 70);
+        btPesquisar.setBounds(250, 300, 100, 70);
 
         btExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/delete.png"))); // NOI18N
@@ -144,7 +99,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btExcluir);
-        btExcluir.setBounds(370, 340, 80, 70);
+        btExcluir.setBounds(360, 300, 80, 70);
 
         btLimpar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/clean.png"))); // NOI18N
@@ -159,13 +114,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btLimpar);
-        btLimpar.setBounds(160, 340, 80, 70);
-
-        jLObrigatorioNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
-        jLObrigatorioNome.setText("*");
-        getContentPane().add(jLObrigatorioNome);
-        jLObrigatorioNome.setBounds(550, 110, 10, 10);
+        btLimpar.setBounds(150, 300, 80, 70);
 
         btSalvar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/save.png"))); // NOI18N
@@ -180,78 +129,86 @@ public class CadastroUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btSalvar);
-        btSalvar.setBounds(490, 340, 80, 70);
+        btSalvar.setBounds(490, 300, 80, 70);
 
-        jLObrigatorioLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLObrigatorioLogin.setForeground(new java.awt.Color(204, 0, 0));
-        jLObrigatorioLogin.setText("*");
-        getContentPane().add(jLObrigatorioLogin);
-        jLObrigatorioLogin.setBounds(550, 180, 10, 10);
+        txtCurso.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCurso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
+        txtCurso.setMaximumSize(new java.awt.Dimension(8, 200));
+        txtCurso.setMinimumSize(new java.awt.Dimension(8, 200));
+        txtCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCursoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCurso);
+        txtCurso.setBounds(40, 190, 490, 30);
 
-        jLObrigatorioSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLObrigatorioSenha.setForeground(new java.awt.Color(204, 0, 0));
-        jLObrigatorioSenha.setText("*");
-        getContentPane().add(jLObrigatorioSenha);
-        jLObrigatorioSenha.setBounds(280, 180, 10, 10);
+        jlNomeUsuario3.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jlNomeUsuario3.setText("Nome do Curso:");
+        getContentPane().add(jlNomeUsuario3);
+        jlNomeUsuario3.setBounds(40, 170, 140, 20);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_user2.png"))); // NOI18N
-        jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLObrigatorioNome2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome2.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome2.setText("*");
+        getContentPane().add(jLObrigatorioNome2);
+        jLObrigatorioNome2.setBounds(520, 180, 10, 10);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_curse.png"))); // NOI18N
+        jLabel6.setMaximumSize(new java.awt.Dimension(580, 380));
+        jLabel6.setMinimumSize(new java.awt.Dimension(580, 380));
+        jLabel6.setPreferredSize(new java.awt.Dimension(580, 380));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 600, 420);
+        jLabel6.setBounds(0, 0, 580, 380);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        List<Usuario> lista;
-        lista = (usuarioDAO.listar());
-        UsuarioTableModel itm = new UsuarioTableModel(lista);
-        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Usuario");
+        List<Curso> lista;
+        lista = cursoDAO.listar();
+        CursoTableModel itm = new CursoTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Curso");
         if (objetoRetorno != null) {
-            usuario = usuarioDAO.consultarObjetoId("idUsuario", objetoRetorno);
-            tfLogin.setText(usuario.getLoginUsuario());
-            tfNomeUsuario.setText(usuario.getNomeUsuario());
-            tfSenha.setText(usuario.getSenhaUsuario());
+            curso = cursoDAO.consultarObjetoId("idCurso", objetoRetorno);
+            txtCurso.setText(curso.getNomeCurso());
             btExcluir.setEnabled(true);
         }
+
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        usuarioDAO.excluir(usuario);
+        cursoDAO.excluir(curso);
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         Util.limparCamposGenerico(this);
         btExcluir.setEnabled(false);
-        usuario = new Usuario();
-        tfLogin.setEnabled(true);
-
+        curso = new Curso();
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
 
-        if (tfLogin.getText().equals("") || tfNomeUsuario.getText().equals("") || tfSenha.getText().equals("")) {
+        if (txtCurso.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
-            usuario.setLoginUsuario(tfLogin.getText());
-            usuario.setNomeUsuario(tfNomeUsuario.getText().toUpperCase());
-            usuario.setSenhaUsuario(tfSenha.getText());
-            usuarioDAO.salvar(usuario);
-            btLimparActionPerformed(null);
-
+            curso.setNomeCurso(txtCurso.getText());
+            cursoDAO.salvar(curso);
+            Util.limparCamposGenerico(this);
+            curso = new Curso();
         }
+
     }//GEN-LAST:event_btSalvarActionPerformed
 
-    private void tfNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfNomeUsuarioActionPerformed
-
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void txtCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCursoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,14 +227,74 @@ public class CadastroUsuario extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -286,7 +303,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroUsuario dialog = new CadastroUsuario(new javax.swing.JFrame(), true);
+                CadastroCurso dialog = new CadastroCurso();
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -304,15 +321,9 @@ public class CadastroUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btPesquisar;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btVoltar;
-    private javax.swing.JLabel jLObrigatorioLogin;
-    private javax.swing.JLabel jLObrigatorioNome;
-    private javax.swing.JLabel jLObrigatorioSenha;
+    private javax.swing.JLabel jLObrigatorioNome2;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jlLogin;
-    private javax.swing.JLabel jlNomeUsuario;
-    private javax.swing.JLabel jlSenha;
-    private javax.swing.JTextField tfLogin;
-    private javax.swing.JTextField tfNomeUsuario;
-    private javax.swing.JPasswordField tfSenha;
+    private javax.swing.JLabel jlNomeUsuario3;
+    private javax.swing.JTextField txtCurso;
     // End of variables declaration//GEN-END:variables
 }
