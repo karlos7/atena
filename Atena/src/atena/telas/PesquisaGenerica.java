@@ -91,9 +91,10 @@ public class PesquisaGenerica extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(602, 421));
+        setMinimumSize(new java.awt.Dimension(710, 460));
         setModal(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(710, 460));
         getContentPane().setLayout(null);
 
         tbPesquisa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -129,7 +130,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         jScrollPane1.setBounds(20, 100, 560, 240);
 
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/ok.png"))); // NOI18N
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/edit.png"))); // NOI18N
         btEditar.setText("Selecionar");
         btEditar.setContentAreaFilled(false);
         btEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -141,10 +142,10 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btEditar);
-        btEditar.setBounds(250, 340, 103, 70);
+        btEditar.setBounds(480, 340, 103, 70);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/voltar.png"))); // NOI18N
+        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
         btVoltar.setText("Voltar");
         btVoltar.setContentAreaFilled(false);
         btVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -170,8 +171,11 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         jlPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/birdpoint/imagens/PesquisaGenerica.png"))); // NOI18N
         jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jlPesquisar.setMaximumSize(new java.awt.Dimension(710, 460));
+        jlPesquisar.setMinimumSize(new java.awt.Dimension(710, 460));
+        jlPesquisar.setPreferredSize(new java.awt.Dimension(710, 460));
         getContentPane().add(jlPesquisar);
-        jlPesquisar.setBounds(0, 0, 2, 420);
+        jlPesquisar.setBounds(0, 0, 710, 460);
 
         pack();
         setLocationRelativeTo(null);
