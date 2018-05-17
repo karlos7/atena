@@ -1,4 +1,4 @@
-package registraclinic.util;
+package atena.util;
 
 import java.awt.Component;
 import java.awt.Graphics;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atena.usuario;
+package atena.curso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,20 +11,20 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Karlos Oliveira
+ * @author Karlos
  */
-public class UsuarioTableModel extends AbstractTableModel {
+public class CursoTableModel extends AbstractTableModel{
+    
+    private List<Curso> cursos = new ArrayList<>();
+    private String[] colunas = {"Código", "Curso"};
 
-    private List<Usuario> usuarios = new ArrayList<>();
-    private String[] colunas = {"Código", "Nome", "Login"};
-
-    public UsuarioTableModel(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public CursoTableModel(List<Curso> curso) {
+        this.cursos = curso;
     }
 
     @Override
     public int getRowCount() {
-        return usuarios.size();
+        return cursos.size();
     }
 
     @Override
@@ -34,14 +34,13 @@ public class UsuarioTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Usuario usuario = usuarios.get(rowIndex);
+        Curso curso = cursos.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return usuario.getIdUsuario();
+                return curso.getIdCurso();
             case 1:
-                return usuario.getNomeUsuario();
-            case 2:
-                return usuario.getLoginUsuario();
+                return curso.getNomeCurso();
+
         }
         return null;
     }
@@ -53,10 +52,8 @@ public class UsuarioTableModel extends AbstractTableModel {
                 return colunas[0];
             case 1:
                 return colunas[1];
-            case 2:
-                return colunas[2];
         }
         return null;
     }
-
+    
 }

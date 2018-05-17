@@ -3,28 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atena.usuario;
+package atena.processoseletivo;
 
+import atena.curso.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Karlos Oliveira
+ * @author Karlos
  */
-public class UsuarioTableModel extends AbstractTableModel {
+public class ProcessoSeletivoTableModel extends AbstractTableModel{
+    
+    private List<ProcessoSeletivo> processoSeletivos = new ArrayList<>();
+    private String[] colunas = {"Código", "Curso"};
 
-    private List<Usuario> usuarios = new ArrayList<>();
-    private String[] colunas = {"Código", "Nome", "Login"};
-
-    public UsuarioTableModel(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public ProcessoSeletivoTableModel(List<ProcessoSeletivo> processoSeletivo) {
+        this.processoSeletivos = processoSeletivo;
     }
 
     @Override
     public int getRowCount() {
-        return usuarios.size();
+        return processoSeletivos.size();
     }
 
     @Override
@@ -34,14 +35,13 @@ public class UsuarioTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Usuario usuario = usuarios.get(rowIndex);
+        ProcessoSeletivo processoSeletivo = processoSeletivos.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return usuario.getIdUsuario();
+                return processoSeletivo.getIdProcessoSeletivo();
             case 1:
-                return usuario.getNomeUsuario();
-            case 2:
-                return usuario.getLoginUsuario();
+                return processoSeletivo.getProcessoSeletivo();
+
         }
         return null;
     }
@@ -53,10 +53,8 @@ public class UsuarioTableModel extends AbstractTableModel {
                 return colunas[0];
             case 1:
                 return colunas[1];
-            case 2:
-                return colunas[2];
         }
         return null;
     }
-
+    
 }

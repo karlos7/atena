@@ -22,7 +22,6 @@ public class Usuario {
     private String nomeUsuario;
     private String loginUsuario;
     private String senhaUsuario;
-    private String tipoUsuario;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -56,12 +55,4 @@ public class Usuario {
         this.senhaUsuario = senhaUsuario;
     }
 
-    public String getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(String tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
-    }
-    
 }

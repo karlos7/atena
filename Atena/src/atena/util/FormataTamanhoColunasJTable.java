@@ -1,5 +1,5 @@
 
-package registraclinic.util;
+package atena.util;
 
 import java.awt.Component;
 import javax.swing.JTable;

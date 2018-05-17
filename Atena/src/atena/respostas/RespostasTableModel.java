@@ -3,28 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atena.usuario;
+package atena.respostas;
 
+import atena.processoseletivo.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Karlos Oliveira
+ * @author Karlos
  */
-public class UsuarioTableModel extends AbstractTableModel {
+public class RespostasTableModel extends AbstractTableModel{
+    
+    private List<Respostas> respostas = new ArrayList<>();
+    private String[] colunas = {"Código", "Processo Seletivo"};
 
-    private List<Usuario> usuarios = new ArrayList<>();
-    private String[] colunas = {"Código", "Nome", "Login"};
-
-    public UsuarioTableModel(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public RespostasTableModel(List<Respostas> resposta) {
+        this.respostas = resposta;
     }
 
     @Override
     public int getRowCount() {
-        return usuarios.size();
+        return respostas.size();
     }
 
     @Override
@@ -34,14 +35,13 @@ public class UsuarioTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Usuario usuario = usuarios.get(rowIndex);
+        Respostas resposta = respostas.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return usuario.getIdUsuario();
+                return resposta.getIdRespostas();
             case 1:
-                return usuario.getNomeUsuario();
-            case 2:
-                return usuario.getLoginUsuario();
+                return resposta.getProcessoSeletivo().getProcessoSeletivo();
+
         }
         return null;
     }
@@ -53,10 +53,8 @@ public class UsuarioTableModel extends AbstractTableModel {
                 return colunas[0];
             case 1:
                 return colunas[1];
-            case 2:
-                return colunas[2];
         }
         return null;
     }
-
+    
 }

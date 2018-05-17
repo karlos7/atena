@@ -7,19 +7,19 @@ package atena.usuario;
 
 import javax.swing.JOptionPane;
 import org.hibernate.criterion.Restrictions;
-import registraclinic.util.GenericDAO;
-import registraclinic.util.HibernateUtil;
+import atena.util.GenericDAO;
+import atena.util.HibernateUtil;
 
 /**
  *
  * @author Katyeudo
  */
-public class UsuarioDAO extends GenericDAO<Usuario>{
-    
+public class UsuarioDAO extends GenericDAO<Usuario> {
+
     public UsuarioDAO() {
         super(Usuario.class);
     }
-    
+
     public void salvar(Usuario usuario) {
         Object[] options = {"Sim", "Não"};
         if (usuario.getIdUsuario() == 0) {
@@ -27,7 +27,7 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
             }
         } else if (JOptionPane.showOptionDialog(null, "Deseja mesmo realizar essa edição"
-                + "?", "RegistraClinic", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
+                + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
             if (atualizar(usuario)) {
                 JOptionPane.showMessageDialog(null, "Usuário editado com sucesso!!");
             }
@@ -35,7 +35,7 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
             JOptionPane.showMessageDialog(null, "A edição foi cancelada!");
         }
     }
-    
+
     public Usuario autenticarUsuario(String login, String senha) {
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();
@@ -48,15 +48,14 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         }
         return usuario;
     }
-    
+
     public boolean excluir(Usuario usuario) {
         Object[] options = {"Sim", "Não"};
         if (usuario.getIdUsuario() != 0) {
             if (JOptionPane.showOptionDialog(null, "Deseja excluir o Usuário " + usuario.getNomeUsuario()
-                    + "?", "Registra Clinic", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
-
+                    + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
                 if (remover(usuario)) {
-                    JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");                    
+                    JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Não foi possível excluir o Usuário " + usuario.getNomeUsuario(),
                             "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
@@ -69,5 +68,5 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         }
         return true;
     }
-    
+
 }
