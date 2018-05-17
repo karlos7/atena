@@ -95,12 +95,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jlUsuario.setFont(new java.awt.Font("Bebas Neue", 0, 25)); // NOI18N
         jlUsuario.setText("???");
         getContentPane().add(jlUsuario);
-        jlUsuario.setBounds(510, 20, 330, 30);
+        jlUsuario.setBounds(590, 20, 250, 30);
 
         jlNome3.setFont(new java.awt.Font("Bebas Neue", 0, 32)); // NOI18N
         jlNome3.setText("USUÁRIO:");
         getContentPane().add(jlNome3);
-        jlNome3.setBounds(410, 20, 100, 30);
+        jlNome3.setBounds(490, 20, 100, 30);
 
         jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/home.png"))); // NOI18N
         getContentPane().add(jlHome);
