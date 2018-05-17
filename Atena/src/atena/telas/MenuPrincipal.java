@@ -76,7 +76,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 547));
         getContentPane().setLayout(null);
 
-        btLogout.setFont(new java.awt.Font("Bebas Neue", 1, 36)); // NOI18N
+        btLogout.setFont(new java.awt.Font("Bebas Neue", 1, 32)); // NOI18N
         btLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/logoff.png"))); // NOI18N
         btLogout.setText("Sair");
         btLogout.setToolTipText("Sair");
@@ -90,19 +90,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btLogout);
-        btLogout.setBounds(0, 330, 100, 120);
+        btLogout.setBounds(810, 330, 90, 110);
 
-        jlUsuario.setFont(new java.awt.Font("Bebas Neue", 0, 25)); // NOI18N
+        jlUsuario.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jlUsuario.setText("???");
         getContentPane().add(jlUsuario);
-        jlUsuario.setBounds(590, 20, 250, 40);
+        jlUsuario.setBounds(370, 400, 380, 40);
 
-        jlNome3.setFont(new java.awt.Font("Bebas Neue", 0, 32)); // NOI18N
+        jlNome3.setFont(new java.awt.Font("Bebas Neue", 0, 28)); // NOI18N
         jlNome3.setText("USUÁRIO:");
         getContentPane().add(jlNome3);
-        jlNome3.setBounds(490, 20, 100, 40);
+        jlNome3.setBounds(290, 400, 100, 40);
 
-        jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/home.png"))); // NOI18N
+        jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/home2.png"))); // NOI18N
         getContentPane().add(jlHome);
         jlHome.setBounds(0, 0, 900, 450);
 
