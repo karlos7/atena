@@ -23,6 +23,7 @@ public class CadastroCurso extends javax.swing.JDialog {
     CursoDAO cursoDAO;
 
     
+    //public CadastroCurso(java.awt.Frame parent, boolean modal) {
     public CadastroCurso() {
         initComponents();
         btExcluir.setVisible(true);
@@ -155,6 +156,7 @@ public class CadastroCurso extends javax.swing.JDialog {
         jLObrigatorioNome2.setBounds(520, 180, 10, 10);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_curse.png"))); // NOI18N
+        jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         jLabel6.setMaximumSize(new java.awt.Dimension(580, 380));
         jLabel6.setMinimumSize(new java.awt.Dimension(580, 380));
         jLabel6.setPreferredSize(new java.awt.Dimension(580, 380));
@@ -303,6 +305,7 @@ public class CadastroCurso extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //CadastroCurso dialog = new CadastroCurso(new javax.swing.JFrame(), true);
                 CadastroCurso dialog = new CadastroCurso();
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override

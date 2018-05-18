@@ -10,7 +10,7 @@ import atena.usuario.UsuarioDAO;
 
 /**
  *
- * @author Adriano Lima
+ * @author Karlos Oliveira
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
@@ -29,27 +29,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }
 
-    public void permissao() {
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("administrador")) {
-            subUsuario.setVisible(false);
-        }
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("Direção")) {
-            subCadDespesas.setVisible(false);
-        }
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("Direção") && !usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("Coordenador")) {
-            menuDespesas.setVisible(false);
-        }
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("RH")) {
-            subCadCurso.setVisible(false);
-            subJustificativa.setVisible(false);
-        }
-        if (usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("DTI")) {
-            menuCadastros.setVisible(false);
-        }
-        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("DTI")) {
-            subRegistrarPonto.setVisible(false);
-        }
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -167,7 +147,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btLogoutActionPerformed
 
     private void subCadCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadCursoActionPerformed
-        CadastroCurso cadastroCurso = new CadastroCurso(null, rootPaneCheckingEnabled);
+        //CadastroCurso cadastroCurso = new CadastroCurso(null, rootPaneCheckingEnabled);
+        CadastroCurso cadastroCurso = new CadastroCurso();
         cadastroCurso.setVisible(true);
     }//GEN-LAST:event_subCadCursoActionPerformed
 

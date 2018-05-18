@@ -5,7 +5,6 @@
  */
 package atena.respostas;
 
-import atena.processoseletivo.*;
 import atena.util.GenericDAO;
 import javax.swing.JOptionPane;
 

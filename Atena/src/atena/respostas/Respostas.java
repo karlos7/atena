@@ -5,7 +5,6 @@
  */
 package atena.respostas;
 
-import atena.processoseletivo.ProcessoSeletivo;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,7 @@ public class Respostas {
     @Id
     @GeneratedValue
     private int idRespostas;
-    private ProcessoSeletivo processoSeletivo;
+    private String processoSeletivo;
     private List<String> gabarito;
 
     public int getIdRespostas() {
@@ -32,11 +31,11 @@ public class Respostas {
         this.idRespostas = idRespostas;
     }
 
-    public ProcessoSeletivo getProcessoSeletivo() {
+    public String getProcessoSeletivo() {
         return processoSeletivo;
     }
 
-    public void setProcessoSeletivo(ProcessoSeletivo processoSeletivo) {
+    public void setProcessoSeletivo(String processoSeletivo) {
         this.processoSeletivo = processoSeletivo;
     }
     

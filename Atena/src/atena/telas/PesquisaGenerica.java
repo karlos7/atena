@@ -166,11 +166,11 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(tfPesquisa);
-        tfPesquisa.setBounds(130, 101, 530, 30);
+        tfPesquisa.setBounds(130, 102, 530, 30);
 
         jlPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pesquisa.png"))); // NOI18N
-        jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         jlPesquisar.setMaximumSize(new java.awt.Dimension(710, 520));
         jlPesquisar.setMinimumSize(new java.awt.Dimension(710, 520));
         jlPesquisar.setPreferredSize(new java.awt.Dimension(710, 520));

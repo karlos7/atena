@@ -195,7 +195,7 @@ public class CadastroUsuario extends javax.swing.JDialog {
         jLObrigatorioSenha.setBounds(280, 180, 10, 10);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_user2.png"))); // NOI18N
-        jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 600, 420);
 
