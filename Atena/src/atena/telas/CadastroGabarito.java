@@ -194,7 +194,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jlNomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario.setText("10");
         getContentPane().add(jlNomeUsuario);
-        jlNomeUsuario.setBounds(40, 210, 30, 20);
+        jlNomeUsuario.setBounds(40, 220, 30, 20);
 
         quest10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -206,7 +206,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest10);
-        quest10.setBounds(40, 230, 60, 30);
+        quest10.setBounds(40, 240, 60, 30);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -263,29 +263,29 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest19);
-        quest19.setBounds(40, 290, 60, 30);
+        quest19.setBounds(40, 300, 60, 30);
 
         jlNomeUsuario3.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario3.setText("19");
         getContentPane().add(jlNomeUsuario3);
-        jlNomeUsuario3.setBounds(40, 270, 30, 20);
+        jlNomeUsuario3.setBounds(40, 280, 30, 20);
 
         jLObrigatorioNome3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome3.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome3.setText("*");
         getContentPane().add(jLObrigatorioNome3);
-        jLObrigatorioNome3.setBounds(90, 280, 10, 10);
+        jLObrigatorioNome3.setBounds(90, 290, 10, 10);
 
         jlNomeUsuario4.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario4.setText("28");
         getContentPane().add(jlNomeUsuario4);
-        jlNomeUsuario4.setBounds(40, 330, 30, 20);
+        jlNomeUsuario4.setBounds(40, 340, 30, 20);
 
         jLObrigatorioNome4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome4.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome4.setText("*");
         getContentPane().add(jLObrigatorioNome4);
-        jLObrigatorioNome4.setBounds(90, 340, 10, 10);
+        jLObrigatorioNome4.setBounds(90, 350, 10, 10);
 
         quest28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest28.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -297,7 +297,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest28);
-        quest28.setBounds(40, 350, 60, 30);
+        quest28.setBounds(40, 360, 60, 30);
 
         quest01.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest01.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -309,18 +309,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest01);
-        quest01.setBounds(40, 170, 60, 30);
+        quest01.setBounds(40, 180, 60, 30);
 
         jlNomeUsuario2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario2.setText("01");
         getContentPane().add(jlNomeUsuario2);
-        jlNomeUsuario2.setBounds(40, 150, 30, 20);
+        jlNomeUsuario2.setBounds(40, 160, 30, 20);
 
         jLObrigatorioNome2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome2.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome2.setText("*");
         getContentPane().add(jLObrigatorioNome2);
-        jLObrigatorioNome2.setBounds(90, 160, 10, 10);
+        jLObrigatorioNome2.setBounds(90, 170, 10, 10);
 
         btLimpar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/clean.png"))); // NOI18N
@@ -341,7 +341,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome.setText("*");
         getContentPane().add(jLObrigatorioNome);
-        jLObrigatorioNome.setBounds(90, 220, 10, 10);
+        jLObrigatorioNome.setBounds(90, 230, 10, 10);
 
         btSalvar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/save.png"))); // NOI18N
@@ -361,13 +361,13 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jlNomeUsuario5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario5.setText("11");
         getContentPane().add(jlNomeUsuario5);
-        jlNomeUsuario5.setBounds(130, 210, 30, 20);
+        jlNomeUsuario5.setBounds(130, 220, 30, 20);
 
         jLObrigatorioNome5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome5.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome5.setText("*");
         getContentPane().add(jLObrigatorioNome5);
-        jLObrigatorioNome5.setBounds(180, 280, 10, 10);
+        jLObrigatorioNome5.setBounds(180, 290, 10, 10);
 
         quest20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest20.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -379,7 +379,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest20);
-        quest20.setBounds(130, 290, 60, 30);
+        quest20.setBounds(130, 300, 60, 30);
 
         quest11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -391,18 +391,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest11);
-        quest11.setBounds(130, 230, 60, 30);
+        quest11.setBounds(130, 240, 60, 30);
 
         jlNomeUsuario6.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario6.setText("20");
         getContentPane().add(jlNomeUsuario6);
-        jlNomeUsuario6.setBounds(130, 270, 30, 20);
+        jlNomeUsuario6.setBounds(130, 280, 30, 20);
 
         jLObrigatorioNome6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome6.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome6.setText("*");
         getContentPane().add(jLObrigatorioNome6);
-        jLObrigatorioNome6.setBounds(180, 220, 10, 10);
+        jLObrigatorioNome6.setBounds(180, 230, 10, 10);
 
         quest02.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest02.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -414,18 +414,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest02);
-        quest02.setBounds(130, 170, 60, 30);
+        quest02.setBounds(130, 180, 60, 30);
 
         jLObrigatorioNome7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome7.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome7.setText("*");
         getContentPane().add(jLObrigatorioNome7);
-        jLObrigatorioNome7.setBounds(180, 160, 10, 10);
+        jLObrigatorioNome7.setBounds(180, 170, 10, 10);
 
         jlNomeUsuario7.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario7.setText("02");
         getContentPane().add(jlNomeUsuario7);
-        jlNomeUsuario7.setBounds(130, 150, 30, 20);
+        jlNomeUsuario7.setBounds(130, 160, 30, 20);
 
         quest37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest37.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -437,18 +437,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest37);
-        quest37.setBounds(40, 410, 60, 30);
+        quest37.setBounds(40, 420, 60, 30);
 
         jLObrigatorioNome8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome8.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome8.setText("*");
         getContentPane().add(jLObrigatorioNome8);
-        jLObrigatorioNome8.setBounds(90, 400, 10, 10);
+        jLObrigatorioNome8.setBounds(90, 410, 10, 10);
 
         jlNomeUsuario8.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario8.setText("37");
         getContentPane().add(jlNomeUsuario8);
-        jlNomeUsuario8.setBounds(40, 390, 30, 20);
+        jlNomeUsuario8.setBounds(40, 400, 30, 20);
 
         quest03.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest03.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -460,7 +460,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest03);
-        quest03.setBounds(220, 170, 60, 30);
+        quest03.setBounds(220, 180, 60, 30);
 
         quest12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -472,7 +472,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest12);
-        quest12.setBounds(220, 230, 60, 30);
+        quest12.setBounds(220, 240, 60, 30);
 
         quest21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest21.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -484,7 +484,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest21);
-        quest21.setBounds(220, 290, 60, 30);
+        quest21.setBounds(220, 300, 60, 30);
 
         quest22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest22.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -496,7 +496,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest22);
-        quest22.setBounds(310, 290, 60, 30);
+        quest22.setBounds(310, 300, 60, 30);
 
         quest13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -508,7 +508,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest13);
-        quest13.setBounds(310, 230, 60, 30);
+        quest13.setBounds(310, 240, 60, 30);
 
         quest04.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest04.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -520,12 +520,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest04);
-        quest04.setBounds(310, 170, 60, 30);
+        quest04.setBounds(310, 180, 60, 30);
 
         jlNomeUsuario9.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario9.setText("30");
         getContentPane().add(jlNomeUsuario9);
-        jlNomeUsuario9.setBounds(220, 330, 30, 20);
+        jlNomeUsuario9.setBounds(220, 340, 30, 20);
 
         quest30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest30.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -537,12 +537,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest30);
-        quest30.setBounds(220, 350, 60, 30);
+        quest30.setBounds(220, 360, 60, 30);
 
         jlNomeUsuario10.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario10.setText("39");
         getContentPane().add(jlNomeUsuario10);
-        jlNomeUsuario10.setBounds(220, 390, 30, 20);
+        jlNomeUsuario10.setBounds(220, 400, 30, 20);
 
         quest39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest39.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -554,102 +554,102 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest39);
-        quest39.setBounds(220, 410, 60, 30);
+        quest39.setBounds(220, 420, 60, 30);
 
         jLObrigatorioNome9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome9.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome9.setText("*");
         getContentPane().add(jLObrigatorioNome9);
-        jLObrigatorioNome9.setBounds(270, 400, 10, 10);
+        jLObrigatorioNome9.setBounds(270, 410, 10, 10);
 
         jLObrigatorioNome10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome10.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome10.setText("*");
         getContentPane().add(jLObrigatorioNome10);
-        jLObrigatorioNome10.setBounds(270, 340, 10, 10);
+        jLObrigatorioNome10.setBounds(270, 350, 10, 10);
 
         jlNomeUsuario11.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario11.setText("21");
         getContentPane().add(jlNomeUsuario11);
-        jlNomeUsuario11.setBounds(220, 270, 30, 20);
+        jlNomeUsuario11.setBounds(220, 280, 30, 20);
 
         jLObrigatorioNome11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome11.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome11.setText("*");
         getContentPane().add(jLObrigatorioNome11);
-        jLObrigatorioNome11.setBounds(270, 280, 10, 10);
+        jLObrigatorioNome11.setBounds(270, 290, 10, 10);
 
         jlNomeUsuario12.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario12.setText("12");
         getContentPane().add(jlNomeUsuario12);
-        jlNomeUsuario12.setBounds(220, 210, 30, 20);
+        jlNomeUsuario12.setBounds(220, 220, 30, 20);
 
         jLObrigatorioNome12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome12.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome12.setText("*");
         getContentPane().add(jLObrigatorioNome12);
-        jLObrigatorioNome12.setBounds(270, 220, 10, 10);
+        jLObrigatorioNome12.setBounds(270, 230, 10, 10);
 
         jLObrigatorioNome13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome13.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome13.setText("*");
         getContentPane().add(jLObrigatorioNome13);
-        jLObrigatorioNome13.setBounds(270, 160, 10, 10);
+        jLObrigatorioNome13.setBounds(270, 170, 10, 10);
 
         jlNomeUsuario13.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario13.setText("03");
         getContentPane().add(jlNomeUsuario13);
-        jlNomeUsuario13.setBounds(220, 150, 30, 20);
+        jlNomeUsuario13.setBounds(220, 160, 30, 20);
 
         jLObrigatorioNome14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome14.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome14.setText("*");
         getContentPane().add(jLObrigatorioNome14);
-        jLObrigatorioNome14.setBounds(360, 160, 10, 10);
+        jLObrigatorioNome14.setBounds(360, 170, 10, 10);
 
         jLObrigatorioNome15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome15.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome15.setText("*");
         getContentPane().add(jLObrigatorioNome15);
-        jLObrigatorioNome15.setBounds(360, 220, 10, 10);
+        jLObrigatorioNome15.setBounds(360, 230, 10, 10);
 
         jLObrigatorioNome16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome16.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome16.setText("*");
         getContentPane().add(jLObrigatorioNome16);
-        jLObrigatorioNome16.setBounds(360, 280, 10, 10);
+        jLObrigatorioNome16.setBounds(360, 290, 10, 10);
 
         jlNomeUsuario14.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario14.setText("22");
         getContentPane().add(jlNomeUsuario14);
-        jlNomeUsuario14.setBounds(310, 270, 30, 20);
+        jlNomeUsuario14.setBounds(310, 280, 30, 20);
 
         jlNomeUsuario15.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario15.setText("13");
         getContentPane().add(jlNomeUsuario15);
-        jlNomeUsuario15.setBounds(310, 210, 30, 20);
+        jlNomeUsuario15.setBounds(310, 220, 30, 20);
 
         jlNomeUsuario16.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario16.setText("04");
         getContentPane().add(jlNomeUsuario16);
-        jlNomeUsuario16.setBounds(310, 150, 30, 20);
+        jlNomeUsuario16.setBounds(310, 160, 30, 20);
 
         jlNomeUsuario17.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario17.setText("16");
         getContentPane().add(jlNomeUsuario17);
-        jlNomeUsuario17.setBounds(580, 210, 30, 20);
+        jlNomeUsuario17.setBounds(580, 220, 30, 20);
 
         jLObrigatorioNome17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome17.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome17.setText("*");
         getContentPane().add(jLObrigatorioNome17);
-        jLObrigatorioNome17.setBounds(720, 160, 10, 10);
+        jLObrigatorioNome17.setBounds(720, 170, 10, 10);
 
         jLObrigatorioNome18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome18.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome18.setText("*");
         getContentPane().add(jLObrigatorioNome18);
-        jLObrigatorioNome18.setBounds(630, 280, 10, 10);
+        jLObrigatorioNome18.setBounds(630, 290, 10, 10);
 
         quest25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest25.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -661,18 +661,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest25);
-        quest25.setBounds(580, 290, 60, 30);
+        quest25.setBounds(580, 300, 60, 30);
 
         jLObrigatorioNome19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome19.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome19.setText("*");
         getContentPane().add(jLObrigatorioNome19);
-        jLObrigatorioNome19.setBounds(630, 340, 10, 10);
+        jLObrigatorioNome19.setBounds(630, 350, 10, 10);
 
         jlNomeUsuario18.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario18.setText("07");
         getContentPane().add(jlNomeUsuario18);
-        jlNomeUsuario18.setBounds(580, 150, 30, 20);
+        jlNomeUsuario18.setBounds(580, 160, 30, 20);
 
         quest07.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest07.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -684,7 +684,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest07);
-        quest07.setBounds(580, 170, 60, 30);
+        quest07.setBounds(580, 180, 60, 30);
 
         quest16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -696,13 +696,13 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest16);
-        quest16.setBounds(580, 230, 60, 30);
+        quest16.setBounds(580, 240, 60, 30);
 
         jLObrigatorioNome20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome20.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome20.setText("*");
         getContentPane().add(jLObrigatorioNome20);
-        jLObrigatorioNome20.setBounds(720, 220, 10, 10);
+        jLObrigatorioNome20.setBounds(720, 230, 10, 10);
 
         quest26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -714,24 +714,24 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest26);
-        quest26.setBounds(670, 290, 60, 30);
+        quest26.setBounds(670, 300, 60, 30);
 
         jLObrigatorioNome21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome21.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome21.setText("*");
         getContentPane().add(jLObrigatorioNome21);
-        jLObrigatorioNome21.setBounds(630, 220, 10, 10);
+        jLObrigatorioNome21.setBounds(630, 230, 10, 10);
 
         jLObrigatorioNome22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome22.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome22.setText("*");
         getContentPane().add(jLObrigatorioNome22);
-        jLObrigatorioNome22.setBounds(630, 160, 10, 10);
+        jLObrigatorioNome22.setBounds(630, 170, 10, 10);
 
         jlNomeUsuario19.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario19.setText("17");
         getContentPane().add(jlNomeUsuario19);
-        jlNomeUsuario19.setBounds(670, 210, 30, 20);
+        jlNomeUsuario19.setBounds(670, 220, 30, 20);
 
         quest08.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest08.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -743,7 +743,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest08);
-        quest08.setBounds(670, 170, 60, 30);
+        quest08.setBounds(670, 180, 60, 30);
 
         quest17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -755,34 +755,34 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest17);
-        quest17.setBounds(670, 230, 60, 30);
+        quest17.setBounds(670, 240, 60, 30);
 
         jLObrigatorioNome23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome23.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome23.setText("*");
         getContentPane().add(jLObrigatorioNome23);
-        jLObrigatorioNome23.setBounds(630, 400, 10, 10);
+        jLObrigatorioNome23.setBounds(630, 410, 10, 10);
 
         jlNomeUsuario20.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario20.setText("34");
         getContentPane().add(jlNomeUsuario20);
-        jlNomeUsuario20.setBounds(580, 330, 30, 20);
+        jlNomeUsuario20.setBounds(580, 340, 30, 20);
 
         jlNomeUsuario21.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario21.setText("25");
         getContentPane().add(jlNomeUsuario21);
-        jlNomeUsuario21.setBounds(580, 270, 30, 20);
+        jlNomeUsuario21.setBounds(580, 280, 30, 20);
 
         jLObrigatorioNome24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome24.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome24.setText("*");
         getContentPane().add(jLObrigatorioNome24);
-        jLObrigatorioNome24.setBounds(720, 280, 10, 10);
+        jLObrigatorioNome24.setBounds(720, 290, 10, 10);
 
         jlNomeUsuario22.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario22.setText("26");
         getContentPane().add(jlNomeUsuario22);
-        jlNomeUsuario22.setBounds(670, 270, 30, 20);
+        jlNomeUsuario22.setBounds(670, 280, 30, 20);
 
         quest43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest43.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -794,12 +794,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest43);
-        quest43.setBounds(580, 410, 60, 30);
+        quest43.setBounds(580, 420, 60, 30);
 
         jlNomeUsuario23.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario23.setText("08");
         getContentPane().add(jlNomeUsuario23);
-        jlNomeUsuario23.setBounds(670, 150, 30, 20);
+        jlNomeUsuario23.setBounds(670, 160, 30, 20);
 
         quest34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest34.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -811,23 +811,23 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest34);
-        quest34.setBounds(580, 350, 60, 30);
+        quest34.setBounds(580, 360, 60, 30);
 
         jlNomeUsuario24.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario24.setText("43");
         getContentPane().add(jlNomeUsuario24);
-        jlNomeUsuario24.setBounds(580, 390, 30, 20);
+        jlNomeUsuario24.setBounds(580, 400, 30, 20);
 
         jlNomeUsuario25.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario25.setText("06");
         getContentPane().add(jlNomeUsuario25);
-        jlNomeUsuario25.setBounds(490, 150, 30, 20);
+        jlNomeUsuario25.setBounds(490, 160, 30, 20);
 
         jLObrigatorioNome25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome25.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome25.setText("*");
         getContentPane().add(jLObrigatorioNome25);
-        jLObrigatorioNome25.setBounds(540, 160, 10, 10);
+        jLObrigatorioNome25.setBounds(540, 170, 10, 10);
 
         quest06.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest06.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -839,18 +839,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest06);
-        quest06.setBounds(490, 170, 60, 30);
+        quest06.setBounds(490, 180, 60, 30);
 
         jlNomeUsuario26.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario26.setText("15");
         getContentPane().add(jlNomeUsuario26);
-        jlNomeUsuario26.setBounds(490, 210, 30, 20);
+        jlNomeUsuario26.setBounds(490, 220, 30, 20);
 
         jLObrigatorioNome26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome26.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome26.setText("*");
         getContentPane().add(jLObrigatorioNome26);
-        jLObrigatorioNome26.setBounds(540, 220, 10, 10);
+        jLObrigatorioNome26.setBounds(540, 230, 10, 10);
 
         quest15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -862,18 +862,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest15);
-        quest15.setBounds(490, 230, 60, 30);
+        quest15.setBounds(490, 240, 60, 30);
 
         jlNomeUsuario27.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario27.setText("24");
         getContentPane().add(jlNomeUsuario27);
-        jlNomeUsuario27.setBounds(490, 270, 30, 20);
+        jlNomeUsuario27.setBounds(490, 280, 30, 20);
 
         jLObrigatorioNome27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome27.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome27.setText("*");
         getContentPane().add(jLObrigatorioNome27);
-        jLObrigatorioNome27.setBounds(540, 280, 10, 10);
+        jLObrigatorioNome27.setBounds(540, 290, 10, 10);
 
         quest24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest24.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -885,7 +885,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest24);
-        quest24.setBounds(490, 290, 60, 30);
+        quest24.setBounds(490, 300, 60, 30);
 
         quest32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest32.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -897,7 +897,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest32);
-        quest32.setBounds(400, 350, 60, 30);
+        quest32.setBounds(400, 360, 60, 30);
 
         quest41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest41.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -909,23 +909,23 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest41);
-        quest41.setBounds(400, 410, 60, 30);
+        quest41.setBounds(400, 420, 60, 30);
 
         jLObrigatorioNome28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome28.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome28.setText("*");
         getContentPane().add(jLObrigatorioNome28);
-        jLObrigatorioNome28.setBounds(450, 400, 10, 10);
+        jLObrigatorioNome28.setBounds(450, 410, 10, 10);
 
         jlNomeUsuario28.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario28.setText("41");
         getContentPane().add(jlNomeUsuario28);
-        jlNomeUsuario28.setBounds(400, 390, 30, 20);
+        jlNomeUsuario28.setBounds(400, 400, 30, 20);
 
         jlNomeUsuario29.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario29.setText("32");
         getContentPane().add(jlNomeUsuario29);
-        jlNomeUsuario29.setBounds(400, 330, 30, 20);
+        jlNomeUsuario29.setBounds(400, 340, 30, 20);
 
         quest23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest23.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -937,18 +937,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest23);
-        quest23.setBounds(400, 290, 60, 30);
+        quest23.setBounds(400, 300, 60, 30);
 
         jLObrigatorioNome29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome29.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome29.setText("*");
         getContentPane().add(jLObrigatorioNome29);
-        jLObrigatorioNome29.setBounds(450, 280, 10, 10);
+        jLObrigatorioNome29.setBounds(450, 290, 10, 10);
 
         jlNomeUsuario30.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario30.setText("23");
         getContentPane().add(jlNomeUsuario30);
-        jlNomeUsuario30.setBounds(400, 270, 30, 20);
+        jlNomeUsuario30.setBounds(400, 280, 30, 20);
 
         quest14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest14.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -960,18 +960,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest14);
-        quest14.setBounds(400, 230, 60, 30);
+        quest14.setBounds(400, 240, 60, 30);
 
         jLObrigatorioNome30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome30.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome30.setText("*");
         getContentPane().add(jLObrigatorioNome30);
-        jLObrigatorioNome30.setBounds(450, 220, 10, 10);
+        jLObrigatorioNome30.setBounds(450, 230, 10, 10);
 
         jlNomeUsuario31.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario31.setText("14");
         getContentPane().add(jlNomeUsuario31);
-        jlNomeUsuario31.setBounds(400, 210, 30, 20);
+        jlNomeUsuario31.setBounds(400, 220, 30, 20);
 
         quest05.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest05.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -983,23 +983,23 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest05);
-        quest05.setBounds(400, 170, 60, 30);
+        quest05.setBounds(400, 180, 60, 30);
 
         jLObrigatorioNome31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome31.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome31.setText("*");
         getContentPane().add(jLObrigatorioNome31);
-        jLObrigatorioNome31.setBounds(450, 160, 10, 10);
+        jLObrigatorioNome31.setBounds(450, 170, 10, 10);
 
         jlNomeUsuario32.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario32.setText("05");
         getContentPane().add(jlNomeUsuario32);
-        jlNomeUsuario32.setBounds(400, 150, 30, 20);
+        jlNomeUsuario32.setBounds(400, 160, 30, 20);
 
         jlNomeUsuario33.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario33.setText("29");
         getContentPane().add(jlNomeUsuario33);
-        jlNomeUsuario33.setBounds(130, 330, 30, 20);
+        jlNomeUsuario33.setBounds(130, 340, 30, 20);
 
         quest29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest29.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1011,12 +1011,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest29);
-        quest29.setBounds(130, 350, 60, 30);
+        quest29.setBounds(130, 360, 60, 30);
 
         jlNomeUsuario34.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario34.setText("38");
         getContentPane().add(jlNomeUsuario34);
-        jlNomeUsuario34.setBounds(130, 390, 30, 20);
+        jlNomeUsuario34.setBounds(130, 400, 30, 20);
 
         quest38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest38.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1028,24 +1028,24 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest38);
-        quest38.setBounds(130, 410, 60, 30);
+        quest38.setBounds(130, 420, 60, 30);
 
         jLObrigatorioNome32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome32.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome32.setText("*");
         getContentPane().add(jLObrigatorioNome32);
-        jLObrigatorioNome32.setBounds(180, 400, 10, 10);
+        jLObrigatorioNome32.setBounds(180, 410, 10, 10);
 
         jLObrigatorioNome33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome33.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome33.setText("*");
         getContentPane().add(jLObrigatorioNome33);
-        jLObrigatorioNome33.setBounds(180, 340, 10, 10);
+        jLObrigatorioNome33.setBounds(180, 350, 10, 10);
 
         jlNomeUsuario35.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario35.setText("31");
         getContentPane().add(jlNomeUsuario35);
-        jlNomeUsuario35.setBounds(310, 330, 30, 20);
+        jlNomeUsuario35.setBounds(310, 340, 30, 20);
 
         quest31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest31.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1057,12 +1057,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest31);
-        quest31.setBounds(310, 350, 60, 30);
+        quest31.setBounds(310, 360, 60, 30);
 
         jlNomeUsuario36.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario36.setText("40");
         getContentPane().add(jlNomeUsuario36);
-        jlNomeUsuario36.setBounds(310, 390, 30, 20);
+        jlNomeUsuario36.setBounds(310, 400, 30, 20);
 
         quest40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest40.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1074,24 +1074,24 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest40);
-        quest40.setBounds(310, 410, 60, 30);
+        quest40.setBounds(310, 420, 60, 30);
 
         jLObrigatorioNome34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome34.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome34.setText("*");
         getContentPane().add(jLObrigatorioNome34);
-        jLObrigatorioNome34.setBounds(360, 400, 10, 10);
+        jLObrigatorioNome34.setBounds(360, 410, 10, 10);
 
         jLObrigatorioNome35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome35.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome35.setText("*");
         getContentPane().add(jLObrigatorioNome35);
-        jLObrigatorioNome35.setBounds(360, 340, 10, 10);
+        jLObrigatorioNome35.setBounds(360, 350, 10, 10);
 
         jlNomeUsuario37.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario37.setText("33");
         getContentPane().add(jlNomeUsuario37);
-        jlNomeUsuario37.setBounds(490, 330, 30, 20);
+        jlNomeUsuario37.setBounds(490, 340, 30, 20);
 
         quest33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest33.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1103,12 +1103,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest33);
-        quest33.setBounds(490, 350, 60, 30);
+        quest33.setBounds(490, 360, 60, 30);
 
         jlNomeUsuario38.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario38.setText("42");
         getContentPane().add(jlNomeUsuario38);
-        jlNomeUsuario38.setBounds(490, 390, 30, 20);
+        jlNomeUsuario38.setBounds(490, 400, 30, 20);
 
         quest42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest42.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1120,24 +1120,24 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest42);
-        quest42.setBounds(490, 410, 60, 30);
+        quest42.setBounds(490, 420, 60, 30);
 
         jLObrigatorioNome36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome36.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome36.setText("*");
         getContentPane().add(jLObrigatorioNome36);
-        jLObrigatorioNome36.setBounds(450, 340, 10, 10);
+        jLObrigatorioNome36.setBounds(450, 350, 10, 10);
 
         jLObrigatorioNome37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome37.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome37.setText("*");
         getContentPane().add(jLObrigatorioNome37);
-        jLObrigatorioNome37.setBounds(540, 340, 10, 10);
+        jLObrigatorioNome37.setBounds(540, 350, 10, 10);
 
         jlNomeUsuario39.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario39.setText("35");
         getContentPane().add(jlNomeUsuario39);
-        jlNomeUsuario39.setBounds(670, 330, 30, 20);
+        jlNomeUsuario39.setBounds(670, 340, 30, 20);
 
         quest35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest35.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1149,12 +1149,12 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest35);
-        quest35.setBounds(670, 350, 60, 30);
+        quest35.setBounds(670, 360, 60, 30);
 
         jlNomeUsuario40.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario40.setText("44");
         getContentPane().add(jlNomeUsuario40);
-        jlNomeUsuario40.setBounds(670, 390, 30, 20);
+        jlNomeUsuario40.setBounds(670, 400, 30, 20);
 
         quest44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest44.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1166,30 +1166,30 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest44);
-        quest44.setBounds(670, 410, 60, 30);
+        quest44.setBounds(670, 420, 60, 30);
 
         jLObrigatorioNome38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome38.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome38.setText("*");
         getContentPane().add(jLObrigatorioNome38);
-        jLObrigatorioNome38.setBounds(720, 400, 10, 10);
+        jLObrigatorioNome38.setBounds(720, 410, 10, 10);
 
         jLObrigatorioNome39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome39.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome39.setText("*");
         getContentPane().add(jLObrigatorioNome39);
-        jLObrigatorioNome39.setBounds(720, 340, 10, 10);
+        jLObrigatorioNome39.setBounds(720, 350, 10, 10);
 
         jlNomeUsuario41.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario41.setText("09");
         getContentPane().add(jlNomeUsuario41);
-        jlNomeUsuario41.setBounds(760, 150, 30, 20);
+        jlNomeUsuario41.setBounds(760, 160, 30, 20);
 
         jLObrigatorioNome40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome40.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome40.setText("*");
         getContentPane().add(jLObrigatorioNome40);
-        jLObrigatorioNome40.setBounds(810, 160, 10, 10);
+        jLObrigatorioNome40.setBounds(810, 170, 10, 10);
 
         quest09.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest09.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1201,18 +1201,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest09);
-        quest09.setBounds(760, 170, 60, 30);
+        quest09.setBounds(760, 180, 60, 30);
 
         jlNomeUsuario42.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario42.setText("18");
         getContentPane().add(jlNomeUsuario42);
-        jlNomeUsuario42.setBounds(760, 210, 30, 20);
+        jlNomeUsuario42.setBounds(760, 220, 30, 20);
 
         jLObrigatorioNome41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome41.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome41.setText("*");
         getContentPane().add(jLObrigatorioNome41);
-        jLObrigatorioNome41.setBounds(810, 220, 10, 10);
+        jLObrigatorioNome41.setBounds(810, 230, 10, 10);
 
         quest18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest18.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1224,18 +1224,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest18);
-        quest18.setBounds(760, 230, 60, 30);
+        quest18.setBounds(760, 240, 60, 30);
 
         jlNomeUsuario43.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario43.setText("27");
         getContentPane().add(jlNomeUsuario43);
-        jlNomeUsuario43.setBounds(760, 270, 30, 20);
+        jlNomeUsuario43.setBounds(760, 280, 30, 20);
 
         jLObrigatorioNome42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome42.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome42.setText("*");
         getContentPane().add(jLObrigatorioNome42);
-        jLObrigatorioNome42.setBounds(810, 280, 10, 10);
+        jLObrigatorioNome42.setBounds(810, 290, 10, 10);
 
         quest27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest27.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1247,18 +1247,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest27);
-        quest27.setBounds(760, 290, 60, 30);
+        quest27.setBounds(760, 300, 60, 30);
 
         jlNomeUsuario44.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario44.setText("36");
         getContentPane().add(jlNomeUsuario44);
-        jlNomeUsuario44.setBounds(760, 330, 30, 20);
+        jlNomeUsuario44.setBounds(760, 340, 30, 20);
 
         jLObrigatorioNome43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome43.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome43.setText("*");
         getContentPane().add(jLObrigatorioNome43);
-        jLObrigatorioNome43.setBounds(810, 340, 10, 10);
+        jLObrigatorioNome43.setBounds(810, 350, 10, 10);
 
         quest36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest36.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1270,24 +1270,24 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest36);
-        quest36.setBounds(760, 350, 60, 30);
+        quest36.setBounds(760, 360, 60, 30);
 
         jLObrigatorioNome45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome45.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome45.setText("*");
         getContentPane().add(jLObrigatorioNome45);
-        jLObrigatorioNome45.setBounds(540, 400, 10, 10);
+        jLObrigatorioNome45.setBounds(540, 410, 10, 10);
 
         jlNomeUsuario45.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario45.setText("45");
         getContentPane().add(jlNomeUsuario45);
-        jlNomeUsuario45.setBounds(760, 390, 30, 20);
+        jlNomeUsuario45.setBounds(760, 400, 30, 20);
 
         jLObrigatorioNome44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome44.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome44.setText("*");
         getContentPane().add(jLObrigatorioNome44);
-        jLObrigatorioNome44.setBounds(810, 400, 10, 10);
+        jLObrigatorioNome44.setBounds(810, 410, 10, 10);
 
         quest45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1299,7 +1299,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(quest45);
-        quest45.setBounds(760, 410, 60, 30);
+        quest45.setBounds(760, 420, 60, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_gabarito.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
