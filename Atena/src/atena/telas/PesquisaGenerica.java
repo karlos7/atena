@@ -10,6 +10,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JViewport;
 import javax.swing.table.AbstractTableModel;
@@ -21,8 +22,6 @@ import javax.swing.table.AbstractTableModel;
 public class PesquisaGenerica extends javax.swing.JDialog {
 
     private static Object objeto;
-    private String coluna;
-    
 
     public static Object exibeTela(AbstractTableModel atm, String pesquisa) {
         PesquisaGenerica tp = new PesquisaGenerica(atm, pesquisa);
@@ -33,8 +32,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
 
     private PesquisaGenerica(AbstractTableModel atm, String pesquisa) {
         initComponents();
-        this.coluna = pesquisa;
-        this.setIconImage(new ImageIcon(getClass().getResource("/birdpoint/imagens/logo-1.png")).getImage());
+        //this.setIconImage(new ImageIcon(getClass().getResource("/birdpoint/imagens/logo-1.png")).getImage());
         tbPesquisa.setAutoCreateRowSorter(true);
         tbPesquisa.setModel(atm);
         setLocationRelativeTo(null);
@@ -42,7 +40,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         FormataTamanhoColunasJTable.packColumns(tbPesquisa, 1);
         tfPesquisa.grabFocus();
         btEditar.setEnabled(false);
-        this.setIconImage(new ImageIcon(getClass().getResource("/birdpoint/imagens/logo-1.png")).getImage());
+        //this.setIconImage(new ImageIcon(getClass().getResource("/birdpoint/imagens/logo-1.png")).getImage());
         setModal(true);
     }
 
@@ -50,21 +48,14 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    
 
     private void procuraTable(String nome) {
-        int colunaPesquisa=1;
-        for (int i = 0; i < tbPesquisa.getColumnCount(); i++) {
-            if(coluna.equals(tbPesquisa.getColumnName(i))){
-                colunaPesquisa = i;
-            }
-        }
         for (int linha = 0; linha < tbPesquisa.getRowCount(); linha++) {
-            String nomeTabela = String.valueOf(tbPesquisa.getValueAt(linha, colunaPesquisa));
+            String nomeTabela = String.valueOf(tbPesquisa.getValueAt(linha, 1));
             if (nomeTabela.toLowerCase().startsWith(nome.toLowerCase())) {
                 tbPesquisa.setRowSelectionInterval(linha, linha);
                 JViewport viewport = (JViewport) tbPesquisa.getParent();
-                Rectangle rect = tbPesquisa.getCellRect(linha, colunaPesquisa, true);
+                Rectangle rect = tbPesquisa.getCellRect(linha, 1, true);
                 Point pt = viewport.getViewPosition();
                 rect.setLocation(rect.x - pt.x, rect.y - pt.y);
                 viewport.scrollRectToVisible(rect);
@@ -82,6 +73,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator4 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbPesquisa = new javax.swing.JTable();
         btEditar = new javax.swing.JButton();
@@ -91,12 +83,16 @@ public class PesquisaGenerica extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(710, 520));
+        setMinimumSize(new java.awt.Dimension(700, 500));
         setModal(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(710, 520));
         getContentPane().setLayout(null);
 
+        jSeparator4.setForeground(new java.awt.Color(58, 100, 62));
+        getContentPane().add(jSeparator4);
+        jSeparator4.setBounds(0, 410, 700, 10);
+
+        tbPesquisa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(58, 100, 62), 1, true));
         tbPesquisa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tbPesquisa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,13 +123,13 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         jScrollPane1.setViewportView(tbPesquisa);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 150, 670, 280);
+        jScrollPane1.setBounds(30, 150, 640, 250);
 
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/edit.png"))); // NOI18N
         btEditar.setText("Selecionar");
         btEditar.setContentAreaFilled(false);
-        btEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,13 +138,13 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btEditar);
-        btEditar.setBounds(590, 440, 103, 70);
+        btEditar.setBounds(580, 420, 110, 70);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
         btVoltar.setText("Voltar");
         btVoltar.setContentAreaFilled(false);
-        btVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btVoltar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -157,25 +153,23 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(20, 440, 80, 70);
+        btVoltar.setBounds(10, 420, 80, 70);
 
         tfPesquisa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfPesquisa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(58, 100, 62), 1, true));
         tfPesquisa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfPesquisaKeyPressed(evt);
             }
         });
         getContentPane().add(tfPesquisa);
-        tfPesquisa.setBounds(130, 102, 530, 30);
+        tfPesquisa.setBounds(124, 91, 540, 30);
 
         jlPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pesquisa.png"))); // NOI18N
-        jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        jlPesquisar.setMaximumSize(new java.awt.Dimension(710, 520));
-        jlPesquisar.setMinimumSize(new java.awt.Dimension(710, 520));
-        jlPesquisar.setPreferredSize(new java.awt.Dimension(710, 520));
+        jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 2, true));
         getContentPane().add(jlPesquisar);
-        jlPesquisar.setBounds(0, 0, 710, 520);
+        jlPesquisar.setBounds(0, 0, 700, 500);
 
         pack();
         setLocationRelativeTo(null);
@@ -194,7 +188,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         objeto = null;
-        dispose();
+        dispose();        
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void tbPesquisaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbPesquisaFocusGained
@@ -257,6 +251,22 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -277,6 +287,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel jlPesquisar;
     private javax.swing.JTable tbPesquisa;
     private javax.swing.JTextField tfPesquisa;

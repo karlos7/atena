@@ -5,6 +5,12 @@
  */
 package atena.telas;
 
+import atena.gabarito.Gabarito;
+import atena.gabarito.GabaritoDAO;
+import atena.gabarito.GabaritoTableModel;
+import atena.processoseletivo.ProcessoSeletivo;
+import atena.processoseletivo.ProcessoSeletivoDAO;
+import atena.processoseletivo.ProcessoSeletivoTableModel;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
@@ -19,8 +25,10 @@ import javax.swing.JTextField;
  */
 public class CadastroGabarito extends javax.swing.JDialog {
 
-    Usuario usuario = new Usuario();
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    ProcessoSeletivo processoSeletivo = new ProcessoSeletivo();
+    ProcessoSeletivoDAO processoSeletivoDAO = new ProcessoSeletivoDAO();
+    Gabarito gabarito = new Gabarito();
+    GabaritoDAO gabaritoDAO = new GabaritoDAO();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -28,7 +36,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     public CadastroGabarito(java.awt.Frame parent, boolean modal) {
         initComponents();
         getRootPane().setDefaultButton(btSalvar);
-
+        txtProcessoSeletivo.setEnabled(false);
         btLimparActionPerformed(null);
         setModal(true);
     }
@@ -180,14 +188,16 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest36 = new javax.swing.JTextField();
         jLObrigatorioNome45 = new javax.swing.JLabel();
         jlNomeUsuario45 = new javax.swing.JLabel();
+        btnAtendimento = new javax.swing.JButton();
+        txtProcessoSeletivo = new javax.swing.JTextField();
         jLObrigatorioNome44 = new javax.swing.JLabel();
         quest45 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(855, 600));
+        setMinimumSize(new java.awt.Dimension(855, 550));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(855, 600));
+        setPreferredSize(new java.awt.Dimension(855, 550));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -203,6 +213,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest10ActionPerformed(evt);
+            }
+        });
+        quest10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest10KeyTyped(evt);
             }
         });
         getContentPane().add(quest10);
@@ -221,7 +236,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(10, 520, 90, 70);
+        btVoltar.setBounds(10, 470, 90, 70);
 
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/search.png"))); // NOI18N
@@ -236,7 +251,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btPesquisar);
-        btPesquisar.setBounds(370, 520, 99, 70);
+        btPesquisar.setBounds(370, 470, 99, 70);
 
         btExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/delete.png"))); // NOI18N
@@ -251,7 +266,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btExcluir);
-        btExcluir.setBounds(530, 520, 80, 70);
+        btExcluir.setBounds(530, 470, 80, 70);
 
         quest19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest19.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -260,6 +275,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest19ActionPerformed(evt);
+            }
+        });
+        quest19.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest19KeyTyped(evt);
             }
         });
         getContentPane().add(quest19);
@@ -296,6 +316,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest28ActionPerformed(evt);
             }
         });
+        quest28.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest28KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest28);
         quest28.setBounds(40, 360, 60, 30);
 
@@ -306,6 +331,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest01ActionPerformed(evt);
+            }
+        });
+        quest01.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest01KeyTyped(evt);
             }
         });
         getContentPane().add(quest01);
@@ -335,7 +365,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btLimpar);
-        btLimpar.setBounds(220, 520, 80, 70);
+        btLimpar.setBounds(220, 470, 80, 70);
 
         jLObrigatorioNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
@@ -356,7 +386,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btSalvar);
-        btSalvar.setBounds(760, 520, 80, 70);
+        btSalvar.setBounds(760, 470, 80, 70);
 
         jlNomeUsuario5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario5.setText("11");
@@ -378,6 +408,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest20ActionPerformed(evt);
             }
         });
+        quest20.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest20KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest20);
         quest20.setBounds(130, 300, 60, 30);
 
@@ -388,6 +423,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest11ActionPerformed(evt);
+            }
+        });
+        quest11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest11KeyTyped(evt);
             }
         });
         getContentPane().add(quest11);
@@ -413,6 +453,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest02ActionPerformed(evt);
             }
         });
+        quest02.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest02KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest02);
         quest02.setBounds(130, 180, 60, 30);
 
@@ -434,6 +479,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest37ActionPerformed(evt);
+            }
+        });
+        quest37.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest37KeyTyped(evt);
             }
         });
         getContentPane().add(quest37);
@@ -459,6 +509,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest03ActionPerformed(evt);
             }
         });
+        quest03.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest03KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest03);
         quest03.setBounds(220, 180, 60, 30);
 
@@ -469,6 +524,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest12ActionPerformed(evt);
+            }
+        });
+        quest12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest12KeyTyped(evt);
             }
         });
         getContentPane().add(quest12);
@@ -483,6 +543,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest21ActionPerformed(evt);
             }
         });
+        quest21.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest21KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest21);
         quest21.setBounds(220, 300, 60, 30);
 
@@ -493,6 +558,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest22ActionPerformed(evt);
+            }
+        });
+        quest22.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest22KeyTyped(evt);
             }
         });
         getContentPane().add(quest22);
@@ -507,6 +577,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest13ActionPerformed(evt);
             }
         });
+        quest13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest13KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest13);
         quest13.setBounds(310, 240, 60, 30);
 
@@ -517,6 +592,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest04.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest04ActionPerformed(evt);
+            }
+        });
+        quest04.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest04KeyTyped(evt);
             }
         });
         getContentPane().add(quest04);
@@ -536,6 +616,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest30ActionPerformed(evt);
             }
         });
+        quest30.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest30KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest30);
         quest30.setBounds(220, 360, 60, 30);
 
@@ -551,6 +636,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest39ActionPerformed(evt);
+            }
+        });
+        quest39.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest39KeyTyped(evt);
             }
         });
         getContentPane().add(quest39);
@@ -660,6 +750,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest25ActionPerformed(evt);
             }
         });
+        quest25.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest25KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest25);
         quest25.setBounds(580, 300, 60, 30);
 
@@ -683,6 +778,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest07ActionPerformed(evt);
             }
         });
+        quest07.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest07KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest07);
         quest07.setBounds(580, 180, 60, 30);
 
@@ -693,6 +793,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest16ActionPerformed(evt);
+            }
+        });
+        quest16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest16KeyTyped(evt);
             }
         });
         getContentPane().add(quest16);
@@ -711,6 +816,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest26ActionPerformed(evt);
+            }
+        });
+        quest26.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest26KeyTyped(evt);
             }
         });
         getContentPane().add(quest26);
@@ -742,6 +852,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest08ActionPerformed(evt);
             }
         });
+        quest08.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest08KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest08);
         quest08.setBounds(670, 180, 60, 30);
 
@@ -752,6 +867,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest17ActionPerformed(evt);
+            }
+        });
+        quest17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest17KeyTyped(evt);
             }
         });
         getContentPane().add(quest17);
@@ -793,6 +913,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest43ActionPerformed(evt);
             }
         });
+        quest43.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest43KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest43);
         quest43.setBounds(580, 420, 60, 30);
 
@@ -808,6 +933,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest34ActionPerformed(evt);
+            }
+        });
+        quest34.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest34KeyTyped(evt);
             }
         });
         getContentPane().add(quest34);
@@ -838,6 +968,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest06ActionPerformed(evt);
             }
         });
+        quest06.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest06KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest06);
         quest06.setBounds(490, 180, 60, 30);
 
@@ -859,6 +994,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest15ActionPerformed(evt);
+            }
+        });
+        quest15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest15KeyTyped(evt);
             }
         });
         getContentPane().add(quest15);
@@ -884,6 +1024,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest24ActionPerformed(evt);
             }
         });
+        quest24.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest24KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest24);
         quest24.setBounds(490, 300, 60, 30);
 
@@ -896,6 +1041,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest32ActionPerformed(evt);
             }
         });
+        quest32.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest32KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest32);
         quest32.setBounds(400, 360, 60, 30);
 
@@ -906,6 +1056,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest41ActionPerformed(evt);
+            }
+        });
+        quest41.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest41KeyTyped(evt);
             }
         });
         getContentPane().add(quest41);
@@ -936,6 +1091,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest23ActionPerformed(evt);
             }
         });
+        quest23.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest23KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest23);
         quest23.setBounds(400, 300, 60, 30);
 
@@ -959,6 +1119,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest14ActionPerformed(evt);
             }
         });
+        quest14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest14KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest14);
         quest14.setBounds(400, 240, 60, 30);
 
@@ -980,6 +1145,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest05.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest05ActionPerformed(evt);
+            }
+        });
+        quest05.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest05KeyTyped(evt);
             }
         });
         getContentPane().add(quest05);
@@ -1010,6 +1180,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest29ActionPerformed(evt);
             }
         });
+        quest29.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest29KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest29);
         quest29.setBounds(130, 360, 60, 30);
 
@@ -1025,6 +1200,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest38ActionPerformed(evt);
+            }
+        });
+        quest38.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest38KeyTyped(evt);
             }
         });
         getContentPane().add(quest38);
@@ -1056,6 +1236,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest31ActionPerformed(evt);
             }
         });
+        quest31.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest31KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest31);
         quest31.setBounds(310, 360, 60, 30);
 
@@ -1071,6 +1256,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest40ActionPerformed(evt);
+            }
+        });
+        quest40.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest40KeyTyped(evt);
             }
         });
         getContentPane().add(quest40);
@@ -1102,6 +1292,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest33ActionPerformed(evt);
             }
         });
+        quest33.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest33KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest33);
         quest33.setBounds(490, 360, 60, 30);
 
@@ -1117,6 +1312,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest42ActionPerformed(evt);
+            }
+        });
+        quest42.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest42KeyTyped(evt);
             }
         });
         getContentPane().add(quest42);
@@ -1148,6 +1348,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest35ActionPerformed(evt);
             }
         });
+        quest35.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest35KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest35);
         quest35.setBounds(670, 360, 60, 30);
 
@@ -1163,6 +1368,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest44ActionPerformed(evt);
+            }
+        });
+        quest44.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest44KeyTyped(evt);
             }
         });
         getContentPane().add(quest44);
@@ -1200,6 +1410,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest09ActionPerformed(evt);
             }
         });
+        quest09.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest09KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest09);
         quest09.setBounds(760, 180, 60, 30);
 
@@ -1221,6 +1436,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quest18ActionPerformed(evt);
+            }
+        });
+        quest18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest18KeyTyped(evt);
             }
         });
         getContentPane().add(quest18);
@@ -1246,6 +1466,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest27ActionPerformed(evt);
             }
         });
+        quest27.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest27KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest27);
         quest27.setBounds(760, 300, 60, 30);
 
@@ -1269,6 +1494,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest36ActionPerformed(evt);
             }
         });
+        quest36.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest36KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest36);
         quest36.setBounds(760, 360, 60, 30);
 
@@ -1282,6 +1512,25 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jlNomeUsuario45.setText("45");
         getContentPane().add(jlNomeUsuario45);
         jlNomeUsuario45.setBounds(760, 400, 30, 20);
+
+        btnAtendimento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
+        btnAtendimento.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
+        btnAtendimento.setContentAreaFilled(false);
+        btnAtendimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAtendimento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAtendimento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtendimentoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAtendimento);
+        btnAtendimento.setBounds(790, 100, 30, 30);
+
+        txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(txtProcessoSeletivo);
+        txtProcessoSeletivo.setBounds(680, 100, 110, 30);
 
         jLObrigatorioNome44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome44.setForeground(new java.awt.Color(204, 0, 0));
@@ -1298,65 +1547,187 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 quest45ActionPerformed(evt);
             }
         });
+        quest45.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quest45KeyTyped(evt);
+            }
+        });
         getContentPane().add(quest45);
         quest45.setBounds(760, 420, 60, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_gabarito.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        jLabel6.setMaximumSize(new java.awt.Dimension(855, 600));
-        jLabel6.setMinimumSize(new java.awt.Dimension(855, 600));
-        jLabel6.setPreferredSize(new java.awt.Dimension(855, 600));
+        jLabel6.setMaximumSize(new java.awt.Dimension(855, 550));
+        jLabel6.setMinimumSize(new java.awt.Dimension(855, 550));
+        jLabel6.setPreferredSize(new java.awt.Dimension(855, 550));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 855, 600);
+        jLabel6.setBounds(0, 0, 855, 550);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        List<Usuario> lista;
-        lista = (usuarioDAO.listar());
-        UsuarioTableModel itm = new UsuarioTableModel(lista);
-        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Usuario");
+        List<Gabarito> lista;
+        lista = (gabaritoDAO.listar());
+        GabaritoTableModel itm = new GabaritoTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Gabarito");
         if (objetoRetorno != null) {
-            usuario = usuarioDAO.consultarObjetoId("idUsuario", objetoRetorno);
-            quest10.setText(usuario.getNomeUsuario());
+            gabarito = gabaritoDAO.consultarObjetoId("idGabarito", objetoRetorno);
+            quest01.setText(gabarito.getQuest01());
+            quest02.setText(gabarito.getQuest02());
+            quest03.setText(gabarito.getQuest03());
+            quest04.setText(gabarito.getQuest04());
+            quest05.setText(gabarito.getQuest05());
+            quest06.setText(gabarito.getQuest06());
+            quest07.setText(gabarito.getQuest07());
+            quest08.setText(gabarito.getQuest08());
+            quest09.setText(gabarito.getQuest09());
+            quest10.setText(gabarito.getQuest10());
+            quest11.setText(gabarito.getQuest11());
+            quest12.setText(gabarito.getQuest12());
+            quest13.setText(gabarito.getQuest13());
+            quest14.setText(gabarito.getQuest14());
+            quest15.setText(gabarito.getQuest15());
+            quest16.setText(gabarito.getQuest16());
+            quest17.setText(gabarito.getQuest17());
+            quest18.setText(gabarito.getQuest18());
+            quest19.setText(gabarito.getQuest19());
+            quest20.setText(gabarito.getQuest20());
+            quest21.setText(gabarito.getQuest21());
+            quest22.setText(gabarito.getQuest22());
+            quest23.setText(gabarito.getQuest23());
+            quest24.setText(gabarito.getQuest24());
+            quest25.setText(gabarito.getQuest25());
+            quest26.setText(gabarito.getQuest26());
+            quest27.setText(gabarito.getQuest27());
+            quest28.setText(gabarito.getQuest28());
+            quest29.setText(gabarito.getQuest29());
+            quest30.setText(gabarito.getQuest30());
+            quest31.setText(gabarito.getQuest31());
+            quest32.setText(gabarito.getQuest32());
+            quest33.setText(gabarito.getQuest33());
+            quest34.setText(gabarito.getQuest34());
+            quest35.setText(gabarito.getQuest35());
+            quest36.setText(gabarito.getQuest36());
+            quest37.setText(gabarito.getQuest37());
+            quest38.setText(gabarito.getQuest38());
+            quest39.setText(gabarito.getQuest39());
+            quest40.setText(gabarito.getQuest40());
+            quest41.setText(gabarito.getQuest41());
+            quest42.setText(gabarito.getQuest42());
+            quest43.setText(gabarito.getQuest43());
+            quest44.setText(gabarito.getQuest44());
+            quest45.setText(gabarito.getQuest45());
+
+            processoSeletivo = gabarito.getProcessoSeletivo();
+
             btExcluir.setEnabled(true);
         }
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        usuarioDAO.excluir(usuario);
+        processoSeletivoDAO.excluir(processoSeletivo);
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         Util.limparCamposGenerico(this);
         btExcluir.setEnabled(false);
-        usuario = new Usuario();
+        processoSeletivo = new ProcessoSeletivo();
 
     }//GEN-LAST:event_btLimparActionPerformed
 
-    private void travarTeclado(java.awt.event.KeyEvent evt, JTextField txt){
+    //Falta travar teclado
+    private void travarTeclado(java.awt.event.KeyEvent evt, JTextField txt) {
         int ascii = evt.getKeyChar();
-        if (!(ascii >= 41 && ascii <= 45) || !(ascii >= 61 && ascii <= 65)) {
+        if (!(ascii >= 97 && ascii <= 101) && !(ascii >= 65 && ascii <= 69)) {
             evt.consume();
         }
         if (txt.getText().length() >= 1) {
             evt.consume();
         }
     }
-    
+
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
 
-//        if (tfLogin.getText().equals("") || tfNomeUsuario.getText().equals("") || tfSenha.getText().equals("")) {
-//            JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
-//        } else {
-//            usuario.setNomeUsuario(tfNomeUsuario.getText().toUpperCase());
-//            usuarioDAO.salvar(usuario);
-//            btLimparActionPerformed(null);
-//
-//        }
+        if (quest01.getText().equalsIgnoreCase("") || quest02.getText().equalsIgnoreCase("")
+                || quest03.getText().equalsIgnoreCase("") || quest04.getText().equalsIgnoreCase("")
+                || quest05.getText().equalsIgnoreCase("") || quest06.getText().equalsIgnoreCase("")
+                || quest07.getText().equalsIgnoreCase("") || quest08.getText().equalsIgnoreCase("")
+                || quest09.getText().equalsIgnoreCase("") || quest10.getText().equalsIgnoreCase("")
+                || quest11.getText().equalsIgnoreCase("") || quest12.getText().equalsIgnoreCase("")
+                || quest13.getText().equalsIgnoreCase("") || quest14.getText().equalsIgnoreCase("")
+                || quest15.getText().equalsIgnoreCase("") || quest16.getText().equalsIgnoreCase("")
+                || quest17.getText().equalsIgnoreCase("") || quest18.getText().equalsIgnoreCase("")
+                || quest19.getText().equalsIgnoreCase("") || quest20.getText().equalsIgnoreCase("")
+                || quest21.getText().equalsIgnoreCase("") || quest22.getText().equalsIgnoreCase("")
+                || quest23.getText().equalsIgnoreCase("") || quest24.getText().equalsIgnoreCase("")
+                || quest25.getText().equalsIgnoreCase("") || quest26.getText().equalsIgnoreCase("")
+                || quest27.getText().equalsIgnoreCase("") || quest28.getText().equalsIgnoreCase("")
+                || quest29.getText().equalsIgnoreCase("") || quest30.getText().equalsIgnoreCase("")
+                || quest31.getText().equalsIgnoreCase("") || quest32.getText().equalsIgnoreCase("")
+                || quest33.getText().equalsIgnoreCase("") || quest34.getText().equalsIgnoreCase("")
+                || quest35.getText().equalsIgnoreCase("") || quest36.getText().equalsIgnoreCase("")
+                || quest37.getText().equalsIgnoreCase("") || quest38.getText().equalsIgnoreCase("")
+                || quest39.getText().equalsIgnoreCase("") || quest40.getText().equalsIgnoreCase("")
+                || quest41.getText().equalsIgnoreCase("") || quest42.getText().equalsIgnoreCase("")
+                || quest43.getText().equalsIgnoreCase("") || quest44.getText().equalsIgnoreCase("")
+                || quest45.getText().equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
+        } else {
+            gabarito.setQuest01(quest01.getText().toUpperCase());
+            gabarito.setQuest02(quest02.getText().toUpperCase());
+            gabarito.setQuest03(quest03.getText().toUpperCase());
+            gabarito.setQuest04(quest04.getText().toUpperCase());
+            gabarito.setQuest05(quest05.getText().toUpperCase());
+            gabarito.setQuest06(quest06.getText().toUpperCase());
+            gabarito.setQuest07(quest07.getText().toUpperCase());
+            gabarito.setQuest08(quest08.getText().toUpperCase());
+            gabarito.setQuest09(quest09.getText().toUpperCase());
+            gabarito.setQuest10(quest10.getText().toUpperCase());
+            gabarito.setQuest11(quest11.getText().toUpperCase());
+            gabarito.setQuest12(quest12.getText().toUpperCase());
+            gabarito.setQuest13(quest13.getText().toUpperCase());
+            gabarito.setQuest14(quest14.getText().toUpperCase());
+            gabarito.setQuest15(quest15.getText().toUpperCase());
+            gabarito.setQuest16(quest16.getText().toUpperCase());
+            gabarito.setQuest17(quest17.getText().toUpperCase());
+            gabarito.setQuest18(quest18.getText().toUpperCase());
+            gabarito.setQuest19(quest19.getText().toUpperCase());
+            gabarito.setQuest20(quest20.getText().toUpperCase());
+            gabarito.setQuest21(quest21.getText().toUpperCase());
+            gabarito.setQuest22(quest22.getText().toUpperCase());
+            gabarito.setQuest23(quest23.getText().toUpperCase());
+            gabarito.setQuest24(quest24.getText().toUpperCase());
+            gabarito.setQuest25(quest25.getText().toUpperCase());
+            gabarito.setQuest26(quest26.getText().toUpperCase());
+            gabarito.setQuest27(quest27.getText().toUpperCase());
+            gabarito.setQuest28(quest28.getText().toUpperCase());
+            gabarito.setQuest29(quest29.getText().toUpperCase());
+            gabarito.setQuest30(quest30.getText().toUpperCase());
+            gabarito.setQuest31(quest31.getText().toUpperCase());
+            gabarito.setQuest32(quest32.getText().toUpperCase());
+            gabarito.setQuest33(quest33.getText().toUpperCase());
+            gabarito.setQuest34(quest34.getText().toUpperCase());
+            gabarito.setQuest35(quest35.getText().toUpperCase());
+            gabarito.setQuest36(quest36.getText().toUpperCase());
+            gabarito.setQuest37(quest37.getText().toUpperCase());
+            gabarito.setQuest38(quest38.getText().toUpperCase());
+            gabarito.setQuest39(quest39.getText().toUpperCase());
+            gabarito.setQuest40(quest40.getText().toUpperCase());
+            gabarito.setQuest41(quest41.getText().toUpperCase());
+            gabarito.setQuest42(quest42.getText().toUpperCase());
+            gabarito.setQuest43(quest43.getText().toUpperCase());
+            gabarito.setQuest44(quest44.getText().toUpperCase());
+            gabarito.setQuest45(quest45.getText().toUpperCase());
+            
+            gabarito.setProcessoSeletivo(processoSeletivo);
+
+            gabaritoDAO.salvar(gabarito);
+            btLimparActionPerformed(null);
+
+        }
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -1544,6 +1915,197 @@ public class CadastroGabarito extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_quest45ActionPerformed
 
+    private void btnAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendimentoActionPerformed
+        List<ProcessoSeletivo> lista;
+        lista = (processoSeletivoDAO.listar());
+        ProcessoSeletivoTableModel itm = new ProcessoSeletivoTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Processo Seletivo");
+        if (objetoRetorno != null) {
+            processoSeletivo = processoSeletivoDAO.consultarObjetoId("idProcessoSeletivo", objetoRetorno);
+            txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
+        }
+    }//GEN-LAST:event_btnAtendimentoActionPerformed
+
+    private void quest01KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest01KeyTyped
+        travarTeclado(evt, quest01);
+    }//GEN-LAST:event_quest01KeyTyped
+
+    private void quest02KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest02KeyTyped
+        travarTeclado(evt, quest02);
+    }//GEN-LAST:event_quest02KeyTyped
+
+    private void quest03KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest03KeyTyped
+        travarTeclado(evt, quest03);
+    }//GEN-LAST:event_quest03KeyTyped
+
+    private void quest04KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest04KeyTyped
+        travarTeclado(evt, quest04);
+    }//GEN-LAST:event_quest04KeyTyped
+
+    private void quest05KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest05KeyTyped
+        travarTeclado(evt, quest05);
+    }//GEN-LAST:event_quest05KeyTyped
+
+    private void quest06KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest06KeyTyped
+        travarTeclado(evt, quest06);
+    }//GEN-LAST:event_quest06KeyTyped
+
+    private void quest07KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest07KeyTyped
+        travarTeclado(evt, quest07);
+    }//GEN-LAST:event_quest07KeyTyped
+
+    private void quest08KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest08KeyTyped
+        travarTeclado(evt, quest08);
+    }//GEN-LAST:event_quest08KeyTyped
+
+    private void quest09KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest09KeyTyped
+        travarTeclado(evt, quest09);
+    }//GEN-LAST:event_quest09KeyTyped
+
+    private void quest10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest10KeyTyped
+        travarTeclado(evt, quest10);
+    }//GEN-LAST:event_quest10KeyTyped
+
+    private void quest11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest11KeyTyped
+        travarTeclado(evt, quest11);
+    }//GEN-LAST:event_quest11KeyTyped
+
+    private void quest12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest12KeyTyped
+        travarTeclado(evt, quest12);
+    }//GEN-LAST:event_quest12KeyTyped
+
+    private void quest13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest13KeyTyped
+        travarTeclado(evt, quest13);
+    }//GEN-LAST:event_quest13KeyTyped
+
+    private void quest14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest14KeyTyped
+        travarTeclado(evt, quest14);
+    }//GEN-LAST:event_quest14KeyTyped
+
+    private void quest15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest15KeyTyped
+        travarTeclado(evt, quest15);
+    }//GEN-LAST:event_quest15KeyTyped
+
+    private void quest16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest16KeyTyped
+        travarTeclado(evt, quest16);
+    }//GEN-LAST:event_quest16KeyTyped
+
+    private void quest17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest17KeyTyped
+        travarTeclado(evt, quest17);
+    }//GEN-LAST:event_quest17KeyTyped
+
+    private void quest18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest18KeyTyped
+        travarTeclado(evt, quest18);
+    }//GEN-LAST:event_quest18KeyTyped
+
+    private void quest19KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest19KeyTyped
+        travarTeclado(evt, quest19);
+    }//GEN-LAST:event_quest19KeyTyped
+
+    private void quest20KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest20KeyTyped
+        travarTeclado(evt, quest20);
+    }//GEN-LAST:event_quest20KeyTyped
+
+    private void quest21KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest21KeyTyped
+        travarTeclado(evt, quest21);
+    }//GEN-LAST:event_quest21KeyTyped
+
+    private void quest22KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest22KeyTyped
+        travarTeclado(evt, quest22);
+    }//GEN-LAST:event_quest22KeyTyped
+
+    private void quest23KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest23KeyTyped
+        travarTeclado(evt, quest23);
+    }//GEN-LAST:event_quest23KeyTyped
+
+    private void quest24KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest24KeyTyped
+        travarTeclado(evt, quest24);
+    }//GEN-LAST:event_quest24KeyTyped
+
+    private void quest25KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest25KeyTyped
+        travarTeclado(evt, quest25);
+    }//GEN-LAST:event_quest25KeyTyped
+
+    private void quest26KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest26KeyTyped
+        travarTeclado(evt, quest26);
+    }//GEN-LAST:event_quest26KeyTyped
+
+    private void quest27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest27KeyTyped
+        travarTeclado(evt, quest27);
+    }//GEN-LAST:event_quest27KeyTyped
+
+    private void quest28KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest28KeyTyped
+        travarTeclado(evt, quest28);
+    }//GEN-LAST:event_quest28KeyTyped
+
+    private void quest29KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest29KeyTyped
+        travarTeclado(evt, quest29);
+    }//GEN-LAST:event_quest29KeyTyped
+
+    private void quest30KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest30KeyTyped
+        travarTeclado(evt, quest30);
+    }//GEN-LAST:event_quest30KeyTyped
+
+    private void quest31KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest31KeyTyped
+        travarTeclado(evt, quest31);
+    }//GEN-LAST:event_quest31KeyTyped
+
+    private void quest32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest32KeyTyped
+        travarTeclado(evt, quest32);
+    }//GEN-LAST:event_quest32KeyTyped
+
+    private void quest33KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest33KeyTyped
+        travarTeclado(evt, quest33);
+    }//GEN-LAST:event_quest33KeyTyped
+
+    private void quest34KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest34KeyTyped
+        travarTeclado(evt, quest34);
+    }//GEN-LAST:event_quest34KeyTyped
+
+    private void quest35KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest35KeyTyped
+        travarTeclado(evt, quest35);
+    }//GEN-LAST:event_quest35KeyTyped
+
+    private void quest36KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest36KeyTyped
+        travarTeclado(evt, quest36);
+    }//GEN-LAST:event_quest36KeyTyped
+
+    private void quest37KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest37KeyTyped
+        travarTeclado(evt, quest37);
+    }//GEN-LAST:event_quest37KeyTyped
+
+    private void quest38KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest38KeyTyped
+        travarTeclado(evt, quest38);
+    }//GEN-LAST:event_quest38KeyTyped
+
+    private void quest39KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest39KeyTyped
+        travarTeclado(evt, quest39);
+    }//GEN-LAST:event_quest39KeyTyped
+
+    private void quest40KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest40KeyTyped
+        travarTeclado(evt, quest40);
+    }//GEN-LAST:event_quest40KeyTyped
+
+    private void quest41KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest41KeyTyped
+        travarTeclado(evt, quest41);
+    }//GEN-LAST:event_quest41KeyTyped
+
+    private void quest42KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest42KeyTyped
+        travarTeclado(evt, quest42);
+    }//GEN-LAST:event_quest42KeyTyped
+
+    private void quest43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest43KeyTyped
+        travarTeclado(evt, quest43);
+    }//GEN-LAST:event_quest43KeyTyped
+
+    private void quest44KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest44KeyTyped
+        travarTeclado(evt, quest44);
+    }//GEN-LAST:event_quest44KeyTyped
+
+    private void quest45KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest45KeyTyped
+        travarTeclado(evt, quest04);
+    }//GEN-LAST:event_quest45KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -1599,6 +2161,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JButton btPesquisar;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btVoltar;
+    private javax.swing.JButton btnAtendimento;
     private javax.swing.JLabel jLObrigatorioNome;
     private javax.swing.JLabel jLObrigatorioNome10;
     private javax.swing.JLabel jLObrigatorioNome11;
@@ -1735,5 +2298,6 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JTextField quest43;
     private javax.swing.JTextField quest44;
     private javax.swing.JTextField quest45;
+    private javax.swing.JTextField txtProcessoSeletivo;
     // End of variables declaration//GEN-END:variables
 }

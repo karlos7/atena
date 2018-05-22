@@ -41,7 +41,7 @@ public class GabaritoDAO extends GenericDAO<Gabarito>{
             if (JOptionPane.showOptionDialog(null, "Deseja excluir o gabarito" + gabarito.getProcessoSeletivo()
                     + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
                 if (remover(gabarito)) {
-                    JOptionPane.showMessageDialog(null, "Curso excluído com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Gabarito excluído com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Não foi possível excluir o gabarito" + gabarito.getProcessoSeletivo(),
                             "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
