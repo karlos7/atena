@@ -10,6 +10,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,6 +23,8 @@ public class Gabarito {
     @Id
     @GeneratedValue
     private int idGabarito;
+    
+    @OneToOne
     private ProcessoSeletivo processoSeletivo;
     private String quest01;
     private String quest02;

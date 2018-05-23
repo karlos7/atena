@@ -34,12 +34,12 @@ public class ProcessoSeletivoTableModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        ProcessoSeletivo rocessoSeletivo = processoSeletivos.get(rowIndex);
+        ProcessoSeletivo processoSeletivo = processoSeletivos.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return rocessoSeletivo.getIdProcessoSeletivo();
+                return processoSeletivo.getIdProcessoSeletivo();
             case 1:
-                return rocessoSeletivo.getProcessoSeletivo();
+                return processoSeletivo.getProcessoSeletivo();
 
         }
         return null;

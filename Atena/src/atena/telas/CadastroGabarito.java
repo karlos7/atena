@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Adriano Lima
+ * @author Karlos Oliveira
  */
 public class CadastroGabarito extends javax.swing.JDialog {
 
@@ -1529,6 +1529,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         btnAtendimento.setBounds(790, 100, 30, 30);
 
         txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtProcessoSeletivo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(txtProcessoSeletivo);
         txtProcessoSeletivo.setBounds(680, 100, 110, 30);
 
@@ -1641,7 +1642,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     //Falta travar teclado
     private void travarTeclado(java.awt.event.KeyEvent evt, JTextField txt) {
         int ascii = evt.getKeyChar();
-        if (!(ascii >= 97 && ascii <= 101) && !(ascii >= 65 && ascii <= 69)) {
+        if (!(ascii >= 97 && ascii <= 101) && !(ascii >= 65 && ascii <= 69) && !(ascii == 9)) {
             evt.consume();
         }
         if (txt.getText().length() >= 1) {
@@ -1721,7 +1722,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             gabarito.setQuest43(quest43.getText().toUpperCase());
             gabarito.setQuest44(quest44.getText().toUpperCase());
             gabarito.setQuest45(quest45.getText().toUpperCase());
-            
+
             gabarito.setProcessoSeletivo(processoSeletivo);
 
             gabaritoDAO.salvar(gabarito);
@@ -2103,7 +2104,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     }//GEN-LAST:event_quest44KeyTyped
 
     private void quest45KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest45KeyTyped
-        travarTeclado(evt, quest04);
+        travarTeclado(evt, quest45);
     }//GEN-LAST:event_quest45KeyTyped
 
     /**

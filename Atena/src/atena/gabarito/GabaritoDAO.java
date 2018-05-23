@@ -23,12 +23,12 @@ public class GabaritoDAO extends GenericDAO<Gabarito>{
         Object[] options = {"Sim", "Não"};
         if (gabarito.getIdGabarito() == 0) {
             if (adicionar(gabarito)) {
-                JOptionPane.showMessageDialog(null, "Gabarito " + gabarito.getProcessoSeletivo() + " cadastrado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Gabarito " + gabarito.getProcessoSeletivo().getProcessoSeletivo() + " cadastrado com sucesso!");
             }
         } else if (JOptionPane.showOptionDialog(null, "Deseja mesmo realizar essa edição"
                 + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
             if (atualizar(gabarito)) {
-                JOptionPane.showMessageDialog(null, "Gabarito " + gabarito.getProcessoSeletivo() + " editado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Gabarito " + gabarito.getProcessoSeletivo().getProcessoSeletivo() + " editado com sucesso!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "A edição foi cancelada!");

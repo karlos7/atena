@@ -15,6 +15,10 @@
         <property name="use_sql_coments">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="atena.usuario.Usuario"/>
+        <mapping class="atena.curso.Curso"/>
+        <mapping class="atena.gabarito.Gabarito"/>
+        <mapping class="atena.processoseletivo.ProcessoSeletivo"/>
+        <mapping class="atena.respostas.Respostas"/>
     </session-factory>
 </hibernate-configuration>
 
