@@ -24,6 +24,8 @@ public class Respostas {
     private int idRespostas;
     @OneToOne
     private ProcessoSeletivo processoSeletivo;
+    private String nomeCandidato;
+    private double notaRedacao;
     
     private String quest01;
     private String quest02;
@@ -87,6 +89,22 @@ public class Respostas {
         this.processoSeletivo = processoSeletivo;
     }
 
+    public String getNomeCandidato() {
+        return nomeCandidato;
+    }
+
+    public void setNomeCandidato(String nomeCandidato) {
+        this.nomeCandidato = nomeCandidato;
+    }
+
+    public double getNotaRedacao() {
+        return notaRedacao;
+    }
+
+    public void setNotaRedacao(double notaRedacao) {
+        this.notaRedacao = notaRedacao;
+    }
+    
     public String getQuest01() {
         return quest01;
     }

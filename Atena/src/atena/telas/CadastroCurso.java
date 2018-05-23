@@ -10,6 +10,7 @@ import atena.curso.CursoDAO;
 import atena.curso.CursoTableModel;
 import atena.usuario.Usuario;
 import atena.util.Util;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -140,6 +141,11 @@ public class CadastroCurso extends javax.swing.JDialog {
                 txtCursoActionPerformed(evt);
             }
         });
+        txtCurso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCursoKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtCurso);
         txtCurso.setBounds(40, 190, 490, 30);
 
@@ -210,6 +216,12 @@ public class CadastroCurso extends javax.swing.JDialog {
     private void txtCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCursoActionPerformed
+
+    private void txtCursoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCursoKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btSalvarActionPerformed(null);
+        }
+    }//GEN-LAST:event_txtCursoKeyPressed
 
     /**
      * @param args the command line arguments

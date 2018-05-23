@@ -47,6 +47,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
         subCadCurso = new javax.swing.JMenuItem();
+        subCadGabarito = new javax.swing.JMenuItem();
+        subCadRespostas = new javax.swing.JMenuItem();
+        subCadProcessoSeletivo = new javax.swing.JMenuItem();
         subUsuario = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
 
@@ -109,6 +112,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         menuCadastros.add(subCadCurso);
 
+        subCadGabarito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
+        subCadGabarito.setText("Gabarito");
+        subCadGabarito.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        subCadGabarito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCadGabaritoActionPerformed(evt);
+            }
+        });
+        menuCadastros.add(subCadGabarito);
+
+        subCadRespostas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
+        subCadRespostas.setText("Respostas");
+        subCadRespostas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        subCadRespostas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCadRespostasActionPerformed(evt);
+            }
+        });
+        menuCadastros.add(subCadRespostas);
+
+        subCadProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
+        subCadProcessoSeletivo.setText("Processo Seletivo");
+        subCadProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        subCadProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCadProcessoSeletivoActionPerformed(evt);
+            }
+        });
+        menuCadastros.add(subCadProcessoSeletivo);
+
         subUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
         subUsuario.setText("Usuário");
         subUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -161,6 +194,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuRelatorioActionPerformed
 
+    private void subCadGabaritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadGabaritoActionPerformed
+        CadastroGabarito cadastroGabarito = new CadastroGabarito(null, rootPaneCheckingEnabled);
+        cadastroGabarito.setVisible(true);
+    }//GEN-LAST:event_subCadGabaritoActionPerformed
+
+    private void subCadRespostasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadRespostasActionPerformed
+        CadastroRespostas cadastroRespostas = new CadastroRespostas(null, rootPaneCheckingEnabled);
+        cadastroRespostas.setVisible(true);
+    }//GEN-LAST:event_subCadRespostasActionPerformed
+
+    private void subCadProcessoSeletivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadProcessoSeletivoActionPerformed
+        CadastroProcessoSeletivo cadastroProcessoSeletivo = new CadastroProcessoSeletivo(null, rootPaneCheckingEnabled);
+        cadastroProcessoSeletivo.setVisible(true);
+    }//GEN-LAST:event_subCadProcessoSeletivoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,6 +256,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuCadastros;
     private javax.swing.JMenu menuRelatorio;
     private javax.swing.JMenuItem subCadCurso;
+    private javax.swing.JMenuItem subCadGabarito;
+    private javax.swing.JMenuItem subCadProcessoSeletivo;
+    private javax.swing.JMenuItem subCadRespostas;
     private javax.swing.JMenuItem subUsuario;
     // End of variables declaration//GEN-END:variables
 }

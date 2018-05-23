@@ -11,9 +11,9 @@ import atena.gabarito.GabaritoTableModel;
 import atena.processoseletivo.ProcessoSeletivo;
 import atena.processoseletivo.ProcessoSeletivoDAO;
 import atena.processoseletivo.ProcessoSeletivoTableModel;
-import atena.usuario.Usuario;
-import atena.usuario.UsuarioDAO;
-import atena.usuario.UsuarioTableModel;
+import atena.respostas.Respostas;
+import atena.respostas.RespostasDAO;
+import atena.respostas.RespostasTableModel;
 import atena.util.Util;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -23,17 +23,17 @@ import javax.swing.JTextField;
  *
  * @author Karlos Oliveira
  */
-public class CadastroGabarito extends javax.swing.JDialog {
+public class CadastroRespostas extends javax.swing.JDialog {
 
     ProcessoSeletivo processoSeletivo = new ProcessoSeletivo();
     ProcessoSeletivoDAO processoSeletivoDAO = new ProcessoSeletivoDAO();
-    Gabarito gabarito = new Gabarito();
-    GabaritoDAO gabaritoDAO = new GabaritoDAO();
+    Respostas respostas = new Respostas();
+    RespostasDAO respostasDAO = new RespostasDAO();
 
     /**
      * Creates new form TelaCadastroUsuario
      */
-    public CadastroGabarito(java.awt.Frame parent, boolean modal) {
+    public CadastroRespostas(java.awt.Frame parent, boolean modal) {
         initComponents();
         getRootPane().setDefaultButton(btSalvar);
         txtProcessoSeletivo.setEnabled(false);
@@ -191,15 +191,22 @@ public class CadastroGabarito extends javax.swing.JDialog {
         btnAtendimento = new javax.swing.JButton();
         txtProcessoSeletivo = new javax.swing.JTextField();
         jLObrigatorioNome44 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        txtNomeCandidato = new javax.swing.JTextField();
+        jLObrigatorioNome1 = new javax.swing.JLabel();
+        txtNotaRedacao = new javax.swing.JTextField();
+        jLObrigatorioSenha = new javax.swing.JLabel();
         quest45 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(855, 550));
+        setMaximumSize(new java.awt.Dimension(855, 630));
+        setMinimumSize(new java.awt.Dimension(855, 630));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(855, 550));
+        setPreferredSize(new java.awt.Dimension(855, 630));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -238,7 +245,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(10, 470, 90, 70);
+        btVoltar.setBounds(10, 550, 90, 70);
 
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/search.png"))); // NOI18N
@@ -253,7 +260,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btPesquisar);
-        btPesquisar.setBounds(370, 470, 99, 70);
+        btPesquisar.setBounds(370, 550, 99, 70);
 
         btExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/delete.png"))); // NOI18N
@@ -268,7 +275,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btExcluir);
-        btExcluir.setBounds(530, 470, 80, 70);
+        btExcluir.setBounds(530, 550, 80, 70);
 
         quest19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest19.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -367,7 +374,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btLimpar);
-        btLimpar.setBounds(220, 470, 80, 70);
+        btLimpar.setBounds(220, 550, 80, 70);
 
         jLObrigatorioNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
@@ -388,7 +395,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btSalvar);
-        btSalvar.setBounds(760, 470, 80, 70);
+        btSalvar.setBounds(760, 550, 80, 70);
 
         jlNomeUsuario5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario5.setText("11");
@@ -1533,7 +1540,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtProcessoSeletivo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(txtProcessoSeletivo);
-        txtProcessoSeletivo.setBounds(720, 100, 80, 30);
+        txtProcessoSeletivo.setBounds(720, 103, 80, 30);
 
         jLObrigatorioNome44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome44.setForeground(new java.awt.Color(204, 0, 0));
@@ -1541,15 +1548,34 @@ public class CadastroGabarito extends javax.swing.JDialog {
         getContentPane().add(jLObrigatorioNome44);
         jLObrigatorioNome44.setBounds(810, 410, 10, 10);
 
-        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
-        jLabel1.setText("QUESTÕES");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 99, 110, 40);
+        txtNomeCandidato.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNomeCandidato.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
+        txtNomeCandidato.setMaximumSize(new java.awt.Dimension(8, 200));
+        txtNomeCandidato.setMinimumSize(new java.awt.Dimension(8, 200));
+        txtNomeCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeCandidatoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNomeCandidato);
+        txtNomeCandidato.setBounds(40, 500, 620, 30);
 
-        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
-        jLabel2.setText("PROCESSO SELETIVO");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(500, 104, 220, 30);
+        jLObrigatorioNome1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome1.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome1.setText("*");
+        getContentPane().add(jLObrigatorioNome1);
+        jLObrigatorioNome1.setBounds(650, 490, 10, 10);
+
+        txtNotaRedacao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNotaRedacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
+        getContentPane().add(txtNotaRedacao);
+        txtNotaRedacao.setBounds(690, 500, 130, 30);
+
+        jLObrigatorioSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioSenha.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioSenha.setText("*");
+        getContentPane().add(jLObrigatorioSenha);
+        jLObrigatorioSenha.setBounds(810, 490, 10, 10);
 
         quest45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1568,72 +1594,94 @@ public class CadastroGabarito extends javax.swing.JDialog {
         getContentPane().add(quest45);
         quest45.setBounds(760, 420, 60, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_gabarito.png"))); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
+        jLabel4.setText("CANDIDATO");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(40, 470, 140, 30);
+
+        jLabel3.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
+        jLabel3.setText("NOTA REDAÇÃO");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(690, 470, 120, 30);
+
+        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jLabel2.setText("PROCESSO SELETIVO");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(500, 104, 220, 30);
+
+        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jLabel1.setText("QUESTÕES");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(40, 99, 110, 40);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_respostas.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        jLabel6.setMaximumSize(new java.awt.Dimension(855, 550));
-        jLabel6.setMinimumSize(new java.awt.Dimension(855, 550));
-        jLabel6.setPreferredSize(new java.awt.Dimension(855, 550));
+        jLabel6.setMaximumSize(new java.awt.Dimension(855, 630));
+        jLabel6.setMinimumSize(new java.awt.Dimension(855, 630));
+        jLabel6.setPreferredSize(new java.awt.Dimension(855, 630));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 855, 550);
+        jLabel6.setBounds(0, 0, 855, 630);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        List<Gabarito> lista;
-        lista = (gabaritoDAO.listar());
-        GabaritoTableModel itm = new GabaritoTableModel(lista);
-        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Gabarito");
+        List<Respostas> lista;
+        lista = (respostasDAO.listar());
+        RespostasTableModel itm = new RespostasTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Respostas");
         if (objetoRetorno != null) {
-            gabarito = gabaritoDAO.consultarObjetoId("idGabarito", objetoRetorno);
-            quest01.setText(gabarito.getQuest01());
-            quest02.setText(gabarito.getQuest02());
-            quest03.setText(gabarito.getQuest03());
-            quest04.setText(gabarito.getQuest04());
-            quest05.setText(gabarito.getQuest05());
-            quest06.setText(gabarito.getQuest06());
-            quest07.setText(gabarito.getQuest07());
-            quest08.setText(gabarito.getQuest08());
-            quest09.setText(gabarito.getQuest09());
-            quest10.setText(gabarito.getQuest10());
-            quest11.setText(gabarito.getQuest11());
-            quest12.setText(gabarito.getQuest12());
-            quest13.setText(gabarito.getQuest13());
-            quest14.setText(gabarito.getQuest14());
-            quest15.setText(gabarito.getQuest15());
-            quest16.setText(gabarito.getQuest16());
-            quest17.setText(gabarito.getQuest17());
-            quest18.setText(gabarito.getQuest18());
-            quest19.setText(gabarito.getQuest19());
-            quest20.setText(gabarito.getQuest20());
-            quest21.setText(gabarito.getQuest21());
-            quest22.setText(gabarito.getQuest22());
-            quest23.setText(gabarito.getQuest23());
-            quest24.setText(gabarito.getQuest24());
-            quest25.setText(gabarito.getQuest25());
-            quest26.setText(gabarito.getQuest26());
-            quest27.setText(gabarito.getQuest27());
-            quest28.setText(gabarito.getQuest28());
-            quest29.setText(gabarito.getQuest29());
-            quest30.setText(gabarito.getQuest30());
-            quest31.setText(gabarito.getQuest31());
-            quest32.setText(gabarito.getQuest32());
-            quest33.setText(gabarito.getQuest33());
-            quest34.setText(gabarito.getQuest34());
-            quest35.setText(gabarito.getQuest35());
-            quest36.setText(gabarito.getQuest36());
-            quest37.setText(gabarito.getQuest37());
-            quest38.setText(gabarito.getQuest38());
-            quest39.setText(gabarito.getQuest39());
-            quest40.setText(gabarito.getQuest40());
-            quest41.setText(gabarito.getQuest41());
-            quest42.setText(gabarito.getQuest42());
-            quest43.setText(gabarito.getQuest43());
-            quest44.setText(gabarito.getQuest44());
-            quest45.setText(gabarito.getQuest45());
+            respostas = respostasDAO.consultarObjetoId("idRespostas", objetoRetorno);
+            quest01.setText(respostas.getQuest01());
+            quest02.setText(respostas.getQuest02());
+            quest03.setText(respostas.getQuest03());
+            quest04.setText(respostas.getQuest04());
+            quest05.setText(respostas.getQuest05());
+            quest06.setText(respostas.getQuest06());
+            quest07.setText(respostas.getQuest07());
+            quest08.setText(respostas.getQuest08());
+            quest09.setText(respostas.getQuest09());
+            quest10.setText(respostas.getQuest10());
+            quest11.setText(respostas.getQuest11());
+            quest12.setText(respostas.getQuest12());
+            quest13.setText(respostas.getQuest13());
+            quest14.setText(respostas.getQuest14());
+            quest15.setText(respostas.getQuest15());
+            quest16.setText(respostas.getQuest16());
+            quest17.setText(respostas.getQuest17());
+            quest18.setText(respostas.getQuest18());
+            quest19.setText(respostas.getQuest19());
+            quest20.setText(respostas.getQuest20());
+            quest21.setText(respostas.getQuest21());
+            quest22.setText(respostas.getQuest22());
+            quest23.setText(respostas.getQuest23());
+            quest24.setText(respostas.getQuest24());
+            quest25.setText(respostas.getQuest25());
+            quest26.setText(respostas.getQuest26());
+            quest27.setText(respostas.getQuest27());
+            quest28.setText(respostas.getQuest28());
+            quest29.setText(respostas.getQuest29());
+            quest30.setText(respostas.getQuest30());
+            quest31.setText(respostas.getQuest31());
+            quest32.setText(respostas.getQuest32());
+            quest33.setText(respostas.getQuest33());
+            quest34.setText(respostas.getQuest34());
+            quest35.setText(respostas.getQuest35());
+            quest36.setText(respostas.getQuest36());
+            quest37.setText(respostas.getQuest37());
+            quest38.setText(respostas.getQuest38());
+            quest39.setText(respostas.getQuest39());
+            quest40.setText(respostas.getQuest40());
+            quest41.setText(respostas.getQuest41());
+            quest42.setText(respostas.getQuest42());
+            quest43.setText(respostas.getQuest43());
+            quest44.setText(respostas.getQuest44());
+            quest45.setText(respostas.getQuest45());
 
-            processoSeletivo = gabarito.getProcessoSeletivo();
+            processoSeletivo = respostas.getProcessoSeletivo();
+            txtNomeCandidato.setText(respostas.getNomeCandidato());
+            txtNotaRedacao.setText(String.valueOf(respostas.getNotaRedacao()));
 
             btExcluir.setEnabled(true);
         }
@@ -1686,58 +1734,61 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 || quest39.getText().equalsIgnoreCase("") || quest40.getText().equalsIgnoreCase("")
                 || quest41.getText().equalsIgnoreCase("") || quest42.getText().equalsIgnoreCase("")
                 || quest43.getText().equalsIgnoreCase("") || quest44.getText().equalsIgnoreCase("")
-                || quest45.getText().equalsIgnoreCase("")) {
+                || quest45.getText().equalsIgnoreCase("") || txtNomeCandidato.getText().equals("")
+                || txtNotaRedacao.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
-            gabarito.setQuest01(quest01.getText().toUpperCase());
-            gabarito.setQuest02(quest02.getText().toUpperCase());
-            gabarito.setQuest03(quest03.getText().toUpperCase());
-            gabarito.setQuest04(quest04.getText().toUpperCase());
-            gabarito.setQuest05(quest05.getText().toUpperCase());
-            gabarito.setQuest06(quest06.getText().toUpperCase());
-            gabarito.setQuest07(quest07.getText().toUpperCase());
-            gabarito.setQuest08(quest08.getText().toUpperCase());
-            gabarito.setQuest09(quest09.getText().toUpperCase());
-            gabarito.setQuest10(quest10.getText().toUpperCase());
-            gabarito.setQuest11(quest11.getText().toUpperCase());
-            gabarito.setQuest12(quest12.getText().toUpperCase());
-            gabarito.setQuest13(quest13.getText().toUpperCase());
-            gabarito.setQuest14(quest14.getText().toUpperCase());
-            gabarito.setQuest15(quest15.getText().toUpperCase());
-            gabarito.setQuest16(quest16.getText().toUpperCase());
-            gabarito.setQuest17(quest17.getText().toUpperCase());
-            gabarito.setQuest18(quest18.getText().toUpperCase());
-            gabarito.setQuest19(quest19.getText().toUpperCase());
-            gabarito.setQuest20(quest20.getText().toUpperCase());
-            gabarito.setQuest21(quest21.getText().toUpperCase());
-            gabarito.setQuest22(quest22.getText().toUpperCase());
-            gabarito.setQuest23(quest23.getText().toUpperCase());
-            gabarito.setQuest24(quest24.getText().toUpperCase());
-            gabarito.setQuest25(quest25.getText().toUpperCase());
-            gabarito.setQuest26(quest26.getText().toUpperCase());
-            gabarito.setQuest27(quest27.getText().toUpperCase());
-            gabarito.setQuest28(quest28.getText().toUpperCase());
-            gabarito.setQuest29(quest29.getText().toUpperCase());
-            gabarito.setQuest30(quest30.getText().toUpperCase());
-            gabarito.setQuest31(quest31.getText().toUpperCase());
-            gabarito.setQuest32(quest32.getText().toUpperCase());
-            gabarito.setQuest33(quest33.getText().toUpperCase());
-            gabarito.setQuest34(quest34.getText().toUpperCase());
-            gabarito.setQuest35(quest35.getText().toUpperCase());
-            gabarito.setQuest36(quest36.getText().toUpperCase());
-            gabarito.setQuest37(quest37.getText().toUpperCase());
-            gabarito.setQuest38(quest38.getText().toUpperCase());
-            gabarito.setQuest39(quest39.getText().toUpperCase());
-            gabarito.setQuest40(quest40.getText().toUpperCase());
-            gabarito.setQuest41(quest41.getText().toUpperCase());
-            gabarito.setQuest42(quest42.getText().toUpperCase());
-            gabarito.setQuest43(quest43.getText().toUpperCase());
-            gabarito.setQuest44(quest44.getText().toUpperCase());
-            gabarito.setQuest45(quest45.getText().toUpperCase());
+            respostas.setQuest01(quest01.getText().toUpperCase());
+            respostas.setQuest02(quest02.getText().toUpperCase());
+            respostas.setQuest03(quest03.getText().toUpperCase());
+            respostas.setQuest04(quest04.getText().toUpperCase());
+            respostas.setQuest05(quest05.getText().toUpperCase());
+            respostas.setQuest06(quest06.getText().toUpperCase());
+            respostas.setQuest07(quest07.getText().toUpperCase());
+            respostas.setQuest08(quest08.getText().toUpperCase());
+            respostas.setQuest09(quest09.getText().toUpperCase());
+            respostas.setQuest10(quest10.getText().toUpperCase());
+            respostas.setQuest11(quest11.getText().toUpperCase());
+            respostas.setQuest12(quest12.getText().toUpperCase());
+            respostas.setQuest13(quest13.getText().toUpperCase());
+            respostas.setQuest14(quest14.getText().toUpperCase());
+            respostas.setQuest15(quest15.getText().toUpperCase());
+            respostas.setQuest16(quest16.getText().toUpperCase());
+            respostas.setQuest17(quest17.getText().toUpperCase());
+            respostas.setQuest18(quest18.getText().toUpperCase());
+            respostas.setQuest19(quest19.getText().toUpperCase());
+            respostas.setQuest20(quest20.getText().toUpperCase());
+            respostas.setQuest21(quest21.getText().toUpperCase());
+            respostas.setQuest22(quest22.getText().toUpperCase());
+            respostas.setQuest23(quest23.getText().toUpperCase());
+            respostas.setQuest24(quest24.getText().toUpperCase());
+            respostas.setQuest25(quest25.getText().toUpperCase());
+            respostas.setQuest26(quest26.getText().toUpperCase());
+            respostas.setQuest27(quest27.getText().toUpperCase());
+            respostas.setQuest28(quest28.getText().toUpperCase());
+            respostas.setQuest29(quest29.getText().toUpperCase());
+            respostas.setQuest30(quest30.getText().toUpperCase());
+            respostas.setQuest31(quest31.getText().toUpperCase());
+            respostas.setQuest32(quest32.getText().toUpperCase());
+            respostas.setQuest33(quest33.getText().toUpperCase());
+            respostas.setQuest34(quest34.getText().toUpperCase());
+            respostas.setQuest35(quest35.getText().toUpperCase());
+            respostas.setQuest36(quest36.getText().toUpperCase());
+            respostas.setQuest37(quest37.getText().toUpperCase());
+            respostas.setQuest38(quest38.getText().toUpperCase());
+            respostas.setQuest39(quest39.getText().toUpperCase());
+            respostas.setQuest40(quest40.getText().toUpperCase());
+            respostas.setQuest41(quest41.getText().toUpperCase());
+            respostas.setQuest42(quest42.getText().toUpperCase());
+            respostas.setQuest43(quest43.getText().toUpperCase());
+            respostas.setQuest44(quest44.getText().toUpperCase());
+            respostas.setQuest45(quest45.getText().toUpperCase());
 
-            gabarito.setProcessoSeletivo(processoSeletivo);
+            respostas.setProcessoSeletivo(processoSeletivo);
+            respostas.setNomeCandidato(txtNomeCandidato.getText());
+            respostas.setNotaRedacao(Double.valueOf(txtNotaRedacao.getText()));
 
-            gabaritoDAO.salvar(gabarito);
+            respostasDAO.salvar(respostas);
             btLimparActionPerformed(null);
 
         }
@@ -2119,6 +2170,10 @@ public class CadastroGabarito extends javax.swing.JDialog {
         travarTeclado(evt, quest45);
     }//GEN-LAST:event_quest45KeyTyped
 
+    private void txtNomeCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeCandidatoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2136,14 +2191,22 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroGabarito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroGabarito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroGabarito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroGabarito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -2156,7 +2219,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroGabarito dialog = new CadastroGabarito(new javax.swing.JFrame(), true);
+                CadastroRespostas dialog = new CadastroRespostas(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -2176,6 +2239,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JButton btVoltar;
     private javax.swing.JButton btnAtendimento;
     private javax.swing.JLabel jLObrigatorioNome;
+    private javax.swing.JLabel jLObrigatorioNome1;
     private javax.swing.JLabel jLObrigatorioNome10;
     private javax.swing.JLabel jLObrigatorioNome11;
     private javax.swing.JLabel jLObrigatorioNome12;
@@ -2220,8 +2284,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JLabel jLObrigatorioNome7;
     private javax.swing.JLabel jLObrigatorioNome8;
     private javax.swing.JLabel jLObrigatorioNome9;
+    private javax.swing.JLabel jLObrigatorioSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jlNomeUsuario;
     private javax.swing.JLabel jlNomeUsuario10;
@@ -2313,6 +2380,8 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JTextField quest43;
     private javax.swing.JTextField quest44;
     private javax.swing.JTextField quest45;
+    private javax.swing.JTextField txtNomeCandidato;
+    private javax.swing.JTextField txtNotaRedacao;
     private javax.swing.JTextField txtProcessoSeletivo;
     // End of variables declaration//GEN-END:variables
 }
