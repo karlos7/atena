@@ -5,11 +5,14 @@
  */
 package atena.respostas;
 
+import atena.curso.Curso;
 import atena.processoseletivo.ProcessoSeletivo;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -22,8 +25,12 @@ public class Respostas {
     @Id
     @GeneratedValue
     private int idRespostas;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private ProcessoSeletivo processoSeletivo;
+   
+    @OneToOne
+    private Curso curso;
+    
     private String nomeCandidato;
     private double notaRedacao;
     
@@ -89,6 +96,14 @@ public class Respostas {
         this.processoSeletivo = processoSeletivo;
     }
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+    
     public String getNomeCandidato() {
         return nomeCandidato;
     }

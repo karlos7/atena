@@ -47,9 +47,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
         subCadCurso = new javax.swing.JMenuItem();
+        subCadProcessoSeletivo = new javax.swing.JMenuItem();
         subCadGabarito = new javax.swing.JMenuItem();
         subCadRespostas = new javax.swing.JMenuItem();
-        subCadProcessoSeletivo = new javax.swing.JMenuItem();
         subUsuario = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
 
@@ -86,6 +86,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jlNome3.setBounds(290, 400, 100, 40);
 
         jlHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/home2.png"))); // NOI18N
+        jlHome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(jlHome);
         jlHome.setBounds(0, 0, 900, 450);
 
@@ -112,6 +113,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         menuCadastros.add(subCadCurso);
 
+        subCadProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
+        subCadProcessoSeletivo.setText("Processo Seletivo");
+        subCadProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        subCadProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCadProcessoSeletivoActionPerformed(evt);
+            }
+        });
+        menuCadastros.add(subCadProcessoSeletivo);
+
         subCadGabarito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
         subCadGabarito.setText("Gabarito");
         subCadGabarito.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -131,16 +142,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastros.add(subCadRespostas);
-
-        subCadProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
-        subCadProcessoSeletivo.setText("Processo Seletivo");
-        subCadProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        subCadProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subCadProcessoSeletivoActionPerformed(evt);
-            }
-        });
-        menuCadastros.add(subCadProcessoSeletivo);
 
         subUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
         subUsuario.setText("Usuário");

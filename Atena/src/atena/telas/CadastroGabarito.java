@@ -1634,6 +1634,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             quest45.setText(gabarito.getQuest45());
 
             processoSeletivo = gabarito.getProcessoSeletivo();
+            txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
 
             btExcluir.setEnabled(true);
         }

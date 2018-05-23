@@ -48,7 +48,7 @@ public class TelaAutenticacao extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 560));
         getContentPane().setLayout(null);
 
-        txtLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtLogin.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         txtLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
         txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +108,7 @@ public class TelaAutenticacao extends javax.swing.JFrame {
         getContentPane().add(btEntrar);
         btEntrar.setBounds(900, 470, 90, 80);
 
-        txtSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         txtSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

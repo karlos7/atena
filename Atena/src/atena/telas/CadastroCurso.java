@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Adriano Lima
+ * @author Karlos Oliveira
  */
 public class CadastroCurso extends javax.swing.JDialog {
 
     Curso curso = new Curso();
-    CursoDAO cursoDAO;
+    CursoDAO cursoDAO = new CursoDAO();
 
     
     //public CadastroCurso(java.awt.Frame parent, boolean modal) {
@@ -197,7 +197,6 @@ public class CadastroCurso extends javax.swing.JDialog {
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-
         if (txtCurso.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
