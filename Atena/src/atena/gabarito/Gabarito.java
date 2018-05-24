@@ -25,8 +25,9 @@ public class Gabarito {
     @Id
     @GeneratedValue
     private int idGabarito;
+    private String chamada;
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne
     private ProcessoSeletivo processoSeletivo;
     private String quest01;
     private String quest02;
@@ -82,6 +83,14 @@ public class Gabarito {
         this.idGabarito = idGabarito;
     }
 
+    public String getChamada() {
+        return chamada;
+    }
+
+    public void setChamada(String chamada) {
+        this.chamada = chamada;
+    }
+    
     public ProcessoSeletivo getProcessoSeletivo() {
         return processoSeletivo;
     }

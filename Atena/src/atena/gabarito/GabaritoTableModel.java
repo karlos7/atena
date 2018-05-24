@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class GabaritoTableModel extends AbstractTableModel{
     
     private List<Gabarito> gabarito = new ArrayList<>();
-    private String[] colunas = {"Código", "Processo Seletivo"};
+    private String[] colunas = {"Código", "Processo Seletivo", "Chamada"};
 
     public GabaritoTableModel(List<Gabarito> gabarito) {
         this.gabarito = gabarito;
@@ -40,6 +40,8 @@ public class GabaritoTableModel extends AbstractTableModel{
                 return gabaritos.getIdGabarito();
             case 1:
                 return gabaritos.getProcessoSeletivo().getProcessoSeletivo();
+            case 2:
+                return gabaritos.getChamada();
 
         }
         return null;
@@ -52,6 +54,8 @@ public class GabaritoTableModel extends AbstractTableModel{
                 return colunas[0];
             case 1:
                 return colunas[1];
+            case 2:
+                return colunas[2];
         }
         return null;
     }

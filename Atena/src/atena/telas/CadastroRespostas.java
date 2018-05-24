@@ -1651,12 +1651,12 @@ public class CadastroRespostas extends javax.swing.JDialog {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(420, 470, 70, 30);
 
-        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
         jLabel2.setText("PROCESSO SELETIVO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(500, 104, 220, 30);
+        jLabel2.setBounds(540, 104, 180, 30);
 
-        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
         jLabel1.setText("QUESTÕES");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(40, 99, 110, 40);

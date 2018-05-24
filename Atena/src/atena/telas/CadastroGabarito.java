@@ -191,7 +191,11 @@ public class CadastroGabarito extends javax.swing.JDialog {
         btnAtendimento = new javax.swing.JButton();
         txtProcessoSeletivo = new javax.swing.JTextField();
         jLObrigatorioNome44 = new javax.swing.JLabel();
+        jcChamada = new javax.swing.JComboBox<>();
+        jLObrigatorioNome47 = new javax.swing.JLabel();
+        jLObrigatorioNome46 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         quest45 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -1161,7 +1165,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jLObrigatorioNome31.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome31.setText("*");
         getContentPane().add(jLObrigatorioNome31);
-        jLObrigatorioNome31.setBounds(450, 170, 10, 10);
+        jLObrigatorioNome31.setBounds(790, 91, 10, 10);
 
         jlNomeUsuario32.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario32.setText("05");
@@ -1541,15 +1545,39 @@ public class CadastroGabarito extends javax.swing.JDialog {
         getContentPane().add(jLObrigatorioNome44);
         jLObrigatorioNome44.setBounds(810, 410, 10, 10);
 
-        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jcChamada.setBackground(new java.awt.Color(204, 102, 0));
+        jcChamada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jcChamada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-------", "1ª Chamada", "2ª Chamada", "3ª Chamada", "4ª Chamada" }));
+        jcChamada.setBorder(null);
+        getContentPane().add(jcChamada);
+        jcChamada.setBounds(320, 100, 120, 30);
+
+        jLObrigatorioNome47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome47.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome47.setText("*");
+        getContentPane().add(jLObrigatorioNome47);
+        jLObrigatorioNome47.setBounds(430, 91, 10, 10);
+
+        jLObrigatorioNome46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome46.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome46.setText("*");
+        getContentPane().add(jLObrigatorioNome46);
+        jLObrigatorioNome46.setBounds(450, 170, 10, 10);
+
+        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
         jLabel1.setText("QUESTÕES");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 99, 110, 40);
+        jLabel1.setBounds(40, 105, 90, 30);
 
-        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 30)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
+        jLabel3.setText("Chamada");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(230, 104, 90, 30);
+
+        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
         jLabel2.setText("PROCESSO SELETIVO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(500, 104, 220, 30);
+        jLabel2.setBounds(540, 104, 180, 30);
 
         quest45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1632,7 +1660,8 @@ public class CadastroGabarito extends javax.swing.JDialog {
             quest43.setText(gabarito.getQuest43());
             quest44.setText(gabarito.getQuest44());
             quest45.setText(gabarito.getQuest45());
-
+            jcChamada.setSelectedItem(gabarito.getChamada());
+            
             processoSeletivo = gabarito.getProcessoSeletivo();
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
 
@@ -1641,18 +1670,18 @@ public class CadastroGabarito extends javax.swing.JDialog {
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        processoSeletivoDAO.excluir(processoSeletivo);
+        gabaritoDAO.excluir(gabarito);
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         Util.limparCamposGenerico(this);
+        jcChamada.setSelectedIndex(0);
         btExcluir.setEnabled(false);
         processoSeletivo = new ProcessoSeletivo();
-
+        gabarito = new Gabarito();
     }//GEN-LAST:event_btLimparActionPerformed
 
-    //Falta travar teclado
     private void travarTeclado(java.awt.event.KeyEvent evt, JTextField txt) {
         int ascii = evt.getKeyChar();
         if (!(ascii >= 97 && ascii <= 101) && !(ascii >= 65 && ascii <= 69) && !(ascii == 9)) {
@@ -1664,7 +1693,6 @@ public class CadastroGabarito extends javax.swing.JDialog {
     }
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-
         if (quest01.getText().equalsIgnoreCase("") || quest02.getText().equalsIgnoreCase("")
                 || quest03.getText().equalsIgnoreCase("") || quest04.getText().equalsIgnoreCase("")
                 || quest05.getText().equalsIgnoreCase("") || quest06.getText().equalsIgnoreCase("")
@@ -1687,7 +1715,8 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 || quest39.getText().equalsIgnoreCase("") || quest40.getText().equalsIgnoreCase("")
                 || quest41.getText().equalsIgnoreCase("") || quest42.getText().equalsIgnoreCase("")
                 || quest43.getText().equalsIgnoreCase("") || quest44.getText().equalsIgnoreCase("")
-                || quest45.getText().equalsIgnoreCase("")) {
+                || quest45.getText().equalsIgnoreCase("") || txtProcessoSeletivo.getText().equals("")
+                || jcChamada.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
             gabarito.setQuest01(quest01.getText().toUpperCase());
@@ -1735,6 +1764,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             gabarito.setQuest43(quest43.getText().toUpperCase());
             gabarito.setQuest44(quest44.getText().toUpperCase());
             gabarito.setQuest45(quest45.getText().toUpperCase());
+            gabarito.setChamada(jcChamada.getSelectedItem().toString());
 
             gabarito.setProcessoSeletivo(processoSeletivo);
 
@@ -1742,6 +1772,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             btLimparActionPerformed(null);
 
         }
+
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -2216,6 +2247,8 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JLabel jLObrigatorioNome43;
     private javax.swing.JLabel jLObrigatorioNome44;
     private javax.swing.JLabel jLObrigatorioNome45;
+    private javax.swing.JLabel jLObrigatorioNome46;
+    private javax.swing.JLabel jLObrigatorioNome47;
     private javax.swing.JLabel jLObrigatorioNome5;
     private javax.swing.JLabel jLObrigatorioNome6;
     private javax.swing.JLabel jLObrigatorioNome7;
@@ -2223,7 +2256,9 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JLabel jLObrigatorioNome9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JComboBox<String> jcChamada;
     private javax.swing.JLabel jlNomeUsuario;
     private javax.swing.JLabel jlNomeUsuario10;
     private javax.swing.JLabel jlNomeUsuario11;

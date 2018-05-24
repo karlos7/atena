@@ -25,7 +25,7 @@ public class Respostas {
     @Id
     @GeneratedValue
     private int idRespostas;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne
     private ProcessoSeletivo processoSeletivo;
    
     @OneToOne
