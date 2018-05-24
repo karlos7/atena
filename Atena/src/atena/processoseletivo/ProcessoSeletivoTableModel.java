@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class ProcessoSeletivoTableModel extends AbstractTableModel{
     
     private List<ProcessoSeletivo> processoSeletivos = new ArrayList<>();
-    private String[] colunas = {"Código", "Processo Seletivo"};
+    private String[] colunas = {"Código", "Processo Seletivo", "Chamada"};
 
     public ProcessoSeletivoTableModel(List<ProcessoSeletivo> processoSeletivos) {
         this.processoSeletivos = processoSeletivos;
@@ -40,6 +40,8 @@ public class ProcessoSeletivoTableModel extends AbstractTableModel{
                 return processoSeletivo.getIdProcessoSeletivo();
             case 1:
                 return processoSeletivo.getProcessoSeletivo();
+            case 2:
+                return processoSeletivo.getChamada();
 
         }
         return null;
@@ -52,6 +54,8 @@ public class ProcessoSeletivoTableModel extends AbstractTableModel{
                 return colunas[0];
             case 1:
                 return colunas[1];
+            case 2:
+                return colunas[2];
         }
         return null;
     }

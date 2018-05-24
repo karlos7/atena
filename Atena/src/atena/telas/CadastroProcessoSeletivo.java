@@ -51,6 +51,9 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
     private void initComponents() {
 
         jlNomeUsuario = new javax.swing.JLabel();
+        jcChamada = new javax.swing.JComboBox<>();
+        jlNomeUsuario1 = new javax.swing.JLabel();
+        jLObrigatorioNome47 = new javax.swing.JLabel();
         txtProcessoSeletivo = new javax.swing.JTextField();
         btVoltar = new javax.swing.JButton();
         btPesquisar = new javax.swing.JButton();
@@ -69,9 +72,27 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
         getContentPane().setLayout(null);
 
         jlNomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jlNomeUsuario.setText("Processo Seletivo");
+        jlNomeUsuario.setText("Chamada");
         getContentPane().add(jlNomeUsuario);
-        jlNomeUsuario.setBounds(170, 150, 150, 20);
+        jlNomeUsuario.setBounds(380, 160, 90, 20);
+
+        jcChamada.setBackground(new java.awt.Color(204, 102, 0));
+        jcChamada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jcChamada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-------", "1ª Chamada", "2ª Chamada", "3ª Chamada", "4ª Chamada" }));
+        jcChamada.setBorder(null);
+        getContentPane().add(jcChamada);
+        jcChamada.setBounds(380, 180, 140, 30);
+
+        jlNomeUsuario1.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jlNomeUsuario1.setText("Processo Seletivo");
+        getContentPane().add(jlNomeUsuario1);
+        jlNomeUsuario1.setBounds(40, 160, 150, 20);
+
+        jLObrigatorioNome47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome47.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome47.setText("*");
+        getContentPane().add(jLObrigatorioNome47);
+        jLObrigatorioNome47.setBounds(510, 170, 10, 10);
 
         txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtProcessoSeletivo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -88,7 +109,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
             }
         });
         getContentPane().add(txtProcessoSeletivo);
-        txtProcessoSeletivo.setBounds(170, 170, 240, 30);
+        txtProcessoSeletivo.setBounds(40, 180, 240, 30);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -154,7 +175,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
         jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome.setText("*");
         getContentPane().add(jLObrigatorioNome);
-        jLObrigatorioNome.setBounds(400, 160, 10, 10);
+        jLObrigatorioNome.setBounds(270, 170, 10, 10);
 
         btSalvar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/save.png"))); // NOI18N
@@ -229,6 +250,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         Util.limparCamposGenerico(this);
         btExcluir.setEnabled(false);
+        jcChamada.setSelectedIndex(0);
         processoSeletivo = new ProcessoSeletivo();
         gabarito = new Gabarito();
         txtProcessoSeletivo.setEnabled(true);
@@ -237,13 +259,13 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
 
-        if (txtProcessoSeletivo.getText().equals("")) {
+        if (txtProcessoSeletivo.getText().equals("") || jcChamada.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
             processoSeletivo.setProcessoSeletivo(txtProcessoSeletivo.getText());
+            processoSeletivo.setChamada(jcChamada.getSelectedItem().toString());
             processoSeletivoDAO.salvar(processoSeletivo);
             btLimparActionPerformed(null);
-
         }
     }//GEN-LAST:event_btSalvarActionPerformed
 
@@ -318,8 +340,11 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JLabel jLObrigatorioNome;
+    private javax.swing.JLabel jLObrigatorioNome47;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JComboBox<String> jcChamada;
     private javax.swing.JLabel jlNomeUsuario;
+    private javax.swing.JLabel jlNomeUsuario1;
     private javax.swing.JTextField txtProcessoSeletivo;
     // End of variables declaration//GEN-END:variables
 }

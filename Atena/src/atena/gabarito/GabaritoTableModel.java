@@ -41,7 +41,7 @@ public class GabaritoTableModel extends AbstractTableModel{
             case 1:
                 return gabaritos.getProcessoSeletivo().getProcessoSeletivo();
             case 2:
-                return gabaritos.getChamada();
+                return gabaritos.getProcessoSeletivo().getChamada();
 
         }
         return null;

@@ -6,14 +6,10 @@
 package atena.gabarito;
 
 import atena.processoseletivo.ProcessoSeletivo;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,7 +22,7 @@ public class Gabarito {
     @Id
     @GeneratedValue
     private int idGabarito;
-    private String chamada;
+    
     
     @OneToOne(fetch = FetchType.EAGER)
     private ProcessoSeletivo processoSeletivo;
@@ -84,14 +80,6 @@ public class Gabarito {
         this.idGabarito = idGabarito;
     }
 
-    public String getChamada() {
-        return chamada;
-    }
-
-    public void setChamada(String chamada) {
-        this.chamada = chamada;
-    }
-    
     public ProcessoSeletivo getProcessoSeletivo() {
         return processoSeletivo;
     }

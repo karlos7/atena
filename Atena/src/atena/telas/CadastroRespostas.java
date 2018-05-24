@@ -34,6 +34,8 @@ public class CadastroRespostas extends javax.swing.JDialog {
     RespostasDAO respostasDAO = new RespostasDAO();
     Curso curso = new Curso();
     CursoDAO cursoDAO = new CursoDAO();
+    Gabarito gabarito = new Gabarito();
+    GabaritoDAO gabaritoDAO = new GabaritoDAO();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -42,6 +44,8 @@ public class CadastroRespostas extends javax.swing.JDialog {
         initComponents();
         getRootPane().setDefaultButton(btSalvar);
         txtProcessoSeletivo.setEnabled(false);
+        txtGabarito.setEnabled(false);
+        txtCurso.setEnabled(false);
         btLimparActionPerformed(null);
         setModal(true);
     }
@@ -172,6 +176,8 @@ public class CadastroRespostas extends javax.swing.JDialog {
         jlNomeUsuario38 = new javax.swing.JLabel();
         quest42 = new javax.swing.JTextField();
         jLObrigatorioNome36 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtGabarito = new javax.swing.JTextField();
         jLObrigatorioNome37 = new javax.swing.JLabel();
         jlNomeUsuario39 = new javax.swing.JLabel();
         quest35 = new javax.swing.JTextField();
@@ -197,19 +203,21 @@ public class CadastroRespostas extends javax.swing.JDialog {
         txtProcessoSeletivo = new javax.swing.JTextField();
         jLObrigatorioNome44 = new javax.swing.JLabel();
         txtNomeCandidato = new javax.swing.JTextField();
+        btnProcessoSeletivo = new javax.swing.JButton();
         jLObrigatorioNome1 = new javax.swing.JLabel();
+        jLObrigatorioNome48 = new javax.swing.JLabel();
         txtNotaRedacao = new javax.swing.JTextField();
         jLObrigatorioSenha = new javax.swing.JLabel();
         quest45 = new javax.swing.JTextField();
+        btnProcessoSeletivo1 = new javax.swing.JButton();
         txtCurso = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        btnProcessoSeletivo = new javax.swing.JButton();
         jLObrigatorioNome46 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLObrigatorioNome47 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(855, 630));
@@ -854,7 +862,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
         jLObrigatorioNome22.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome22.setText("*");
         getContentPane().add(jLObrigatorioNome22);
-        jLObrigatorioNome22.setBounds(630, 170, 10, 10);
+        jLObrigatorioNome22.setBounds(780, 100, 10, 10);
 
         jlNomeUsuario19.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario19.setText("17");
@@ -1346,6 +1354,16 @@ public class CadastroRespostas extends javax.swing.JDialog {
         getContentPane().add(jLObrigatorioNome36);
         jLObrigatorioNome36.setBounds(450, 350, 10, 10);
 
+        jLabel7.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
+        jLabel7.setText("gabarito");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(630, 112, 80, 30);
+
+        txtGabarito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtGabarito.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
+        getContentPane().add(txtGabarito);
+        txtGabarito.setBounds(710, 110, 80, 30);
+
         jLObrigatorioNome37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome37.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome37.setText("*");
@@ -1544,12 +1562,12 @@ public class CadastroRespostas extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btnCurso);
-        btnCurso.setBounds(800, 500, 30, 30);
+        btnCurso.setBounds(790, 500, 30, 30);
 
         txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtProcessoSeletivo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(txtProcessoSeletivo);
-        txtProcessoSeletivo.setBounds(720, 103, 80, 30);
+        txtProcessoSeletivo.setBounds(200, 110, 80, 30);
 
         jLObrigatorioNome44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome44.setForeground(new java.awt.Color(204, 0, 0));
@@ -1569,11 +1587,32 @@ public class CadastroRespostas extends javax.swing.JDialog {
         getContentPane().add(txtNomeCandidato);
         txtNomeCandidato.setBounds(40, 500, 370, 30);
 
+        btnProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
+        btnProcessoSeletivo.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
+        btnProcessoSeletivo.setContentAreaFilled(false);
+        btnProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnProcessoSeletivo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProcessoSeletivo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcessoSeletivoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProcessoSeletivo);
+        btnProcessoSeletivo.setBounds(790, 110, 30, 30);
+
         jLObrigatorioNome1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome1.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome1.setText("*");
         getContentPane().add(jLObrigatorioNome1);
         jLObrigatorioNome1.setBounds(400, 490, 10, 10);
+
+        jLObrigatorioNome48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome48.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome48.setText("*");
+        getContentPane().add(jLObrigatorioNome48);
+        jLObrigatorioNome48.setBounds(270, 100, 10, 10);
 
         txtNotaRedacao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtNotaRedacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1603,6 +1642,21 @@ public class CadastroRespostas extends javax.swing.JDialog {
         getContentPane().add(quest45);
         quest45.setBounds(760, 420, 60, 30);
 
+        btnProcessoSeletivo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnProcessoSeletivo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
+        btnProcessoSeletivo1.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
+        btnProcessoSeletivo1.setContentAreaFilled(false);
+        btnProcessoSeletivo1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnProcessoSeletivo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProcessoSeletivo1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnProcessoSeletivo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcessoSeletivo1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProcessoSeletivo1);
+        btnProcessoSeletivo1.setBounds(280, 110, 30, 30);
+
         txtCurso.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtCurso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         txtCurso.setMaximumSize(new java.awt.Dimension(8, 200));
@@ -1613,53 +1667,33 @@ public class CadastroRespostas extends javax.swing.JDialog {
             }
         });
         getContentPane().add(txtCurso);
-        txtCurso.setBounds(510, 500, 290, 30);
+        txtCurso.setBounds(510, 500, 280, 30);
 
         jLabel5.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
         jLabel5.setText("cURSO");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(510, 470, 60, 30);
 
-        btnProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
-        btnProcessoSeletivo.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
-        btnProcessoSeletivo.setContentAreaFilled(false);
-        btnProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnProcessoSeletivo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnProcessoSeletivo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProcessoSeletivoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnProcessoSeletivo);
-        btnProcessoSeletivo.setBounds(800, 100, 30, 30);
-
         jLObrigatorioNome46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome46.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome46.setText("*");
         getContentPane().add(jLObrigatorioNome46);
-        jLObrigatorioNome46.setBounds(790, 490, 9, 10);
+        jLObrigatorioNome46.setBounds(780, 490, 9, 10);
 
         jLabel4.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
         jLabel4.setText("CANDIDATO");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 470, 140, 30);
+        jLabel4.setBounds(40, 470, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
         jLabel3.setText("REDAÇÃO");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(420, 470, 70, 30);
 
-        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
         jLabel2.setText("PROCESSO SELETIVO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(540, 104, 180, 30);
-
-        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
-        jLabel1.setText("QUESTÕES");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 99, 110, 40);
+        jLabel2.setBounds(45, 112, 160, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_respostas.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1668,6 +1702,12 @@ public class CadastroRespostas extends javax.swing.JDialog {
         jLabel6.setPreferredSize(new java.awt.Dimension(855, 630));
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 855, 630);
+
+        jLObrigatorioNome47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLObrigatorioNome47.setForeground(new java.awt.Color(204, 0, 0));
+        jLObrigatorioNome47.setText("*");
+        getContentPane().add(jLObrigatorioNome47);
+        jLObrigatorioNome47.setBounds(630, 170, 10, 10);
 
         pack();
         setLocationRelativeTo(null);
@@ -2231,8 +2271,26 @@ public class CadastroRespostas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCursoActionPerformed
 
     private void btnProcessoSeletivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessoSeletivoActionPerformed
-        // TODO add your handling code here:
+        List<Gabarito> lista;
+        lista = (gabaritoDAO.listar());
+        GabaritoTableModel itm = new GabaritoTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Gabarito");
+        if (objetoRetorno != null) {
+            gabarito = gabaritoDAO.consultarObjetoId("idGabarito", objetoRetorno);
+            txtGabarito.setText(gabarito.getProcessoSeletivo().getProcessoSeletivo());
+        }
     }//GEN-LAST:event_btnProcessoSeletivoActionPerformed
+
+    private void btnProcessoSeletivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessoSeletivo1ActionPerformed
+        List<ProcessoSeletivo> lista;
+        lista = (processoSeletivoDAO.listar());
+        ProcessoSeletivoTableModel itm = new ProcessoSeletivoTableModel(lista);
+        Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Processo Seletivo");
+        if (objetoRetorno != null) {
+            processoSeletivo = processoSeletivoDAO.consultarObjetoId("idProcessoSeletivo", objetoRetorno);
+            txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
+        }
+    }//GEN-LAST:event_btnProcessoSeletivo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2299,6 +2357,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
     private javax.swing.JButton btVoltar;
     private javax.swing.JButton btnCurso;
     private javax.swing.JButton btnProcessoSeletivo;
+    private javax.swing.JButton btnProcessoSeletivo1;
     private javax.swing.JLabel jLObrigatorioNome;
     private javax.swing.JLabel jLObrigatorioNome1;
     private javax.swing.JLabel jLObrigatorioNome10;
@@ -2341,18 +2400,20 @@ public class CadastroRespostas extends javax.swing.JDialog {
     private javax.swing.JLabel jLObrigatorioNome44;
     private javax.swing.JLabel jLObrigatorioNome45;
     private javax.swing.JLabel jLObrigatorioNome46;
+    private javax.swing.JLabel jLObrigatorioNome47;
+    private javax.swing.JLabel jLObrigatorioNome48;
     private javax.swing.JLabel jLObrigatorioNome5;
     private javax.swing.JLabel jLObrigatorioNome6;
     private javax.swing.JLabel jLObrigatorioNome7;
     private javax.swing.JLabel jLObrigatorioNome8;
     private javax.swing.JLabel jLObrigatorioNome9;
     private javax.swing.JLabel jLObrigatorioSenha;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jlNomeUsuario;
     private javax.swing.JLabel jlNomeUsuario10;
     private javax.swing.JLabel jlNomeUsuario11;
@@ -2444,6 +2505,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
     private javax.swing.JTextField quest44;
     private javax.swing.JTextField quest45;
     private javax.swing.JTextField txtCurso;
+    private javax.swing.JTextField txtGabarito;
     private javax.swing.JTextField txtNomeCandidato;
     private javax.swing.JTextField txtNotaRedacao;
     private javax.swing.JTextField txtProcessoSeletivo;

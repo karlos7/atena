@@ -188,14 +188,10 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest36 = new javax.swing.JTextField();
         jLObrigatorioNome45 = new javax.swing.JLabel();
         jlNomeUsuario45 = new javax.swing.JLabel();
-        btnAtendimento = new javax.swing.JButton();
+        btnProcessoSeletivo = new javax.swing.JButton();
         txtProcessoSeletivo = new javax.swing.JTextField();
         jLObrigatorioNome44 = new javax.swing.JLabel();
-        jcChamada = new javax.swing.JComboBox<>();
-        jLObrigatorioNome47 = new javax.swing.JLabel();
         jLObrigatorioNome46 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         quest45 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -1165,7 +1161,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         jLObrigatorioNome31.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome31.setText("*");
         getContentPane().add(jLObrigatorioNome31);
-        jLObrigatorioNome31.setBounds(790, 91, 10, 10);
+        jLObrigatorioNome31.setBounds(270, 90, 10, 10);
 
         jlNomeUsuario32.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario32.setText("05");
@@ -1519,25 +1515,25 @@ public class CadastroGabarito extends javax.swing.JDialog {
         getContentPane().add(jlNomeUsuario45);
         jlNomeUsuario45.setBounds(760, 400, 30, 20);
 
-        btnAtendimento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
-        btnAtendimento.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
-        btnAtendimento.setContentAreaFilled(false);
-        btnAtendimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAtendimento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAtendimento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAtendimento.addActionListener(new java.awt.event.ActionListener() {
+        btnProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnProcessoSeletivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_20x20.png"))); // NOI18N
+        btnProcessoSeletivo.setToolTipText("Clique aqui para adicionar um novo estoque do produto selecionado.");
+        btnProcessoSeletivo.setContentAreaFilled(false);
+        btnProcessoSeletivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnProcessoSeletivo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProcessoSeletivo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnProcessoSeletivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtendimentoActionPerformed(evt);
+                btnProcessoSeletivoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAtendimento);
-        btnAtendimento.setBounds(800, 100, 30, 30);
+        getContentPane().add(btnProcessoSeletivo);
+        btnProcessoSeletivo.setBounds(280, 100, 30, 30);
 
         txtProcessoSeletivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtProcessoSeletivo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
         getContentPane().add(txtProcessoSeletivo);
-        txtProcessoSeletivo.setBounds(720, 100, 80, 30);
+        txtProcessoSeletivo.setBounds(200, 100, 80, 30);
 
         jLObrigatorioNome44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome44.setForeground(new java.awt.Color(204, 0, 0));
@@ -1545,39 +1541,16 @@ public class CadastroGabarito extends javax.swing.JDialog {
         getContentPane().add(jLObrigatorioNome44);
         jLObrigatorioNome44.setBounds(810, 410, 10, 10);
 
-        jcChamada.setBackground(new java.awt.Color(204, 102, 0));
-        jcChamada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jcChamada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-------", "1ª Chamada", "2ª Chamada", "3ª Chamada", "4ª Chamada" }));
-        jcChamada.setBorder(null);
-        getContentPane().add(jcChamada);
-        jcChamada.setBounds(320, 100, 120, 30);
-
-        jLObrigatorioNome47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLObrigatorioNome47.setForeground(new java.awt.Color(204, 0, 0));
-        jLObrigatorioNome47.setText("*");
-        getContentPane().add(jLObrigatorioNome47);
-        jLObrigatorioNome47.setBounds(430, 91, 10, 10);
-
         jLObrigatorioNome46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome46.setForeground(new java.awt.Color(204, 0, 0));
         jLObrigatorioNome46.setText("*");
         getContentPane().add(jLObrigatorioNome46);
         jLObrigatorioNome46.setBounds(450, 170, 10, 10);
 
-        jLabel1.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
-        jLabel1.setText("QUESTÕES");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 105, 90, 30);
-
-        jLabel3.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
-        jLabel3.setText("Chamada");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(230, 104, 90, 30);
-
-        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 26)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bebas Neue", 1, 22)); // NOI18N
         jLabel2.setText("PROCESSO SELETIVO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(540, 104, 180, 30);
+        jLabel2.setBounds(40, 100, 160, 30);
 
         quest45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -1660,8 +1633,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             quest43.setText(gabarito.getQuest43());
             quest44.setText(gabarito.getQuest44());
             quest45.setText(gabarito.getQuest45());
-            jcChamada.setSelectedItem(gabarito.getChamada());
-            
+
             processoSeletivo = gabarito.getProcessoSeletivo();
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
 
@@ -1676,7 +1648,6 @@ public class CadastroGabarito extends javax.swing.JDialog {
 
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         Util.limparCamposGenerico(this);
-        jcChamada.setSelectedIndex(0);
         btExcluir.setEnabled(false);
         processoSeletivo = new ProcessoSeletivo();
         gabarito = new Gabarito();
@@ -1715,8 +1686,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
                 || quest39.getText().equalsIgnoreCase("") || quest40.getText().equalsIgnoreCase("")
                 || quest41.getText().equalsIgnoreCase("") || quest42.getText().equalsIgnoreCase("")
                 || quest43.getText().equalsIgnoreCase("") || quest44.getText().equalsIgnoreCase("")
-                || quest45.getText().equalsIgnoreCase("") || txtProcessoSeletivo.getText().equals("")
-                || jcChamada.getSelectedIndex() == 0) {
+                || quest45.getText().equalsIgnoreCase("") || txtProcessoSeletivo.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
             gabarito.setQuest01(quest01.getText().toUpperCase());
@@ -1764,7 +1734,6 @@ public class CadastroGabarito extends javax.swing.JDialog {
             gabarito.setQuest43(quest43.getText().toUpperCase());
             gabarito.setQuest44(quest44.getText().toUpperCase());
             gabarito.setQuest45(quest45.getText().toUpperCase());
-            gabarito.setChamada(jcChamada.getSelectedItem().toString());
 
             gabarito.setProcessoSeletivo(processoSeletivo);
 
@@ -1960,7 +1929,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_quest45ActionPerformed
 
-    private void btnAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtendimentoActionPerformed
+    private void btnProcessoSeletivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessoSeletivoActionPerformed
         List<ProcessoSeletivo> lista;
         lista = (processoSeletivoDAO.listar());
         ProcessoSeletivoTableModel itm = new ProcessoSeletivoTableModel(lista);
@@ -1969,7 +1938,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             processoSeletivo = processoSeletivoDAO.consultarObjetoId("idProcessoSeletivo", objetoRetorno);
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
         }
-    }//GEN-LAST:event_btnAtendimentoActionPerformed
+    }//GEN-LAST:event_btnProcessoSeletivoActionPerformed
 
     private void quest01KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quest01KeyTyped
         travarTeclado(evt, quest01);
@@ -2206,7 +2175,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JButton btPesquisar;
     private javax.swing.JButton btSalvar;
     private javax.swing.JButton btVoltar;
-    private javax.swing.JButton btnAtendimento;
+    private javax.swing.JButton btnProcessoSeletivo;
     private javax.swing.JLabel jLObrigatorioNome;
     private javax.swing.JLabel jLObrigatorioNome10;
     private javax.swing.JLabel jLObrigatorioNome11;
@@ -2248,17 +2217,13 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JLabel jLObrigatorioNome44;
     private javax.swing.JLabel jLObrigatorioNome45;
     private javax.swing.JLabel jLObrigatorioNome46;
-    private javax.swing.JLabel jLObrigatorioNome47;
     private javax.swing.JLabel jLObrigatorioNome5;
     private javax.swing.JLabel jLObrigatorioNome6;
     private javax.swing.JLabel jLObrigatorioNome7;
     private javax.swing.JLabel jLObrigatorioNome8;
     private javax.swing.JLabel jLObrigatorioNome9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JComboBox<String> jcChamada;
     private javax.swing.JLabel jlNomeUsuario;
     private javax.swing.JLabel jlNomeUsuario10;
     private javax.swing.JLabel jlNomeUsuario11;

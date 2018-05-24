@@ -22,6 +22,7 @@ public class ProcessoSeletivo implements Serializable {
     @GeneratedValue
     private int idProcessoSeletivo;
     private String processoSeletivo;
+    private String chamada;
 
     public int getIdProcessoSeletivo() {
         return idProcessoSeletivo;
@@ -37,6 +38,14 @@ public class ProcessoSeletivo implements Serializable {
 
     public void setProcessoSeletivo(String processoSeletivo) {
         this.processoSeletivo = processoSeletivo;
+    }
+
+    public String getChamada() {
+        return chamada;
+    }
+
+    public void setChamada(String chamada) {
+        this.chamada = chamada;
     }
     
 }
