@@ -1739,7 +1739,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        processoSeletivoDAO.excluir(processoSeletivo);
+        respostasDAO.excluir(respostas);
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 

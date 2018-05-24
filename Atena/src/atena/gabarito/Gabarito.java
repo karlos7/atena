@@ -7,6 +7,7 @@ package atena.gabarito;
 
 import atena.processoseletivo.ProcessoSeletivo;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Gabarito {
     private int idGabarito;
     private String chamada;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private ProcessoSeletivo processoSeletivo;
     private String quest01;
     private String quest02;

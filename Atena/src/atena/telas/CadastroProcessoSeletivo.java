@@ -5,6 +5,8 @@
  */
 package atena.telas;
 
+import atena.gabarito.Gabarito;
+import atena.gabarito.GabaritoDAO;
 import atena.processoseletivo.ProcessoSeletivo;
 import atena.processoseletivo.ProcessoSeletivoDAO;
 import atena.processoseletivo.ProcessoSeletivoTableModel;
@@ -13,6 +15,7 @@ import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
 import atena.util.Util;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -24,6 +27,8 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
 
     ProcessoSeletivo processoSeletivo = new ProcessoSeletivo();
     ProcessoSeletivoDAO processoSeletivoDAO = new ProcessoSeletivoDAO();
+    Gabarito gabarito = new Gabarito();
+    GabaritoDAO gabaritoDAO = new GabaritoDAO();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -180,6 +185,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
         List<ProcessoSeletivo> lista;
+        List<Gabarito> listaGabarito;
         lista = (processoSeletivoDAO.listar());
         ProcessoSeletivoTableModel itm = new ProcessoSeletivoTableModel(lista);
         Object objetoRetorno = PesquisaGenerica.exibeTela(itm, "Processo Seletivo");
@@ -188,10 +194,35 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
             btExcluir.setEnabled(true);
         }
+        listaGabarito = (gabaritoDAO.listar());
+        List<Gabarito> listaFiltrada = new ArrayList<>();
+        for (Gabarito gab : listaGabarito) {
+            if (gab.getProcessoSeletivo().getIdProcessoSeletivo() == processoSeletivo.getIdProcessoSeletivo()) {
+                listaFiltrada.add(gab);
+                gabarito = gab;
+            }
+        }
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        processoSeletivoDAO.excluir(processoSeletivo);
+        Object[] options = {"Sim", "Não"};
+        if (gabarito.getIdGabarito() == 0) {
+            if (processoSeletivo.getIdProcessoSeletivo() != 0) {
+                if (JOptionPane.showOptionDialog(null, "Deseja excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo()
+                        + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
+                    if (processoSeletivoDAO.remover(processoSeletivo)) {
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo(),
+                                "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "A exclusão foi cancelada!");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo() + ", \npois este já possui gabaritos associados!",
+                    "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+        }
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 
@@ -199,6 +230,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
         Util.limparCamposGenerico(this);
         btExcluir.setEnabled(false);
         processoSeletivo = new ProcessoSeletivo();
+        gabarito = new Gabarito();
         txtProcessoSeletivo.setEnabled(true);
 
     }//GEN-LAST:event_btLimparActionPerformed

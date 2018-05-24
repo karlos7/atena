@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
  *
  * @author Karlos
  */
-public class ProcessoSeletivoDAO extends GenericDAO<ProcessoSeletivo>{
-    
+public class ProcessoSeletivoDAO extends GenericDAO<ProcessoSeletivo> {
+
     public ProcessoSeletivoDAO() {
         super(ProcessoSeletivo.class);
     }
@@ -34,23 +34,26 @@ public class ProcessoSeletivoDAO extends GenericDAO<ProcessoSeletivo>{
         }
     }
 
-    public boolean excluir(ProcessoSeletivo processoSeletivo) {
-        Object[] options = {"Sim", "Não"};
-        if (processoSeletivo.getIdProcessoSeletivo() != 0) {
-            if (JOptionPane.showOptionDialog(null, "Deseja excluir o processo seletivo" + processoSeletivo.getProcessoSeletivo()
-                    + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
-                if (remover(processoSeletivo)) {
-                    JOptionPane.showMessageDialog(null, "Processo seletivo excluído com sucesso!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Não foi possível excluir o processo seletivo" + processoSeletivo.getProcessoSeletivo(),
-                            "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
-                    return false;
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "A exclusão foi cancelada!");
-            }
-        }
-        return true;
-    }
+//    public boolean excluir(ProcessoSeletivo processoSeletivo) {
+//        Object[] options = {"Sim", "Não"};
+//        if (processoSeletivo.getIdProcessoSeletivo() != 0) {
+//            if (JOptionPane.showOptionDialog(null, "Deseja excluir o processo seletivo" + processoSeletivo.getProcessoSeletivo()
+//                    + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
+//                
+//                if (remover(processoSeletivo)) {
+//                    JOptionPane.showMessageDialog(null, "Processo seletivo excluído com sucesso!");
+//                } else {
+//                    JOptionPane.showMessageDialog(null, "Não foi possível excluir o processo seletivo" + processoSeletivo.getProcessoSeletivo(),
+//                            "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+//                    return false;
+//                }
+//            } else {
+//                JOptionPane.showMessageDialog(null, "A exclusão foi cancelada!");
+//            }
+//        }
+//        return true;
+//    }
     
+    
+
 }
