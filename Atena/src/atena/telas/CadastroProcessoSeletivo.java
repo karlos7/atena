@@ -229,11 +229,12 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
         Object[] options = {"Sim", "Não"};
         if (gabarito.getIdGabarito() == 0) {
             if (processoSeletivo.getIdProcessoSeletivo() != 0) {
-                if (JOptionPane.showOptionDialog(null, "Deseja excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo()
+                if (JOptionPane.showOptionDialog(null, "Deseja excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo() + "\n"
+                        + " da " + processoSeletivo.getChamada()
                         + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
                     if (processoSeletivoDAO.remover(processoSeletivo)) {
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo(),
+                        JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o processo seletivo " + processoSeletivo.getProcessoSeletivo() + " da " + processoSeletivo.getChamada(),
                                 "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {

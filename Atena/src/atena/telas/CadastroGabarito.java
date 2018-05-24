@@ -11,10 +11,13 @@ import atena.gabarito.GabaritoTableModel;
 import atena.processoseletivo.ProcessoSeletivo;
 import atena.processoseletivo.ProcessoSeletivoDAO;
 import atena.processoseletivo.ProcessoSeletivoTableModel;
+import atena.respostas.Respostas;
+import atena.respostas.RespostasDAO;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
 import atena.util.Util;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -29,6 +32,8 @@ public class CadastroGabarito extends javax.swing.JDialog {
     ProcessoSeletivoDAO processoSeletivoDAO = new ProcessoSeletivoDAO();
     Gabarito gabarito = new Gabarito();
     GabaritoDAO gabaritoDAO = new GabaritoDAO();
+    Respostas respostas = new Respostas();
+    RespostasDAO respostasDAO = new RespostasDAO();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -1582,6 +1587,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        List<Respostas> listaRespostas;
         List<Gabarito> lista;
         lista = (gabaritoDAO.listar());
         GabaritoTableModel itm = new GabaritoTableModel(lista);
@@ -1639,10 +1645,35 @@ public class CadastroGabarito extends javax.swing.JDialog {
 
             btExcluir.setEnabled(true);
         }
+        listaRespostas = (respostasDAO.listar());
+        List<Respostas> listaFiltrada = new ArrayList<>();
+        for (Respostas resp : listaRespostas) {
+            if (resp.getGabarito().getIdGabarito() == gabarito.getIdGabarito()) {
+                listaFiltrada.add(resp);
+                respostas = resp;
+            }
+        }
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        gabaritoDAO.excluir(gabarito);
+        Object[] options = {"Sim", "Não"};
+        if (respostas.getIdRespostas() == 0) {
+            if (gabarito.getIdGabarito() != 0) {
+                if (JOptionPane.showOptionDialog(null, "Deseja excluir o gabarito " + gabarito.getProcessoSeletivo().getProcessoSeletivo() + " da " + gabarito.getProcessoSeletivo().getChamada()
+                        + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
+                    if (processoSeletivoDAO.remover(processoSeletivo)) {
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o gabarito " + gabarito.getProcessoSeletivo().getProcessoSeletivo() + " da " + gabarito.getProcessoSeletivo().getChamada(),
+                                "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "A exclusão foi cancelada!");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Não foi possível excluir o gabarito " + gabarito.getProcessoSeletivo().getProcessoSeletivo() + " da " + gabarito.getProcessoSeletivo().getChamada() + ", \npois este já possui respostas associadas!",
+                    "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+        }
         btLimparActionPerformed(null);
     }//GEN-LAST:event_btExcluirActionPerformed
 

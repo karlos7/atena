@@ -20,7 +20,7 @@ public class Curso {
     @Id
     @GeneratedValue
     private int idCurso;
-    @Column(length = 100, nullable = false)
+    
     private String nomeCurso;
 
     public int getIdCurso() {
@@ -38,5 +38,5 @@ public class Curso {
     public void setNomeCurso(String nomeCurso) {
         this.nomeCurso = nomeCurso;
     }
-        
+
 }

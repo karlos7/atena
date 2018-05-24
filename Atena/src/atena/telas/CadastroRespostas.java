@@ -1714,6 +1714,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        
         List<Respostas> lista;
         lista = (respostasDAO.listar());
         RespostasTableModel itm = new RespostasTableModel(lista);
@@ -1768,6 +1769,10 @@ public class CadastroRespostas extends javax.swing.JDialog {
 
             processoSeletivo = respostas.getProcessoSeletivo();
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
+            
+            gabarito = respostas.getGabarito();
+            txtGabarito.setText(gabarito.getProcessoSeletivo().getProcessoSeletivo());
+            
             curso = respostas.getCurso();
             txtCurso.setText(curso.getNomeCurso());
             
@@ -1787,7 +1792,8 @@ public class CadastroRespostas extends javax.swing.JDialog {
         Util.limparCamposGenerico(this);
         btExcluir.setEnabled(false);
         processoSeletivo = new ProcessoSeletivo();
-
+        gabarito = new Gabarito();
+        respostas = new Respostas();
     }//GEN-LAST:event_btLimparActionPerformed
 
     //Falta travar teclado
@@ -1876,6 +1882,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
             respostas.setQuest45(quest45.getText().toUpperCase());
 
             respostas.setProcessoSeletivo(processoSeletivo);
+            respostas.setGabarito(gabarito);
             respostas.setCurso(curso);
             respostas.setNomeCandidato(txtNomeCandidato.getText());
             respostas.setNotaRedacao(Double.valueOf(txtNotaRedacao.getText()));

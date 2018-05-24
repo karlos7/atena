@@ -22,12 +22,14 @@ public class ProcessoSeletivoDAO extends GenericDAO<ProcessoSeletivo> {
         Object[] options = {"Sim", "Não"};
         if (processoSeletivo.getIdProcessoSeletivo() == 0) {
             if (adicionar(processoSeletivo)) {
-                JOptionPane.showMessageDialog(null, "Processo seletivo " + processoSeletivo.getProcessoSeletivo() + " cadastrado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Processo seletivo " + processoSeletivo.getProcessoSeletivo() + "\n"
+                        + "de " + processoSeletivo.getChamada() + " cadastrado com sucesso!");
             }
         } else if (JOptionPane.showOptionDialog(null, "Deseja mesmo realizar essa edição"
                 + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
             if (atualizar(processoSeletivo)) {
-                JOptionPane.showMessageDialog(null, "Processo seletivo " + processoSeletivo.getProcessoSeletivo() + " editado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Processo seletivo " + processoSeletivo.getProcessoSeletivo() + "\n"
+                        + "de " + processoSeletivo.getChamada() + " editado com sucesso!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "A edição foi cancelada!");

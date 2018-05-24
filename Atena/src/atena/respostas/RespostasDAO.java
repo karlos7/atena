@@ -22,12 +22,12 @@ public class RespostasDAO extends GenericDAO<Respostas>{
         Object[] options = {"Sim", "Não"};
         if (respostas.getIdRespostas() == 0) {
             if (adicionar(respostas)) {
-                JOptionPane.showMessageDialog(null, "Respostas cadastradas com sucesso!");
+                JOptionPane.showMessageDialog(null, "Respostas de " + respostas.getNomeCandidato() + " cadastradas com sucesso!");
             }
         } else if (JOptionPane.showOptionDialog(null, "Deseja mesmo realizar essa edição"
                 + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
             if (atualizar(respostas)) {
-                JOptionPane.showMessageDialog(null, "Respostas editadas com sucesso!");
+                JOptionPane.showMessageDialog(null, "Respostas de " + respostas.getNomeCandidato() + " editadas com sucesso!");
             }
         } else {
             JOptionPane.showMessageDialog(null, "A edição foi cancelada!");
@@ -37,12 +37,12 @@ public class RespostasDAO extends GenericDAO<Respostas>{
     public boolean excluir(Respostas respostas) {
         Object[] options = {"Sim", "Não"};
         if (respostas.getIdRespostas() != 0) {
-            if (JOptionPane.showOptionDialog(null, "Deseja excluir as respostas"
+            if (JOptionPane.showOptionDialog(null, "Deseja excluir as respostas de " + respostas.getNomeCandidato()
                     + "?", "Atena", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == JOptionPane.YES_OPTION) {
                 if (remover(respostas)) {
-                    JOptionPane.showMessageDialog(null, "Respostas excluídas com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Respostas de " + respostas.getNomeCandidato() + " excluídas com sucesso!");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Não foi possível excluir as respostas",
+                    JOptionPane.showMessageDialog(null, "Não foi possível excluir as respostas de " + respostas.getNomeCandidato(),
                             "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }

@@ -13,8 +13,8 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Karlos
  */
-public class CursoTableModel extends AbstractTableModel{
-    
+public class CursoTableModel extends AbstractTableModel {
+
     private List<Curso> cursos = new ArrayList<>();
     private String[] colunas = {"Código", "Curso"};
 
@@ -55,5 +55,5 @@ public class CursoTableModel extends AbstractTableModel{
         }
         return null;
     }
-    
+
 }

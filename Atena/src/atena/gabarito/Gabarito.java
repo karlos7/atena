@@ -22,10 +22,10 @@ public class Gabarito {
     @Id
     @GeneratedValue
     private int idGabarito;
-    
-    
+        
     @OneToOne(fetch = FetchType.EAGER)
     private ProcessoSeletivo processoSeletivo;
+    
     private String quest01;
     private String quest02;
     private String quest03;
