@@ -39,9 +39,9 @@ public class RespostasTableModel extends AbstractTableModel{
             case 0:
                 return resposta.getIdRespostas();
             case 1:
-                return resposta.getProcessoSeletivo().getProcessoSeletivo();
+                return resposta.getGabarito().getProcessoSeletivo().getProcessoSeletivo();
             case 2:
-                return resposta.getProcessoSeletivo().getChamada();
+                return resposta.getGabarito().getProcessoSeletivo().getChamada();
             case 3:
                 return resposta.getNomeCandidato();
             case 4:

@@ -24,8 +24,6 @@ public class Respostas {
     @Id
     @GeneratedValue
     private int idRespostas;
-    @OneToOne(fetch = FetchType.EAGER)
-    private ProcessoSeletivo processoSeletivo;
    
     @OneToOne(fetch = FetchType.EAGER)
     private Curso curso;
@@ -88,14 +86,6 @@ public class Respostas {
 
     public void setIdRespostas(int idRespostas) {
         this.idRespostas = idRespostas;
-    }
-
-    public ProcessoSeletivo getProcessoSeletivo() {
-        return processoSeletivo;
-    }
-
-    public void setProcessoSeletivo(ProcessoSeletivo processoSeletivo) {
-        this.processoSeletivo = processoSeletivo;
     }
 
     public Curso getCurso() {
