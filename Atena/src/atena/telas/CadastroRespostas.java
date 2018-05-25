@@ -1808,7 +1808,6 @@ public class CadastroRespostas extends javax.swing.JDialog {
     }
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-
         if (quest01.getText().equalsIgnoreCase("") || quest02.getText().equalsIgnoreCase("")
                 || quest03.getText().equalsIgnoreCase("") || quest04.getText().equalsIgnoreCase("")
                 || quest05.getText().equalsIgnoreCase("") || quest06.getText().equalsIgnoreCase("")
