@@ -19,7 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
-        //jlUsuario.setText(usuario.getLoginUsuario());
+        jlUsuario.setText(usuario.getLoginUsuario());
         //jlPermissao.setText(usuario.getTipoDeAcessoUsuario());
 //        if (!usuario.getTipoDeAcessoUsuario().equalsIgnoreCase("administrador")) {
 //            permissao();
@@ -52,6 +52,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         subCadRespostas = new javax.swing.JMenuItem();
         subUsuario = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
+        subCadCurso1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 547));
@@ -166,6 +167,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 menuRelatorioActionPerformed(evt);
             }
         });
+
+        subCadCurso1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/add_15x15.png"))); // NOI18N
+        subCadCurso1.setText("Resultados");
+        subCadCurso1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        subCadCurso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCadCurso1ActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(subCadCurso1);
+
         jMenu.add(menuRelatorio);
 
         setJMenuBar(jMenu);
@@ -192,7 +204,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_subUsuarioActionPerformed
 
     private void menuRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_menuRelatorioActionPerformed
 
     private void subCadGabaritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadGabaritoActionPerformed
@@ -209,6 +221,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CadastroProcessoSeletivo cadastroProcessoSeletivo = new CadastroProcessoSeletivo(null, rootPaneCheckingEnabled);
         cadastroProcessoSeletivo.setVisible(true);
     }//GEN-LAST:event_subCadProcessoSeletivoActionPerformed
+
+    private void subCadCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCadCurso1ActionPerformed
+        RelatorioGeral relatorioGeral = new RelatorioGeral(null, rootPaneCheckingEnabled);
+        relatorioGeral.setVisible(true);
+    }//GEN-LAST:event_subCadCurso1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,6 +274,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuCadastros;
     private javax.swing.JMenu menuRelatorio;
     private javax.swing.JMenuItem subCadCurso;
+    private javax.swing.JMenuItem subCadCurso1;
     private javax.swing.JMenuItem subCadGabarito;
     private javax.swing.JMenuItem subCadProcessoSeletivo;
     private javax.swing.JMenuItem subCadRespostas;

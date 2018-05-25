@@ -73,7 +73,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         btVoltar1.setText("ADMINISTRAÇÃO");
         btVoltar1.setContentAreaFilled(false);
         btVoltar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btVoltar1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         btVoltar1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btVoltar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

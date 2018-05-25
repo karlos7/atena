@@ -213,6 +213,7 @@ public class CadastroProcessoSeletivo extends javax.swing.JDialog {
         if (objetoRetorno != null) {
             processoSeletivo = processoSeletivoDAO.consultarObjetoId("idProcessoSeletivo", objetoRetorno);
             txtProcessoSeletivo.setText(processoSeletivo.getProcessoSeletivo());
+            jcChamada.setSelectedItem(processoSeletivo.getChamada());
             btExcluir.setEnabled(true);
         }
         listaGabarito = (gabaritoDAO.listar());
