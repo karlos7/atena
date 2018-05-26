@@ -73,7 +73,6 @@ public class PesquisaGenerica extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator4 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbPesquisa = new javax.swing.JTable();
         btEditar = new javax.swing.JButton();
@@ -83,14 +82,12 @@ public class PesquisaGenerica extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(700, 500));
+        setMaximumSize(new java.awt.Dimension(710, 520));
+        setMinimumSize(new java.awt.Dimension(710, 520));
         setModal(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(710, 520));
         getContentPane().setLayout(null);
-
-        jSeparator4.setForeground(new java.awt.Color(58, 100, 62));
-        getContentPane().add(jSeparator4);
-        jSeparator4.setBounds(0, 410, 700, 10);
 
         tbPesquisa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(58, 100, 62), 1, true));
         tbPesquisa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -123,7 +120,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
         jScrollPane1.setViewportView(tbPesquisa);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 150, 640, 250);
+        jScrollPane1.setBounds(30, 150, 650, 270);
 
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/edit.png"))); // NOI18N
@@ -138,7 +135,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btEditar);
-        btEditar.setBounds(580, 420, 110, 70);
+        btEditar.setBounds(590, 440, 110, 70);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -153,7 +150,7 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(10, 420, 80, 70);
+        btVoltar.setBounds(10, 440, 80, 70);
 
         tfPesquisa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tfPesquisa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(58, 100, 62), 1, true));
@@ -163,13 +160,16 @@ public class PesquisaGenerica extends javax.swing.JDialog {
             }
         });
         getContentPane().add(tfPesquisa);
-        tfPesquisa.setBounds(124, 91, 540, 30);
+        tfPesquisa.setBounds(130, 101, 550, 30);
 
         jlPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pesquisa.png"))); // NOI18N
         jlPesquisar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 2, true));
+        jlPesquisar.setMaximumSize(new java.awt.Dimension(710, 520));
+        jlPesquisar.setMinimumSize(new java.awt.Dimension(710, 520));
+        jlPesquisar.setPreferredSize(new java.awt.Dimension(710, 520));
         getContentPane().add(jlPesquisar);
-        jlPesquisar.setBounds(0, 0, 700, 500);
+        jlPesquisar.setBounds(0, 0, 710, 520);
 
         pack();
         setLocationRelativeTo(null);
@@ -287,7 +287,6 @@ public class PesquisaGenerica extends javax.swing.JDialog {
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btVoltar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel jlPesquisar;
     private javax.swing.JTable tbPesquisa;
     private javax.swing.JTextField tfPesquisa;
