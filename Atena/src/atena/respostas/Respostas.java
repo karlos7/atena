@@ -8,6 +8,8 @@ package atena.respostas;
 import atena.curso.Curso;
 import atena.gabarito.Gabarito;
 import atena.processoseletivo.ProcessoSeletivo;
+import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,7 @@ import javax.persistence.OneToOne;
  * @author Karlos
  */
 @Entity
-public class Respostas {
+public class Respostas implements Comparable<Respostas>, Serializable{
     
     @Id
     @GeneratedValue
@@ -32,8 +34,8 @@ public class Respostas {
     private Gabarito gabarito;
     
     private String nomeCandidato;
-    private double notaRedacao;
-    private int totalPontos;
+    private Double notaRedacao;
+    private Double totalPontos;
     private boolean qualificado;
     
     private String quest01;
@@ -114,19 +116,19 @@ public class Respostas {
         this.nomeCandidato = nomeCandidato;
     }
 
-    public double getNotaRedacao() {
+    public Double getNotaRedacao() {
         return notaRedacao;
     }
 
-    public void setNotaRedacao(double notaRedacao) {
+    public void setNotaRedacao(Double notaRedacao) {
         this.notaRedacao = notaRedacao;
     }
 
-    public int getTotalPontos() {
+    public Double getTotalPontos() {
         return totalPontos;
     }
 
-    public void setTotalPontos(int totalPontos) {
+    public void setTotalPontos(Double totalPontos) {
         this.totalPontos = totalPontos;
     }
 
@@ -497,5 +499,24 @@ public class Respostas {
     public void setQuest45(String quest45) {
         this.quest45 = quest45;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        Respostas outro = (Respostas) obj;
+        return this.totalPontos.equals(outro.totalPontos);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.totalPontos);
+        return hash;
+    }
+    
+    @Override
+    public int compareTo(Respostas r) {
+        return this.totalPontos.compareTo(r.totalPontos);
+    }
+    
     
 }

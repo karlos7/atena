@@ -1760,6 +1760,11 @@ public class CadastroRespostas extends javax.swing.JDialog {
         processoSeletivo = new ProcessoSeletivo();
         gabarito = new Gabarito();
         respostas = new Respostas();
+        pontos = 0;
+        blocoUm = 0;
+        blocoDois = 0;
+        blocoTres = 0;
+        blocoQuatro = 0;
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void travarTeclado(java.awt.event.KeyEvent evt, JTextField txt) {
@@ -1796,7 +1801,7 @@ public class CadastroRespostas extends javax.swing.JDialog {
                 || quest41.getText().equalsIgnoreCase("") || quest42.getText().equalsIgnoreCase("")
                 || quest43.getText().equalsIgnoreCase("") || quest44.getText().equalsIgnoreCase("")
                 || quest45.getText().equalsIgnoreCase("") || txtNomeCandidato.getText().equals("")
-                || txtNotaRedacao.getText().equals("")) {
+                || txtNotaRedacao.getText().equals("") || txtGabarito.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Prencha todos os campos !!");
         } else {
             respostas.setQuest01(quest01.getText().toUpperCase());
@@ -1851,391 +1856,391 @@ public class CadastroRespostas extends javax.swing.JDialog {
             respostas.setNotaRedacao(Double.valueOf(txtNotaRedacao.getText()));
             respostas.setTotalPontos(totalPontos());
             respostas.setQualificado(qualificado());
-            
+
             respostasDAO.salvar(respostas);
-            
+            JOptionPane.showMessageDialog(null, respostas.getTotalPontos());
             btLimparActionPerformed(null);
 
         }
     }//GEN-LAST:event_btSalvarActionPerformed
-    
-    private int totalPontos() {
+
+    private double totalPontos() {
         if (txtCurso.getText().equalsIgnoreCase("Enfermagem") || txtCurso.getText().equalsIgnoreCase("Fisioterapia")
                 || txtCurso.getText().equalsIgnoreCase("Educação Física")) {
             if (gabarito.getQuest01().equalsIgnoreCase(quest01.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest02().equalsIgnoreCase(quest02.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest03().equalsIgnoreCase(quest03.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest04().equalsIgnoreCase(quest04.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest05().equalsIgnoreCase(quest05.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest06().equalsIgnoreCase(quest06.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest07().equalsIgnoreCase(quest07.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest08().equalsIgnoreCase(quest08.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest09().equalsIgnoreCase(quest09.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest10().equalsIgnoreCase(quest10.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest11().equalsIgnoreCase(quest11.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest12().equalsIgnoreCase(quest12.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest13().equalsIgnoreCase(quest13.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoUm++;
             }
             if (gabarito.getQuest14().equalsIgnoreCase(quest14.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest15().equalsIgnoreCase(quest15.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest16().equalsIgnoreCase(quest16.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest17().equalsIgnoreCase(quest17.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest18().equalsIgnoreCase(quest18.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest19().equalsIgnoreCase(quest19.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest20().equalsIgnoreCase(quest20.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest21().equalsIgnoreCase(quest21.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest22().equalsIgnoreCase(quest22.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest23().equalsIgnoreCase(quest23.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest24().equalsIgnoreCase(quest24.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest25().equalsIgnoreCase(quest25.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest26().equalsIgnoreCase(quest26.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest27().equalsIgnoreCase(quest27.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest28().equalsIgnoreCase(quest28.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest29().equalsIgnoreCase(quest29.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest30().equalsIgnoreCase(quest30.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest31().equalsIgnoreCase(quest31.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest32().equalsIgnoreCase(quest32.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest33().equalsIgnoreCase(quest33.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest34().equalsIgnoreCase(quest34.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest35().equalsIgnoreCase(quest35.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest36().equalsIgnoreCase(quest36.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest37().equalsIgnoreCase(quest37.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoTres++;
             }
             if (gabarito.getQuest38().equalsIgnoreCase(quest38.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest39().equalsIgnoreCase(quest39.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest40().equalsIgnoreCase(quest40.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest41().equalsIgnoreCase(quest41.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest42().equalsIgnoreCase(quest42.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest43().equalsIgnoreCase(quest43.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest44().equalsIgnoreCase(quest44.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
             if (gabarito.getQuest45().equalsIgnoreCase(quest45.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoQuatro++;
             }
         } else if (txtCurso.getText().equalsIgnoreCase("Administração") || txtCurso.getText().equalsIgnoreCase("Ciências Contábeis")
                 || txtCurso.getText().equalsIgnoreCase("Análise e Desenvolvimento de Sistemas") || txtCurso.getText().equalsIgnoreCase("Psicologia")
                 || txtCurso.getText().equalsIgnoreCase("Serviço Social") || txtCurso.getText().equalsIgnoreCase("Direito")) {
             if (gabarito.getQuest01().equalsIgnoreCase(quest01.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest02().equalsIgnoreCase(quest02.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest03().equalsIgnoreCase(quest03.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest04().equalsIgnoreCase(quest04.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest05().equalsIgnoreCase(quest05.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest06().equalsIgnoreCase(quest06.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest07().equalsIgnoreCase(quest07.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest08().equalsIgnoreCase(quest08.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest09().equalsIgnoreCase(quest09.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest10().equalsIgnoreCase(quest10.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest11().equalsIgnoreCase(quest11.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest12().equalsIgnoreCase(quest12.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest13().equalsIgnoreCase(quest13.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoUm++;
             }
             if (gabarito.getQuest14().equalsIgnoreCase(quest14.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest15().equalsIgnoreCase(quest15.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest16().equalsIgnoreCase(quest16.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest17().equalsIgnoreCase(quest17.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest18().equalsIgnoreCase(quest18.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest19().equalsIgnoreCase(quest19.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest20().equalsIgnoreCase(quest20.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest21().equalsIgnoreCase(quest21.getText())) {
-                pontos = (pontos + 1) * 4;
+                pontos = pontos + 4;
                 blocoDois++;
             }
             if (gabarito.getQuest22().equalsIgnoreCase(quest22.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest23().equalsIgnoreCase(quest23.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest24().equalsIgnoreCase(quest24.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest25().equalsIgnoreCase(quest25.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest26().equalsIgnoreCase(quest26.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest27().equalsIgnoreCase(quest27.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest28().equalsIgnoreCase(quest28.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest29().equalsIgnoreCase(quest29.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest30().equalsIgnoreCase(quest30.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest31().equalsIgnoreCase(quest31.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest32().equalsIgnoreCase(quest32.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest33().equalsIgnoreCase(quest33.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest34().equalsIgnoreCase(quest34.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest35().equalsIgnoreCase(quest35.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest36().equalsIgnoreCase(quest36.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest37().equalsIgnoreCase(quest37.getText())) {
-                pontos = (pontos + 1) * 2;
+                pontos = pontos + 2;
                 blocoTres++;
             }
             if (gabarito.getQuest38().equalsIgnoreCase(quest38.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest39().equalsIgnoreCase(quest39.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest40().equalsIgnoreCase(quest40.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest41().equalsIgnoreCase(quest41.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest42().equalsIgnoreCase(quest42.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest43().equalsIgnoreCase(quest43.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest44().equalsIgnoreCase(quest44.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
             if (gabarito.getQuest45().equalsIgnoreCase(quest45.getText())) {
-                pontos = (pontos + 1) * 6;
+                pontos = pontos + 6;
                 blocoQuatro++;
             }
         }
-        return pontos;
+        return pontos + Double.parseDouble(txtNotaRedacao.getText());
     }
-    
-    private boolean qualificado(){
+
+    private boolean qualificado() {
         if (blocoUm == 0 || blocoDois == 0 || blocoTres == 0 || blocoQuatro == 0) {
             return false;
         }
         return true;
     }
-    
+
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
@@ -2644,16 +2649,24 @@ public class CadastroRespostas extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroRespostas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroRespostas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
