@@ -33,6 +33,8 @@ public class Respostas {
     
     private String nomeCandidato;
     private double notaRedacao;
+    private int totalPontos;
+    private boolean qualificado;
     
     private String quest01;
     private String quest02;
@@ -118,6 +120,22 @@ public class Respostas {
 
     public void setNotaRedacao(double notaRedacao) {
         this.notaRedacao = notaRedacao;
+    }
+
+    public int getTotalPontos() {
+        return totalPontos;
+    }
+
+    public void setTotalPontos(int totalPontos) {
+        this.totalPontos = totalPontos;
+    }
+
+    public boolean isQualificado() {
+        return qualificado;
+    }
+
+    public void setQualificado(boolean qualificado) {
+        this.qualificado = qualificado;
     }
     
     public String getQuest01() {

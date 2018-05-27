@@ -10,6 +10,8 @@ import atena.gabarito.GabaritoDAO;
 import atena.processoseletivo.ProcessoSeletivo;
 import atena.processoseletivo.ProcessoSeletivoDAO;
 import atena.processoseletivo.ProcessoSeletivoTableModel;
+import atena.respostas.Respostas;
+import atena.respostas.RespostasDAO;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
@@ -29,6 +31,9 @@ public class RelatorioGeral extends javax.swing.JDialog {
     ProcessoSeletivoDAO processoSeletivoDAO = new ProcessoSeletivoDAO();
     Gabarito gabarito = new Gabarito();
     GabaritoDAO gabaritoDAO = new GabaritoDAO();
+    Respostas respostas = new Respostas();
+    RespostasDAO respostasDAO = new RespostasDAO();
+    int pontos = 0;
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -230,8 +235,12 @@ public class RelatorioGeral extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+    private void calcularNota() {
+        
+    }
 
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
