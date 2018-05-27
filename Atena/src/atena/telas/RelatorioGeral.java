@@ -34,6 +34,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
     Respostas respostas = new Respostas();
     RespostasDAO respostasDAO = new RespostasDAO();
     int pontos = 0;
+    List<Respostas> ranking = new ArrayList<>();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -53,16 +54,16 @@ public class RelatorioGeral extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btVoltar1 = new javax.swing.JButton();
-        btVoltar4 = new javax.swing.JButton();
-        btVoltar2 = new javax.swing.JButton();
-        btVoltar3 = new javax.swing.JButton();
-        btVoltar5 = new javax.swing.JButton();
+        btAdministracao = new javax.swing.JButton();
+        btServicoSocial = new javax.swing.JButton();
+        btContabeis = new javax.swing.JButton();
+        btAnalise = new javax.swing.JButton();
+        btDireito = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
-        btVoltar7 = new javax.swing.JButton();
-        btVoltar6 = new javax.swing.JButton();
-        btVoltar8 = new javax.swing.JButton();
-        btVoltar9 = new javax.swing.JButton();
+        btEnfermagem = new javax.swing.JButton();
+        btEducacaoFisica = new javax.swing.JButton();
+        btFisioterapia = new javax.swing.JButton();
+        btPsicologia = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -73,80 +74,80 @@ public class RelatorioGeral extends javax.swing.JDialog {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btVoltar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/adm.png"))); // NOI18N
-        btVoltar1.setText("ADMINISTRAÇÃO");
-        btVoltar1.setContentAreaFilled(false);
-        btVoltar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        btVoltar1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar1.addActionListener(new java.awt.event.ActionListener() {
+        btAdministracao.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btAdministracao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/adm.png"))); // NOI18N
+        btAdministracao.setText("ADMINISTRAÇÃO");
+        btAdministracao.setContentAreaFilled(false);
+        btAdministracao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btAdministracao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btAdministracao.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btAdministracao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar1ActionPerformed(evt);
+                btAdministracaoActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar1);
-        btVoltar1.setBounds(20, 110, 200, 60);
+        getContentPane().add(btAdministracao);
+        btAdministracao.setBounds(20, 110, 200, 60);
 
-        btVoltar4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/servico_social.png"))); // NOI18N
-        btVoltar4.setText("SERVIÇO SOCIAL");
-        btVoltar4.setContentAreaFilled(false);
-        btVoltar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar4.addActionListener(new java.awt.event.ActionListener() {
+        btServicoSocial.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btServicoSocial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/servico_social.png"))); // NOI18N
+        btServicoSocial.setText("SERVIÇO SOCIAL");
+        btServicoSocial.setContentAreaFilled(false);
+        btServicoSocial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btServicoSocial.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btServicoSocial.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btServicoSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar4ActionPerformed(evt);
+                btServicoSocialActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar4);
-        btVoltar4.setBounds(460, 230, 200, 60);
+        getContentPane().add(btServicoSocial);
+        btServicoSocial.setBounds(460, 230, 200, 60);
 
-        btVoltar2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/contabeis.png"))); // NOI18N
-        btVoltar2.setText("CIÊNCIAS CONTÁBEIS");
-        btVoltar2.setContentAreaFilled(false);
-        btVoltar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        btVoltar2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar2.addActionListener(new java.awt.event.ActionListener() {
+        btContabeis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btContabeis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/contabeis.png"))); // NOI18N
+        btContabeis.setText("CIÊNCIAS CONTÁBEIS");
+        btContabeis.setContentAreaFilled(false);
+        btContabeis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btContabeis.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btContabeis.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btContabeis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar2ActionPerformed(evt);
+                btContabeisActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar2);
-        btVoltar2.setBounds(20, 230, 223, 60);
+        getContentPane().add(btContabeis);
+        btContabeis.setBounds(20, 230, 223, 60);
 
-        btVoltar3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/ads.png"))); // NOI18N
-        btVoltar3.setText("ANÁLISE DE SISTEMAS");
-        btVoltar3.setContentAreaFilled(false);
-        btVoltar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        btVoltar3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar3.addActionListener(new java.awt.event.ActionListener() {
+        btAnalise.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btAnalise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/ads.png"))); // NOI18N
+        btAnalise.setText("ANÁLISE DE SISTEMAS");
+        btAnalise.setContentAreaFilled(false);
+        btAnalise.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btAnalise.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btAnalise.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btAnalise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar3ActionPerformed(evt);
+                btAnaliseActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar3);
-        btVoltar3.setBounds(20, 170, 233, 60);
+        getContentPane().add(btAnalise);
+        btAnalise.setBounds(20, 170, 233, 60);
 
-        btVoltar5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/direito.png"))); // NOI18N
-        btVoltar5.setText("DIREITO");
-        btVoltar5.setContentAreaFilled(false);
-        btVoltar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar5.addActionListener(new java.awt.event.ActionListener() {
+        btDireito.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btDireito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/direito.png"))); // NOI18N
+        btDireito.setText("DIREITO");
+        btDireito.setContentAreaFilled(false);
+        btDireito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btDireito.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btDireito.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btDireito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar5ActionPerformed(evt);
+                btDireitoActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar5);
-        btVoltar5.setBounds(260, 110, 143, 60);
+        getContentPane().add(btDireito);
+        btDireito.setBounds(260, 110, 143, 60);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -163,65 +164,65 @@ public class RelatorioGeral extends javax.swing.JDialog {
         getContentPane().add(btVoltar);
         btVoltar.setBounds(0, 340, 90, 70);
 
-        btVoltar7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/enfermagem.png"))); // NOI18N
-        btVoltar7.setText("ENFERMAGEM");
-        btVoltar7.setContentAreaFilled(false);
-        btVoltar7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar7.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar7.addActionListener(new java.awt.event.ActionListener() {
+        btEnfermagem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btEnfermagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/enfermagem.png"))); // NOI18N
+        btEnfermagem.setText("ENFERMAGEM");
+        btEnfermagem.setContentAreaFilled(false);
+        btEnfermagem.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btEnfermagem.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btEnfermagem.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btEnfermagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar7ActionPerformed(evt);
+                btEnfermagemActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar7);
-        btVoltar7.setBounds(260, 230, 180, 60);
+        getContentPane().add(btEnfermagem);
+        btEnfermagem.setBounds(260, 230, 180, 60);
 
-        btVoltar6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/educacao_fisica.png"))); // NOI18N
-        btVoltar6.setText("EDUCAÇÃO FÍSICA");
-        btVoltar6.setContentAreaFilled(false);
-        btVoltar6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar6.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar6.addActionListener(new java.awt.event.ActionListener() {
+        btEducacaoFisica.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btEducacaoFisica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/educacao_fisica.png"))); // NOI18N
+        btEducacaoFisica.setText("EDUCAÇÃO FÍSICA");
+        btEducacaoFisica.setContentAreaFilled(false);
+        btEducacaoFisica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btEducacaoFisica.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btEducacaoFisica.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btEducacaoFisica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar6ActionPerformed(evt);
+                btEducacaoFisicaActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar6);
-        btVoltar6.setBounds(260, 170, 210, 60);
+        getContentPane().add(btEducacaoFisica);
+        btEducacaoFisica.setBounds(260, 170, 210, 60);
 
-        btVoltar8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/fisioterapia.png"))); // NOI18N
-        btVoltar8.setText("FISIOTERAPIA");
-        btVoltar8.setContentAreaFilled(false);
-        btVoltar8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar8.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar8.addActionListener(new java.awt.event.ActionListener() {
+        btFisioterapia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btFisioterapia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/fisioterapia.png"))); // NOI18N
+        btFisioterapia.setText("FISIOTERAPIA");
+        btFisioterapia.setContentAreaFilled(false);
+        btFisioterapia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFisioterapia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btFisioterapia.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btFisioterapia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar8ActionPerformed(evt);
+                btFisioterapiaActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar8);
-        btVoltar8.setBounds(460, 110, 180, 60);
+        getContentPane().add(btFisioterapia);
+        btFisioterapia.setBounds(460, 110, 180, 60);
 
-        btVoltar9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btVoltar9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pscicologia.png"))); // NOI18N
-        btVoltar9.setText("PSICOLOGIA");
-        btVoltar9.setContentAreaFilled(false);
-        btVoltar9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btVoltar9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btVoltar9.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btVoltar9.addActionListener(new java.awt.event.ActionListener() {
+        btPsicologia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btPsicologia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pscicologia.png"))); // NOI18N
+        btPsicologia.setText("PSICOLOGIA");
+        btPsicologia.setContentAreaFilled(false);
+        btPsicologia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btPsicologia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btPsicologia.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btPsicologia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltar9ActionPerformed(evt);
+                btPsicologiaActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoltar9);
-        btVoltar9.setBounds(460, 170, 170, 60);
+        getContentPane().add(btPsicologia);
+        btPsicologia.setBounds(460, 170, 170, 60);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/tela_relatorio.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -236,7 +237,11 @@ public class RelatorioGeral extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcularNota() {
-        
+        List<Respostas> listaRespostas;
+        listaRespostas = (respostasDAO.listar());
+        for (Respostas listaResposta : listaRespostas) {
+            
+        }
     }
 
 
@@ -244,41 +249,41 @@ public class RelatorioGeral extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
-    private void btVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar1ActionPerformed
+    private void btAdministracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministracaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar1ActionPerformed
+    }//GEN-LAST:event_btAdministracaoActionPerformed
 
-    private void btVoltar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar2ActionPerformed
+    private void btContabeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContabeisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar2ActionPerformed
+    }//GEN-LAST:event_btContabeisActionPerformed
 
-    private void btVoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar3ActionPerformed
+    private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar3ActionPerformed
+    }//GEN-LAST:event_btAnaliseActionPerformed
 
-    private void btVoltar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar4ActionPerformed
+    private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar4ActionPerformed
+    }//GEN-LAST:event_btServicoSocialActionPerformed
 
-    private void btVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar5ActionPerformed
+    private void btDireitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDireitoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar5ActionPerformed
+    }//GEN-LAST:event_btDireitoActionPerformed
 
-    private void btVoltar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar6ActionPerformed
+    private void btEducacaoFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEducacaoFisicaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar6ActionPerformed
+    }//GEN-LAST:event_btEducacaoFisicaActionPerformed
 
-    private void btVoltar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar7ActionPerformed
+    private void btEnfermagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEnfermagemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar7ActionPerformed
+    }//GEN-LAST:event_btEnfermagemActionPerformed
 
-    private void btVoltar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar8ActionPerformed
+    private void btFisioterapiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFisioterapiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar8ActionPerformed
+    }//GEN-LAST:event_btFisioterapiaActionPerformed
 
-    private void btVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar9ActionPerformed
+    private void btPsicologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPsicologiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btVoltar9ActionPerformed
+    }//GEN-LAST:event_btPsicologiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,16 +343,16 @@ public class RelatorioGeral extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAdministracao;
+    private javax.swing.JButton btAnalise;
+    private javax.swing.JButton btContabeis;
+    private javax.swing.JButton btDireito;
+    private javax.swing.JButton btEducacaoFisica;
+    private javax.swing.JButton btEnfermagem;
+    private javax.swing.JButton btFisioterapia;
+    private javax.swing.JButton btPsicologia;
+    private javax.swing.JButton btServicoSocial;
     private javax.swing.JButton btVoltar;
-    private javax.swing.JButton btVoltar1;
-    private javax.swing.JButton btVoltar2;
-    private javax.swing.JButton btVoltar3;
-    private javax.swing.JButton btVoltar4;
-    private javax.swing.JButton btVoltar5;
-    private javax.swing.JButton btVoltar6;
-    private javax.swing.JButton btVoltar7;
-    private javax.swing.JButton btVoltar8;
-    private javax.swing.JButton btVoltar9;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
