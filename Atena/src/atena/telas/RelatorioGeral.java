@@ -254,7 +254,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         return listaRanking;
     }
 
-    public List desempatar(String curso) {
+    public List desempatarRedacao(String curso) {
         List<Respostas> listaRespostas1 = gerarRanking(curso);
         List<Respostas> listaRespostas2 = gerarRanking(curso);
         for (int i = 0; i < listaRespostas1.size() - 1; i++) {
@@ -268,53 +268,55 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-
+    
+    
+    
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btAdministracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministracaoActionPerformed
-        List<Respostas> resp = desempatar("Administração");
+        List<Respostas> resp = desempatarRedacao("Administração");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAdministracaoActionPerformed
 
     private void btContabeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContabeisActionPerformed
-        List<Respostas> resp = desempatar("Ciências Contábeis");
+        List<Respostas> resp = desempatarRedacao("Ciências Contábeis");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btContabeisActionPerformed
 
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
-        List<Respostas> resp = desempatar("Análise e Desenvolvimento de Sistemas");
+        List<Respostas> resp = desempatarRedacao("Análise e Desenvolvimento de Sistemas");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
-        List<Respostas> resp = desempatar("Serviço Social");
+        List<Respostas> resp = desempatarRedacao("Serviço Social");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btServicoSocialActionPerformed
 
     private void btDireitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDireitoActionPerformed
-        List<Respostas> resp = desempatar("Direito");
+        List<Respostas> resp = desempatarRedacao("Direito");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btDireitoActionPerformed
 
     private void btEducacaoFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEducacaoFisicaActionPerformed
-        List<Respostas> resp = desempatar("Educação Física");
+        List<Respostas> resp = desempatarRedacao("Educação Física");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEducacaoFisicaActionPerformed
 
     private void btEnfermagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEnfermagemActionPerformed
-        List<Respostas> resp = desempatar("Enfermagem");
+        List<Respostas> resp = desempatarRedacao("Enfermagem");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEnfermagemActionPerformed
 
     private void btFisioterapiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFisioterapiaActionPerformed
-        List<Respostas> resp = desempatar("Fisioterapia");
+        List<Respostas> resp = desempatarRedacao("Fisioterapia");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btFisioterapiaActionPerformed
 
     private void btPsicologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPsicologiaActionPerformed
-        List<Respostas> resp = desempatar("Psicologia");
+        List<Respostas> resp = desempatarRedacao("Psicologia");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btPsicologiaActionPerformed
 
