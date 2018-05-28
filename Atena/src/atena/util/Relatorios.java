@@ -57,6 +57,7 @@ public class Relatorios {
                 Paragraph linha = new Paragraph("ATENA - VESTIBULAR FVS", boldFont);
                 linha.setAlignment(Element.ALIGN_CENTER);
                 document.add(linha);
+                document.add(new Paragraph(" "));
 
             } catch (com.itextpdf.text.DocumentException ex) {
                 Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
@@ -67,7 +68,7 @@ public class Relatorios {
 
                     Respostas resp = (Respostas) obj;
 
-                    Paragraph linha = new Paragraph(resp.getNomeCandidato());
+                    Paragraph linha = new Paragraph(resp.getNomeCandidato(), normal);
                     linha.setAlignment(Element.ALIGN_JUSTIFIED);
                     document.add(linha);
                 }

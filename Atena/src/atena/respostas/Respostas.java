@@ -37,6 +37,11 @@ public class Respostas implements Comparable<Respostas>{
     private Double notaRedacao;
     private Double totalPontos;
     private boolean qualificado;
+    private int portugues;
+    private int matematica;
+    private int geografia;
+    private int historia;
+    private int biologia;
     
     private String quest01;
     private String quest02;
@@ -138,6 +143,46 @@ public class Respostas implements Comparable<Respostas>{
 
     public void setQualificado(boolean qualificado) {
         this.qualificado = qualificado;
+    }
+
+    public int getPortugues() {
+        return portugues;
+    }
+
+    public void setPortugues(int portugues) {
+        this.portugues = portugues;
+    }
+
+    public int getMatematica() {
+        return matematica;
+    }
+
+    public void setMatematica(int matematica) {
+        this.matematica = matematica;
+    }
+
+    public int getGeografia() {
+        return geografia;
+    }
+
+    public void setGeografia(int geografia) {
+        this.geografia = geografia;
+    }
+
+    public int getHistoria() {
+        return historia;
+    }
+
+    public void setHistoria(int historia) {
+        this.historia = historia;
+    }
+
+    public int getBiologia() {
+        return biologia;
+    }
+
+    public void setBiologia(int biologia) {
+        this.biologia = biologia;
     }
     
     public String getQuest01() {

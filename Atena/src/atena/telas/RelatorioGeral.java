@@ -268,55 +268,181 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
+
+    public List desempatarDireito(String curso) {
+        List<Respostas> listaRespostas1 = desempatarRedacao(curso);
+        List<Respostas> listaRespostas2 = desempatarRedacao(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getPortugues() < listaRespostas2.get(j).getPortugues()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
+
+    public List desempatarMatematica(String curso) {
+        List<Respostas> listaRespostas1 = desempatarRedacao(curso);
+        List<Respostas> listaRespostas2 = desempatarRedacao(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getMatematica() < listaRespostas2.get(j).getMatematica()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
+
+    public List desempatarGeografiaHistoria(String curso) {
+        List<Respostas> listaRespostas1 = desempatarRedacao(curso);
+        List<Respostas> listaRespostas2 = desempatarRedacao(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if ((listaRespostas1.get(i).getGeografia() + listaRespostas1.get(i).getHistoria()) < (listaRespostas2.get(j).getGeografia() + listaRespostas2.get(j).getHistoria())) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
     
+     public List desempatarBiologia(String curso) {
+        List<Respostas> listaRespostas1 = desempatarRedacao(curso);
+        List<Respostas> listaRespostas2 = desempatarRedacao(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getBiologia() < listaRespostas2.get(j).getBiologia()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
+     
+    public List desempatarHistoria(String curso) {
+        List<Respostas> listaRespostas1 = desempatarDireito(curso);
+        List<Respostas> listaRespostas2 = desempatarDireito(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getHistoria() < listaRespostas2.get(j).getHistoria()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
     
+    public List desempatarGeralAdmAdsContabeis(String curso) {
+        List<Respostas> listaRespostas1 = desempatarMatematica(curso);
+        List<Respostas> listaRespostas2 = desempatarMatematica(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getPortugues() < listaRespostas2.get(j).getPortugues()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
+    
+    public List desempatarGeralEdFisicaEnferFisio(String curso) {
+        List<Respostas> listaRespostas1 = desempatarBiologia(curso);
+        List<Respostas> listaRespostas2 = desempatarBiologia(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getPortugues() < listaRespostas2.get(j).getPortugues()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
+    
+    public List desempatarGeralPscicoSocial(String curso) {
+        List<Respostas> listaRespostas1 = desempatarGeografiaHistoria(curso);
+        List<Respostas> listaRespostas2 = desempatarGeografiaHistoria(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())
+                        && listaRespostas1.get(i).getNotaRedacao().equals(listaRespostas2.get(j).getNotaRedacao())) {
+                    if (listaRespostas1.get(i).getPortugues() < listaRespostas2.get(j).getPortugues()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
     
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btAdministracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministracaoActionPerformed
-        List<Respostas> resp = desempatarRedacao("Administração");
+        List<Respostas> resp = desempatarGeralAdmAdsContabeis("Administração");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAdministracaoActionPerformed
 
     private void btContabeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContabeisActionPerformed
-        List<Respostas> resp = desempatarRedacao("Ciências Contábeis");
+        List<Respostas> resp = desempatarGeralAdmAdsContabeis("Ciências Contábeis");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btContabeisActionPerformed
 
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
-        List<Respostas> resp = desempatarRedacao("Análise e Desenvolvimento de Sistemas");
+        List<Respostas> resp = desempatarGeralAdmAdsContabeis("Análise e Desenvolvimento de Sistemas");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
-        List<Respostas> resp = desempatarRedacao("Serviço Social");
+        List<Respostas> resp = desempatarGeralPscicoSocial("Serviço Social");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btServicoSocialActionPerformed
 
     private void btDireitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDireitoActionPerformed
-        List<Respostas> resp = desempatarRedacao("Direito");
+        List<Respostas> resp = desempatarHistoria("Direito");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btDireitoActionPerformed
 
     private void btEducacaoFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEducacaoFisicaActionPerformed
-        List<Respostas> resp = desempatarRedacao("Educação Física");
+        List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Educação Física");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEducacaoFisicaActionPerformed
 
     private void btEnfermagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEnfermagemActionPerformed
-        List<Respostas> resp = desempatarRedacao("Enfermagem");
+        List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Enfermagem");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEnfermagemActionPerformed
 
     private void btFisioterapiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFisioterapiaActionPerformed
-        List<Respostas> resp = desempatarRedacao("Fisioterapia");
+        List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Fisioterapia");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btFisioterapiaActionPerformed
 
     private void btPsicologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPsicologiaActionPerformed
-        List<Respostas> resp = desempatarRedacao("Psicologia");
+        List<Respostas> resp = desempatarGeralPscicoSocial("Psicologia");
         Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btPsicologiaActionPerformed
 

@@ -61,17 +61,17 @@ public class TelaAutenticacao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtLogin);
-        txtLogin.setBounds(550, 180, 370, 50);
+        txtLogin.setBounds(590, 180, 370, 50);
 
         jLabel3.setFont(new java.awt.Font("Bebas Neue", 0, 54)); // NOI18N
         jLabel3.setText("SENHA");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(550, 260, 110, 50);
+        jLabel3.setBounds(590, 260, 110, 50);
 
         jLabel2.setFont(new java.awt.Font("Bebas Neue", 0, 54)); // NOI18N
         jLabel2.setText("LOGIN");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(550, 130, 100, 50);
+        jLabel2.setBounds(590, 130, 100, 50);
 
         btCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btCancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -92,7 +92,7 @@ public class TelaAutenticacao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btCancelar);
-        btCancelar.setBounds(780, 470, 81, 80);
+        btCancelar.setBounds(750, 470, 81, 80);
 
         btEntrar.setBackground(new java.awt.Color(255, 255, 255));
         btEntrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -106,7 +106,7 @@ public class TelaAutenticacao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btEntrar);
-        btEntrar.setBounds(900, 470, 90, 80);
+        btEntrar.setBounds(870, 470, 90, 80);
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         txtSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
@@ -116,7 +116,7 @@ public class TelaAutenticacao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtSenha);
-        txtSenha.setBounds(550, 310, 370, 50);
+        txtSenha.setBounds(590, 310, 370, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/login.png"))); // NOI18N
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
