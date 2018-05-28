@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
  * @author Karlos
  */
 @Entity
-public class Respostas implements Comparable<Respostas>, Serializable{
+public class Respostas{
     
     @Id
     @GeneratedValue
@@ -498,24 +498,6 @@ public class Respostas implements Comparable<Respostas>, Serializable{
 
     public void setQuest45(String quest45) {
         this.quest45 = quest45;
-    }
-    
-    @Override
-    public boolean equals(Object obj) {
-        Respostas outro = (Respostas) obj;
-        return this.totalPontos.equals(outro.totalPontos);
-    }
-    
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.totalPontos);
-        return hash;
-    }
-    
-    @Override
-    public int compareTo(Respostas r) {
-        return r.totalPontos.compareTo(this.totalPontos);
     }
         
 }

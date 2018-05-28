@@ -15,6 +15,7 @@ import atena.respostas.RespostasDAO;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
+import atena.util.Comparador;
 import atena.util.Relatorios;
 import atena.util.Util;
 import java.awt.event.KeyEvent;
@@ -249,41 +250,23 @@ public class RelatorioGeral extends javax.swing.JDialog {
                 listaRankingAds.add(listaResposta);
             }
         }
-        Collections.sort(listaRankingAds);
-        //double maior = listaRespostas.get(0).getNotaRedacao();
+        Collections.sort(listaRankingAds, new Comparador(Comparador.POR_TOTAL_PONTOS));
 
-        for (int i = 0; i < listaRankingAds.size() - 1; i++) {
-            for (int j = 1; j < listaRankingAds.size(); j++) {
-                if (listaRankingAds.get(i).getNotaRedacao() > listaRankingAds.get(i).getNotaRedacao()) {
-                    
-                }
-            }
-        }
         return listaRankingAds;
     }
 
-    private List desempatar() {
-        List<Respostas> listaRankingAds = new ArrayList<>();
-        List<Respostas> lista1 = gerarRankingAds();
-        //List<Respostas> lista2 = gerarRankingAds();
-        double maior = lista1.get(0).getNotaRedacao();
-        for (int i = 1; i < lista1.size(); i++) {
-            if (lista1.get(i).getNotaRedacao() > maior) {
-                //listaRankingAds.
-            }
-        }
-        listaRankingAds.sort((Comparator<? super Respostas>) listaRankingAds);
-//        for (int i = 0; i < lista1.size() - 1; i++) {
-//            for (int j = 1; j < lista1.size(); j++) {
-//                if (lista1.get(i).getNotaRedacao() > lista2.get(j).getNotaRedacao()) {
-//                    listaRankingAds.add(lista1.get(i));
-//                } else {
-//                    listaRankingAds.add(lista2.get(j));
+//    public List desempatar() {
+//        List<Respostas> listaRankingAds = new ArrayList<>();
+//        List<Respostas> listaRespostas1 = gerarRankingAds();
+//        List<Respostas> listaRespostas2 = gerarRankingAds();
+//        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+//            for (int j = 1; j < listaRespostas2.size(); j++) {
+//                if (listaRespostas1.get(j).getNotaRedacao() > listaRespostas2.get(i).getNotaRedacao()) {
+//                    listaRankingAds.add(listaRespostas2.get(j));
 //                }
 //            }
 //        }
-        return listaRankingAds;
-    }
+//    }
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
