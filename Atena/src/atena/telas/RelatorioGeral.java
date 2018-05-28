@@ -15,6 +15,7 @@ import atena.respostas.RespostasDAO;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
+import atena.util.Relatorios;
 import atena.util.Util;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -238,23 +239,26 @@ public class RelatorioGeral extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private List gerarRankingAds() {
+    public List gerarRankingAds() {
         List<Respostas> listaRankingAds = new ArrayList<>();
         List<Respostas> listaRespostas;
         listaRespostas = (respostasDAO.listar());
-        double maior = listaRespostas.get(0).getNotaRedacao();
-        //for (Respostas listaResposta : listaRespostas) {
-        for (int i = 1; i < listaRespostas.size(); i++) {
-            if (listaRespostas.get(i).getCurso().getNomeCurso().equalsIgnoreCase("Análise e Desenvolvimento de Sistemas") /*&& listaResposta.isQualificado()*/) {
-                if (listaRespostas.get(i).getNotaRedacao() > maior) {
-                    //maior = listaRespostas.get(i).getNotaRedacao();
-                    listaRankingAds.add(listaRespostas.get(i));
-                }
-                
+
+        for (Respostas listaResposta : listaRespostas) {
+            if (listaResposta.getCurso().getNomeCurso().equalsIgnoreCase("Análise e Desenvolvimento de Sistemas") /*&& listaResposta.isQualificado()*/) {
+                listaRankingAds.add(listaResposta);
             }
         }
-        //}
         Collections.sort(listaRankingAds);
+        //double maior = listaRespostas.get(0).getNotaRedacao();
+
+        for (int i = 0; i < listaRankingAds.size() - 1; i++) {
+            for (int j = 1; j < listaRankingAds.size(); j++) {
+                if (listaRankingAds.get(i).getNotaRedacao() > listaRankingAds.get(i).getNotaRedacao()) {
+                    listaRankingAds.get(i).compareRed(respostas);
+                }
+            }
+        }
         return listaRankingAds;
     }
 
@@ -295,9 +299,10 @@ public class RelatorioGeral extends javax.swing.JDialog {
 
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
         List<Respostas> resp = gerarRankingAds();
-        for (Respostas r : resp) {
-            JOptionPane.showMessageDialog(null, r.getNomeCandidato() + " " + r.getTotalPontos());
-        }
+        Relatorios.gerarRelatorioUsuarios(resp, respostas);
+//        for (Respostas r : resp) {
+//            JOptionPane.showMessageDialog(null, r.getNomeCandidato() + " " + r.getTotalPontos());
+//        }
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed

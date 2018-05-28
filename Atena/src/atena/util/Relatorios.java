@@ -6,84 +6,88 @@
 package atena.util;
 
 import atena.respostas.Respostas;
+import atena.telas.RelatorioGeral;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import static com.sun.javafx.tk.Toolkit.getToolkit;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Karlos Oliveira
  */
 public class Relatorios {
-    
-    public static void gerarRelatorioUsuarios(List respostas, Respostas resposta) {
+
+    //static Respostas r = new Respostas();
+    public static void gerarRelatorioUsuarios(List relatoriogeral, Respostas r) {
+        SimpleDateFormat formatarData = new SimpleDateFormat("dd-MM-yyyy(HH-mm-ss)");
         // criação do documento
         Document document = new Document();
         Font boldFont = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.BOLD);
-        String diretorioPdf = System.getProperty("user.home") + "/AppData/Local/Temp/sysclin_relatorio_tmp.pdf";
+        Font normal = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
+        String diretorioPdf = "resultadoVestibular" + formatarData.format(new Date()) + ".pdf";
 
         try {
 
-            PdfWriter.getInstance(document, new FileOutputStream(diretorioPdf));
+            try {
+                PdfWriter.getInstance(document, new FileOutputStream(diretorioPdf));
+            } catch (com.itextpdf.text.DocumentException ex) {
+                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+            }
             document.open();
 
-//            document.add(new Paragraph("Sysclin - Relatório de usuários", boldFont));
-//            document.add(new Paragraph("Data de emissão: " + Util.dateToString(new Date()), boldFont));
-//            document.add(new Paragraph("Emitido por: " + resposta.getNome(), boldFont));
-//            document.add(new Paragraph(" "));
+            try {
+                Paragraph linha = new Paragraph("ATENA - VESTIBULAR FVS", boldFont);
+                linha.setAlignment(Element.ALIGN_CENTER);
+                document.add(linha);
 
-            PdfPTable tabela = new PdfPTable(4);
-
-            PdfPCell celula = new PdfPCell(new Phrase("Lista de usuários - " + respostas.size() + " resultados encontrados"));
-
-            celula.setColspan(4);
-            tabela.addCell(celula);
-
-            PdfPCell celulaTituloNome = new PdfPCell(new Phrase("nome", boldFont));
-            PdfPCell celulaTituloCpf = new PdfPCell(new Phrase("cpf", boldFont));
-            PdfPCell celulaTituloEmail = new PdfPCell(new Phrase("email", boldFont));
-            PdfPCell celulaTituloTelefone = new PdfPCell(new Phrase("telefone", boldFont));
-
-            tabela.addCell(celulaTituloNome);
-            tabela.addCell(celulaTituloCpf);
-            tabela.addCell(celulaTituloEmail);
-            tabela.addCell(celulaTituloTelefone);
-
-            for (Object objResposta : respostas) {
-
-                Respostas resp = (Respostas) objResposta;
-
-//                PdfPCell celulaNome = new PdfPCell(new Phrase(usuario.getNome()));
-//                PdfPCell celulaCpf = new PdfPCell(new Phrase(usuario.getCpf()));
-//                PdfPCell celulaEmail = new PdfPCell(new Phrase(usuario.getEmail()));
-//                PdfPCell celulaTelefone = new PdfPCell(new Phrase(usuario.getTelefone().equals("(  )     -") ? "Vazio" : usuario.getTelefone()));
-//                System.out.println(usuario.getTelefone());
-
-//                tabela.addCell(celulaNome);
-//                tabela.addCell(celulaCpf);
-//                tabela.addCell(celulaEmail);
-//                tabela.addCell(celulaTelefone);
+            } catch (com.itextpdf.text.DocumentException ex) {
+                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            tabela.setWidthPercentage(100);
-            document.add(tabela);
+            try {
+                for (Object obj : relatoriogeral) {
+
+                    Respostas resp = (Respostas) obj;
+
+                    Paragraph linha = new Paragraph(resp.getNomeCandidato());
+                    linha.setAlignment(Element.ALIGN_JUSTIFIED);
+                    document.add(linha);
+                }
+
+            } catch (com.itextpdf.text.DocumentException ex) {
+                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            try {
+                document.add(new Paragraph(" "));
+            } catch (com.itextpdf.text.DocumentException ex) {
+                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             Desktop.getDesktop().open(new File(diretorioPdf));
-        } catch (DocumentException | IOException de) {
+        } catch (IOException de) {
             System.err.println(de.getMessage());
         }
+
         document.close();
     }
-    
+
 }

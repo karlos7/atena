@@ -505,6 +505,11 @@ public class Respostas implements Comparable<Respostas>, Serializable{
         Respostas outro = (Respostas) obj;
         return this.totalPontos.equals(outro.totalPontos);
     }
+    
+    public boolean equalsRedacao(Object obj) {
+        Respostas outro = (Respostas) obj;
+        return this.notaRedacao.equals(outro.notaRedacao);
+    }
 
     @Override
     public int hashCode() {
@@ -518,5 +523,8 @@ public class Respostas implements Comparable<Respostas>, Serializable{
         return this.totalPontos.compareTo(r.totalPontos);
     }
     
+    public int compareRed(Respostas r) {
+        return this.notaRedacao.compareTo(r.notaRedacao);
+    }
     
 }
