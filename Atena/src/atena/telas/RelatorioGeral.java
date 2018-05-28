@@ -255,7 +255,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         for (int i = 0; i < listaRankingAds.size() - 1; i++) {
             for (int j = 1; j < listaRankingAds.size(); j++) {
                 if (listaRankingAds.get(i).getNotaRedacao() > listaRankingAds.get(i).getNotaRedacao()) {
-                    listaRankingAds.get(i).compareRed(respostas);
+                    
                 }
             }
         }
@@ -300,9 +300,6 @@ public class RelatorioGeral extends javax.swing.JDialog {
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
         List<Respostas> resp = gerarRankingAds();
         Relatorios.gerarRelatorioUsuarios(resp, respostas);
-//        for (Respostas r : resp) {
-//            JOptionPane.showMessageDialog(null, r.getNomeCandidato() + " " + r.getTotalPontos());
-//        }
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
