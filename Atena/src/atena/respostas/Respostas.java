@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
  * @author Karlos
  */
 @Entity
-public class Respostas{
+public class Respostas implements Comparable<Respostas>{
     
     @Id
     @GeneratedValue
@@ -500,4 +500,9 @@ public class Respostas{
         this.quest45 = quest45;
     }
         
+    @Override
+    public int compareTo(Respostas r) {
+        return r.getTotalPontos().compareTo(this.totalPontos);
+           
+    }
 }

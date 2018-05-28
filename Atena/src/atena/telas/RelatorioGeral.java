@@ -15,7 +15,6 @@ import atena.respostas.RespostasDAO;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
-import atena.util.Comparador;
 import atena.util.Relatorios;
 import atena.util.Util;
 import java.awt.event.KeyEvent;
@@ -240,73 +239,83 @@ public class RelatorioGeral extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public List gerarRankingAds() {
-        List<Respostas> listaRankingAds = new ArrayList<>();
+    public List gerarRanking(String curso) {
+        List<Respostas> listaRanking = new ArrayList<>();
         List<Respostas> listaRespostas;
         listaRespostas = (respostasDAO.listar());
-
         for (Respostas listaResposta : listaRespostas) {
-            if (listaResposta.getCurso().getNomeCurso().equalsIgnoreCase("Análise e Desenvolvimento de Sistemas") /*&& listaResposta.isQualificado()*/) {
-                listaRankingAds.add(listaResposta);
+            if (listaResposta.isQualificado()) {
+                if (listaResposta.getCurso().getNomeCurso().equalsIgnoreCase(curso)) {
+                    listaRanking.add(listaResposta);
+                }
             }
         }
-        Collections.sort(listaRankingAds, new Comparador(Comparador.POR_TOTAL_PONTOS));
-
-        return listaRankingAds;
+        Collections.sort(listaRanking);
+        return listaRanking;
     }
 
-//    public List desempatar() {
-//        List<Respostas> listaRankingAds = new ArrayList<>();
-//        List<Respostas> listaRespostas1 = gerarRankingAds();
-//        List<Respostas> listaRespostas2 = gerarRankingAds();
-//        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
-//            for (int j = 1; j < listaRespostas2.size(); j++) {
-//                if (listaRespostas1.get(j).getNotaRedacao() > listaRespostas2.get(i).getNotaRedacao()) {
-//                    listaRankingAds.add(listaRespostas2.get(j));
-//                }
-//            }
-//        }
-//    }
+    public List desempatar(String curso) {
+        List<Respostas> listaRespostas1 = gerarRanking(curso);
+        List<Respostas> listaRespostas2 = gerarRanking(curso);
+        for (int i = 0; i < listaRespostas1.size() - 1; i++) {
+            for (int j = i + 1; j < listaRespostas2.size(); j++) {
+                if (listaRespostas1.get(i).getTotalPontos().equals(listaRespostas2.get(j).getTotalPontos())) {
+                    if (listaRespostas1.get(i).getNotaRedacao() < listaRespostas2.get(j).getNotaRedacao()) {
+                        Collections.swap(listaRespostas1, i, j);
+                    }
+                }
+            }
+        }
+        return listaRespostas1;
+    }
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btAdministracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministracaoActionPerformed
-
+        List<Respostas> resp = desempatar("Administração");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAdministracaoActionPerformed
 
     private void btContabeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContabeisActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Ciências Contábeis");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btContabeisActionPerformed
 
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
-        List<Respostas> resp = gerarRankingAds();
-        Relatorios.gerarRelatorioUsuarios(resp, respostas);
+        List<Respostas> resp = desempatar("Análise e Desenvolvimento de Sistemas");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Serviço Social");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btServicoSocialActionPerformed
 
     private void btDireitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDireitoActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Direito");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btDireitoActionPerformed
 
     private void btEducacaoFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEducacaoFisicaActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Educação Física");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEducacaoFisicaActionPerformed
 
     private void btEnfermagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEnfermagemActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Enfermagem");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btEnfermagemActionPerformed
 
     private void btFisioterapiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFisioterapiaActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Fisioterapia");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btFisioterapiaActionPerformed
 
     private void btPsicologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPsicologiaActionPerformed
-        // TODO add your handling code here:
+        List<Respostas> resp = desempatar("Psicologia");
+        Relatorios.gerarRelatorio(resp, respostas);
     }//GEN-LAST:event_btPsicologiaActionPerformed
 
     /**

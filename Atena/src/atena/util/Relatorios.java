@@ -36,7 +36,7 @@ import javax.swing.ImageIcon;
 public class Relatorios {
 
     //static Respostas r = new Respostas();
-    public static void gerarRelatorioUsuarios(List relatoriogeral, Respostas r) {
+    public static void gerarRelatorio(List relatoriogeral, Respostas r) {
         SimpleDateFormat formatarData = new SimpleDateFormat("dd-MM-yyyy(HH-mm-ss)");
         // criação do documento
         Document document = new Document();
