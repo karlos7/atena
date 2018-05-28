@@ -44,7 +44,6 @@ public class RelatorioGeral extends javax.swing.JDialog {
      */
     public RelatorioGeral(java.awt.Frame parent, boolean modal) {
         initComponents();
-
         setModal(true);
     }
 
