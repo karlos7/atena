@@ -2219,15 +2219,17 @@ public class CadastroRespostas extends javax.swing.JDialog {
             if (gabarito.getQuest27().equalsIgnoreCase(quest27.getText())) {
                 pontos = pontos + 2;
                 blocoTres++;
-                //aquibiologia++;
+                biologia++;
             }
             if (gabarito.getQuest28().equalsIgnoreCase(quest28.getText())) {
                 pontos = pontos + 2;
                 blocoTres++;
+                biologia++;
             }
             if (gabarito.getQuest29().equalsIgnoreCase(quest29.getText())) {
                 pontos = pontos + 2;
                 blocoTres++;
+                biologia++;
             }
             if (gabarito.getQuest30().equalsIgnoreCase(quest30.getText())) {
                 pontos = pontos + 2;
@@ -2255,19 +2257,19 @@ public class CadastroRespostas extends javax.swing.JDialog {
                 biologia++;
             }
             if (gabarito.getQuest35().equalsIgnoreCase(quest35.getText())) {
-                pontos = pontos + 2;
-                blocoTres++;
-                biologia++;
+                pontos = pontos + 6;
+                blocoQuatro++;
+                historia++;
             }
             if (gabarito.getQuest36().equalsIgnoreCase(quest36.getText())) {
-                pontos = pontos + 2;
-                blocoTres++;
-                biologia++;
+                pontos = pontos + 6;
+                blocoQuatro++;
+                historia++;
             }
             if (gabarito.getQuest37().equalsIgnoreCase(quest37.getText())) {
-                pontos = pontos + 2;
-                blocoTres++;
-                biologia++;
+                pontos = pontos + 6;
+                blocoQuatro++;
+                historia++;
             }
             if (gabarito.getQuest38().equalsIgnoreCase(quest38.getText())) {
                 pontos = pontos + 6;
@@ -2277,17 +2279,17 @@ public class CadastroRespostas extends javax.swing.JDialog {
             if (gabarito.getQuest39().equalsIgnoreCase(quest39.getText())) {
                 pontos = pontos + 6;
                 blocoQuatro++;
-                historia++;
+                geografia++;
             }
             if (gabarito.getQuest40().equalsIgnoreCase(quest40.getText())) {
                 pontos = pontos + 6;
                 blocoQuatro++;
-                historia++;
+                geografia++;
             }
             if (gabarito.getQuest41().equalsIgnoreCase(quest41.getText())) {
                 pontos = pontos + 6;
                 blocoQuatro++;
-                historia++;
+                geografia++;
             }
             if (gabarito.getQuest42().equalsIgnoreCase(quest42.getText())) {
                 pontos = pontos + 6;
@@ -2296,18 +2298,15 @@ public class CadastroRespostas extends javax.swing.JDialog {
             }
             if (gabarito.getQuest43().equalsIgnoreCase(quest43.getText())) {
                 pontos = pontos + 6;
-                blocoQuatro++;
-                geografia++;
+                blocoUm++;
             }
             if (gabarito.getQuest44().equalsIgnoreCase(quest44.getText())) {
                 pontos = pontos + 6;
-                blocoQuatro++;
-                geografia++;
+                blocoUm++;
             }
             if (gabarito.getQuest45().equalsIgnoreCase(quest45.getText())) {
                 pontos = pontos + 6;
-                blocoQuatro++;
-                geografia++;
+                blocoUm++;
             }
         }
         respostas.setPortugues(portugues);
