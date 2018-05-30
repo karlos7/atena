@@ -10,8 +10,10 @@ import atena.gabarito.GabaritoDAO;
 import atena.processoseletivo.ProcessoSeletivo;
 import atena.processoseletivo.ProcessoSeletivoDAO;
 import atena.processoseletivo.ProcessoSeletivoTableModel;
+import atena.respostas.RelatorioRespostasTableModel;
 import atena.respostas.Respostas;
 import atena.respostas.RespostasDAO;
+import atena.respostas.RespostasTableModel;
 import atena.usuario.Usuario;
 import atena.usuario.UsuarioDAO;
 import atena.usuario.UsuarioTableModel;
@@ -56,13 +58,18 @@ public class RelatorioGeral extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoTipoSaida = new javax.swing.ButtonGroup();
         btAdministracao = new javax.swing.JButton();
         btServicoSocial = new javax.swing.JButton();
         btContabeis = new javax.swing.JButton();
+        btPdfGeral = new javax.swing.JButton();
         btAnalise = new javax.swing.JButton();
         btDireito = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
         btEnfermagem = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jrPdf = new javax.swing.JRadioButton();
+        jrTabela = new javax.swing.JRadioButton();
         btEducacaoFisica = new javax.swing.JButton();
         btFisioterapia = new javax.swing.JButton();
         btPsicologia = new javax.swing.JButton();
@@ -89,7 +96,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btAdministracao);
-        btAdministracao.setBounds(20, 110, 200, 60);
+        btAdministracao.setBounds(20, 140, 200, 60);
 
         btServicoSocial.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btServicoSocial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/servico_social.png"))); // NOI18N
@@ -104,7 +111,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btServicoSocial);
-        btServicoSocial.setBounds(460, 230, 200, 60);
+        btServicoSocial.setBounds(460, 260, 200, 60);
 
         btContabeis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btContabeis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/contabeis.png"))); // NOI18N
@@ -119,7 +126,22 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btContabeis);
-        btContabeis.setBounds(20, 230, 223, 60);
+        btContabeis.setBounds(20, 260, 223, 60);
+
+        btPdfGeral.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btPdfGeral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pdf.png"))); // NOI18N
+        btPdfGeral.setText("Relatório Geral");
+        btPdfGeral.setContentAreaFilled(false);
+        btPdfGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btPdfGeral.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btPdfGeral.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btPdfGeral.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPdfGeralActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btPdfGeral);
+        btPdfGeral.setBounds(530, 340, 140, 70);
 
         btAnalise.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btAnalise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/ads.png"))); // NOI18N
@@ -134,7 +156,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btAnalise);
-        btAnalise.setBounds(20, 170, 233, 60);
+        btAnalise.setBounds(20, 200, 233, 60);
 
         btDireito.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btDireito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/direito.png"))); // NOI18N
@@ -149,7 +171,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btDireito);
-        btDireito.setBounds(260, 110, 143, 60);
+        btDireito.setBounds(260, 140, 143, 60);
 
         btVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/return.png"))); // NOI18N
@@ -179,7 +201,24 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btEnfermagem);
-        btEnfermagem.setBounds(260, 230, 180, 60);
+        btEnfermagem.setBounds(260, 260, 180, 60);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jLabel7.setText("Emitir relatório:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(20, 100, 150, 19);
+
+        grupoTipoSaida.add(jrPdf);
+        jrPdf.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jrPdf.setText("PDF");
+        getContentPane().add(jrPdf);
+        jrPdf.setBounds(160, 100, 60, 20);
+
+        grupoTipoSaida.add(jrTabela);
+        jrTabela.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jrTabela.setText("Tabela");
+        getContentPane().add(jrTabela);
+        jrTabela.setBounds(230, 100, 90, 23);
 
         btEducacaoFisica.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btEducacaoFisica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/educacao_fisica.png"))); // NOI18N
@@ -194,7 +233,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btEducacaoFisica);
-        btEducacaoFisica.setBounds(260, 170, 210, 60);
+        btEducacaoFisica.setBounds(260, 200, 210, 60);
 
         btFisioterapia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btFisioterapia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/fisioterapia.png"))); // NOI18N
@@ -209,7 +248,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btFisioterapia);
-        btFisioterapia.setBounds(460, 110, 180, 60);
+        btFisioterapia.setBounds(460, 140, 180, 60);
 
         btPsicologia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btPsicologia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/pscicologia.png"))); // NOI18N
@@ -224,7 +263,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btPsicologia);
-        btPsicologia.setBounds(460, 170, 170, 60);
+        btPsicologia.setBounds(460, 200, 170, 60);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/tela_relatorio.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -315,8 +354,8 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-    
-     public List desempatarBiologia(String curso) {
+
+    public List desempatarBiologia(String curso) {
         List<Respostas> listaRespostas1 = desempatarRedacao(curso);
         List<Respostas> listaRespostas2 = desempatarRedacao(curso);
         for (int i = 0; i < listaRespostas1.size() - 1; i++) {
@@ -331,7 +370,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-     
+
     public List desempatarHistoria(String curso) {
         List<Respostas> listaRespostas1 = desempatarDireito(curso);
         List<Respostas> listaRespostas2 = desempatarDireito(curso);
@@ -347,7 +386,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-    
+
     public List desempatarGeralAdmAdsContabeis(String curso) {
         List<Respostas> listaRespostas1 = desempatarMatematica(curso);
         List<Respostas> listaRespostas2 = desempatarMatematica(curso);
@@ -363,7 +402,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-    
+
     public List desempatarGeralEdFisicaEnferFisio(String curso) {
         List<Respostas> listaRespostas1 = desempatarBiologia(curso);
         List<Respostas> listaRespostas2 = desempatarBiologia(curso);
@@ -379,7 +418,7 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-    
+
     public List desempatarGeralPscicoSocial(String curso) {
         List<Respostas> listaRespostas1 = desempatarGeografiaHistoria(curso);
         List<Respostas> listaRespostas2 = desempatarGeografiaHistoria(curso);
@@ -395,55 +434,81 @@ public class RelatorioGeral extends javax.swing.JDialog {
         }
         return listaRespostas1;
     }
-    
+
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    private void pdfOuTabela(List<Respostas> resp) {
+        respostas = respostasDAO.listar().get(0);
+        if (jrPdf.isSelected()) {
+            Relatorios.gerarRelatorio(resp, respostas);
+        } else if (jrTabela.isSelected()) {
+            RelatorioRespostasTableModel itm = new RelatorioRespostasTableModel(resp);
+            PesquisaGenerica.exibeTela(itm, "Relatório");
+        } else {
+            JOptionPane.showMessageDialog(this, "Marque a opção PDF ou Tabela!");
+        }
+    }
+
     private void btAdministracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdministracaoActionPerformed
         List<Respostas> resp = desempatarGeralAdmAdsContabeis("Administração");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btAdministracaoActionPerformed
 
     private void btContabeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btContabeisActionPerformed
         List<Respostas> resp = desempatarGeralAdmAdsContabeis("Ciências Contábeis");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btContabeisActionPerformed
 
     private void btAnaliseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnaliseActionPerformed
         List<Respostas> resp = desempatarGeralAdmAdsContabeis("Análise e Desenvolvimento de Sistemas");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btAnaliseActionPerformed
 
     private void btServicoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btServicoSocialActionPerformed
         List<Respostas> resp = desempatarGeralPscicoSocial("Serviço Social");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btServicoSocialActionPerformed
 
     private void btDireitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDireitoActionPerformed
         List<Respostas> resp = desempatarHistoria("Direito");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btDireitoActionPerformed
 
     private void btEducacaoFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEducacaoFisicaActionPerformed
         List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Educação Física");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btEducacaoFisicaActionPerformed
 
     private void btEnfermagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEnfermagemActionPerformed
         List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Enfermagem");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btEnfermagemActionPerformed
 
     private void btFisioterapiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFisioterapiaActionPerformed
         List<Respostas> resp = desempatarGeralEdFisicaEnferFisio("Fisioterapia");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btFisioterapiaActionPerformed
 
     private void btPsicologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPsicologiaActionPerformed
         List<Respostas> resp = desempatarGeralPscicoSocial("Psicologia");
-        Relatorios.gerarRelatorio(resp, respostas);
+        pdfOuTabela(resp);
     }//GEN-LAST:event_btPsicologiaActionPerformed
+
+    private void btPdfGeralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPdfGeralActionPerformed
+        List<Respostas> respAdm = desempatarGeralAdmAdsContabeis("Administração");
+        List<Respostas> respCont = desempatarGeralAdmAdsContabeis("Ciências Contábeis");
+        List<Respostas> respAds = desempatarGeralAdmAdsContabeis("Análise e Desenvolvimento de Sistemas");
+        List<Respostas> respServico = desempatarGeralPscicoSocial("Serviço Social");
+        List<Respostas> respDireito = desempatarHistoria("Direito");
+        List<Respostas> respEdFisica = desempatarGeralEdFisicaEnferFisio("Educação Física");
+        List<Respostas> respEnfermagem = desempatarGeralEdFisicaEnferFisio("Enfermagem");
+        List<Respostas> respFisio = desempatarGeralEdFisicaEnferFisio("Fisioterapia");
+        List<Respostas> respPsico = desempatarGeralPscicoSocial("Psicologia");
+        respostas = respostasDAO.listar().get(0);
+        Relatorios.gerarRelatorioGeral(respAdm, respCont, respAds, respServico, respDireito, respEdFisica, respEnfermagem, respFisio, respPsico, respostas);
+    }//GEN-LAST:event_btPdfGeralActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,9 +575,15 @@ public class RelatorioGeral extends javax.swing.JDialog {
     private javax.swing.JButton btEducacaoFisica;
     private javax.swing.JButton btEnfermagem;
     private javax.swing.JButton btFisioterapia;
+    private javax.swing.JButton btPdfGeral;
     private javax.swing.JButton btPsicologia;
     private javax.swing.JButton btServicoSocial;
     private javax.swing.JButton btVoltar;
+    private javax.swing.ButtonGroup grupoTipoSaida;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JRadioButton jrPdf;
+    private javax.swing.JRadioButton jrTabela;
     // End of variables declaration//GEN-END:variables
+
 }

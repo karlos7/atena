@@ -201,16 +201,16 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest45 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(855, 680));
-        setMinimumSize(new java.awt.Dimension(855, 680));
+        setMaximumSize(new java.awt.Dimension(855, 650));
+        setMinimumSize(new java.awt.Dimension(855, 650));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(855, 680));
+        setPreferredSize(new java.awt.Dimension(855, 650));
+        setSize(new java.awt.Dimension(855, 650));
         getContentPane().setLayout(null);
 
         jlNomeUsuario.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
@@ -248,7 +248,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btVoltar);
-        btVoltar.setBounds(10, 600, 90, 70);
+        btVoltar.setBounds(10, 570, 90, 70);
 
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/search.png"))); // NOI18N
@@ -263,7 +263,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btPesquisar);
-        btPesquisar.setBounds(370, 600, 99, 70);
+        btPesquisar.setBounds(380, 570, 99, 70);
 
         btExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/delete.png"))); // NOI18N
@@ -278,7 +278,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btExcluir);
-        btExcluir.setBounds(530, 600, 80, 70);
+        btExcluir.setBounds(540, 570, 80, 70);
 
         quest19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         quest19.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
@@ -377,7 +377,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btLimpar);
-        btLimpar.setBounds(220, 600, 80, 70);
+        btLimpar.setBounds(230, 570, 80, 70);
 
         jLObrigatorioNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLObrigatorioNome.setForeground(new java.awt.Color(204, 0, 0));
@@ -398,7 +398,7 @@ public class CadastroGabarito extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btSalvar);
-        btSalvar.setBounds(760, 600, 80, 70);
+        btSalvar.setBounds(750, 570, 80, 70);
 
         jlNomeUsuario5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jlNomeUsuario5.setText("11");
@@ -1580,37 +1580,32 @@ public class CadastroGabarito extends javax.swing.JDialog {
         quest45.setBounds(760, 410, 60, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel1.setText("Questões de 11 a 18 - Matemática e suas tecnologias (Matemática) ");
+        jLabel1.setText("Questões de 14 a 21 - Matemática e suas tecnologias (Matemática) ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 475, 480, 16);
+        jLabel1.setBounds(40, 476, 480, 16);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel3.setText("Questões de 35 a 42 - Ciências Humanas e suas tecnologias (História e Geografia)");
+        jLabel3.setText("Questões de 38 a 45 - Ciências Humanas e suas tecnologias (História e Geografia)");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(40, 525, 540, 16);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel4.setText("Questões de 43 a 45 - Linguagem e Códigos e suas tecnologias (Língua Estrangeira)");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 550, 590, 16);
+        jLabel3.setBounds(40, 530, 540, 16);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel5.setText("Questões de 19 a 34 - Ciências da Natureza e suas tecnologias (Física, Química e Biologia)");
+        jLabel5.setText("Questões de 22 a 37 - Ciências da Natureza e suas tecnologias (Física, Química e Biologia)");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(40, 500, 600, 16);
+        jLabel5.setBounds(40, 504, 600, 16);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel7.setText("Questões de 01 a 10 - Linguagem e Códigos e suas tecnologias (Língua Portuguesa)");
+        jLabel7.setText("Questões de 01 a 13 - Linguagem e Códigos e suas tecnologias (Língua Portuguesa e Língua Estrangeira)");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(40, 450, 690, 16);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atena/imagens/cad_gabarito.png"))); // NOI18N
         jLabel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 1, true));
-        jLabel6.setMaximumSize(new java.awt.Dimension(855, 680));
-        jLabel6.setMinimumSize(new java.awt.Dimension(855, 680));
-        jLabel6.setPreferredSize(new java.awt.Dimension(855, 680));
+        jLabel6.setMaximumSize(new java.awt.Dimension(855, 650));
+        jLabel6.setMinimumSize(new java.awt.Dimension(855, 650));
+        jLabel6.setPreferredSize(new java.awt.Dimension(855, 650));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 855, 680);
+        jLabel6.setBounds(0, 0, 855, 650);
 
         pack();
         setLocationRelativeTo(null);
@@ -2286,7 +2281,6 @@ public class CadastroGabarito extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

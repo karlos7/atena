@@ -13,12 +13,12 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Karlos
  */
-public class RespostasTableModel extends AbstractTableModel{
-    
-    private List<Respostas> respostas = new ArrayList<>();
-    private String[] colunas = {"Código", "Processo Seletivo", "Chamada", "Candidato", "Nota Prova", "Redação", "Nota Final", "Curso"};
+public class RelatorioRespostasTableModel extends AbstractTableModel {
 
-    public RespostasTableModel(List<Respostas> resposta) {
+    private List<Respostas> respostas = new ArrayList<>();
+    private String[] colunas = {"Posição", "Candidato", "Nota Prova", "Redação", "Nota Final"};
+
+    public RelatorioRespostasTableModel(List<Respostas> resposta) {
         this.respostas = resposta;
     }
 
@@ -37,21 +37,15 @@ public class RespostasTableModel extends AbstractTableModel{
         Respostas resposta = respostas.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return resposta.getIdRespostas();
+                return rowIndex + 1;
             case 1:
-                return resposta.getGabarito().getProcessoSeletivo().getProcessoSeletivo();
-            case 2:
-                return resposta.getGabarito().getProcessoSeletivo().getChamada();
-            case 3:
                 return resposta.getNomeCandidato();
-            case 4:
+            case 2:
                 return resposta.getNotaProva();
-            case 5:
+            case 3:
                 return resposta.getNotaRedacao();
-            case 6:
+            case 4:
                 return resposta.getTotalPontos();
-            case 7:
-                return resposta.getCurso().getNomeCurso();
 
         }
         return null;
@@ -70,14 +64,8 @@ public class RespostasTableModel extends AbstractTableModel{
                 return colunas[3];
             case 4:
                 return colunas[4];
-            case 5:
-                return colunas[5];
-            case 6:
-                return colunas[6];
-            case 7:
-                return colunas[7];
         }
         return null;
     }
-    
+
 }

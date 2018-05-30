@@ -35,6 +35,7 @@ public class Respostas implements Comparable<Respostas>{
     
     private String nomeCandidato;
     private Double notaRedacao;
+    private Double notaProva;
     private Double totalPontos;
     private boolean qualificado;
     private int portugues;
@@ -129,6 +130,14 @@ public class Respostas implements Comparable<Respostas>{
         this.notaRedacao = notaRedacao;
     }
 
+    public Double getNotaProva() {
+        return notaProva;
+    }
+
+    public void setNotaProva(Double notaProva) {
+        this.notaProva = notaProva;
+    }
+    
     public Double getTotalPontos() {
         return totalPontos;
     }
