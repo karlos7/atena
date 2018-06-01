@@ -439,6 +439,14 @@ public class RelatorioGeral extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    private void limparSelecao() {
+        if (jrPdf.isSelected()) {
+            jrPdf.setSelected(false);
+        } else if (jrTabela.isSelected()) {
+            jrTabela.setSelected(false);
+        }
+    }
+
     private void pdfOuTabela(List<Respostas> resp) {
         respostas = respostasDAO.listar().get(0);
         if (jrPdf.isSelected()) {
