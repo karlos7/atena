@@ -33,6 +33,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,12 +44,62 @@ public class Relatorios {
     private static SimpleDateFormat formatarData = new SimpleDateFormat("dd-MM-yyyy(HH-mm-ss)");
     private static Document document = new Document(PageSize.A4);
 
-    public static void gerarRelatorio(List relatoriogeral, Respostas r) {
+    private static void gerarCabecalho(Respostas r, Document d) {
         Font boldFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
         Font fontLinha = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
         fontLinha.setColor(41, 72, 59);
         Font fontLinhaMenor = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
         fontLinhaMenor.setColor(BaseColor.BLUE);
+
+        d.open();
+        PdfPTable tabela = new PdfPTable(1);
+        PdfPCell celula1;
+        try {
+            celula1 = new PdfPCell(Image.getInstance("src\\atena\\imagens\\fvs.png"));
+            celula1.setBorder(-1);
+            celula1.setIndent(155);
+            tabela.addCell(celula1);
+            d.add(tabela);
+        } catch (BadElementException ex) {
+            Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Paragraph titulo = new Paragraph("VESTIBULAR FVS - " + r.getGabarito().getProcessoSeletivo().getProcessoSeletivo(), boldFont);
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            d.add(titulo);
+
+            Paragraph linha0 = new Paragraph("________________________________", fontLinhaMenor);
+            linha0.setAlignment(Element.ALIGN_CENTER);
+            linha0.setSpacingAfter(-21);
+            d.add(linha0);
+
+            Paragraph linha2 = new Paragraph("______________________________________________", fontLinha);
+            linha2.setAlignment(Element.ALIGN_CENTER);
+            d.add(linha2);
+
+            Paragraph linha3 = new Paragraph("________________________________", fontLinhaMenor);
+            linha3.setAlignment(Element.ALIGN_CENTER);
+            linha3.setSpacingBefore(-16);
+            d.add(linha3);
+
+            Paragraph linha = new Paragraph();
+            linha.setAlignment(Element.ALIGN_CENTER);
+            d.add(linha);
+            d.add(new Paragraph(" "));
+
+        } catch (com.itextpdf.text.DocumentException ex) {
+            Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //d.close();
+    }
+
+    public static void gerarRelatorio(List relatoriogeral, Respostas r) {
         Font normal = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
         String diretorioPdf = "resultadoVestibular" + formatarData.format(new Date()) + ".pdf";
 
@@ -60,52 +111,7 @@ public class Relatorios {
                 Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
             }
             document.open();
-
-            PdfPTable tabela = new PdfPTable(1);
-            PdfPCell celula1;
-
-            try {
-                celula1 = new PdfPCell(Image.getInstance("fvs.png"));
-                celula1.setBorder(-1);
-                celula1.setIndent(150);
-                tabela.addCell(celula1);
-                document.add(tabela);
-            } catch (BadElementException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (MalformedURLException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (DocumentException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                Paragraph titulo = new Paragraph("VESTIBULAR FVS - " + r.getGabarito().getProcessoSeletivo().getProcessoSeletivo(), boldFont);
-                titulo.setAlignment(Element.ALIGN_CENTER);
-                document.add(titulo);
-
-                Paragraph linha0 = new Paragraph("________________________________", fontLinhaMenor);
-                linha0.setAlignment(Element.ALIGN_CENTER);
-                linha0.setSpacingAfter(-21);
-                document.add(linha0);
-
-                Paragraph linha2 = new Paragraph("______________________________________________", fontLinha);
-                linha2.setAlignment(Element.ALIGN_CENTER);
-                document.add(linha2);
-
-                Paragraph linha3 = new Paragraph("________________________________", fontLinhaMenor);
-                linha3.setAlignment(Element.ALIGN_CENTER);
-                linha3.setSpacingBefore(-16);
-                document.add(linha3);
-
-                Paragraph linha = new Paragraph();
-                linha.setAlignment(Element.ALIGN_CENTER);
-                document.add(linha);
-                document.add(new Paragraph(" "));
-
-            } catch (com.itextpdf.text.DocumentException ex) {
-                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            gerarCabecalho(r, document);
 
             try {
                 for (Object obj : relatoriogeral) {
@@ -137,11 +143,6 @@ public class Relatorios {
     }
 
     public static void gerarRelatorioGeral(List<Respostas> respAdm, List<Respostas> respCont, List<Respostas> respAds, List<Respostas> respServico, List<Respostas> respDireito, List<Respostas> respEdFisica, List<Respostas> respEnfermagem, List<Respostas> respFisio, List<Respostas> respPsico, Respostas r) {
-        Font boldFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
-        Font fontLinha = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
-        fontLinha.setColor(41, 72, 59);
-        Font fontLinhaMenor = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
-        fontLinhaMenor.setColor(BaseColor.BLUE);
         Font normal = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
         String diretorioPdf = "resultadoVestibular" + formatarData.format(new Date()) + ".pdf";
 
@@ -153,52 +154,7 @@ public class Relatorios {
                 Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
             }
             document.open();
-
-            PdfPTable tabela = new PdfPTable(1);
-            PdfPCell celula1;
-
-            try {
-                celula1 = new PdfPCell(Image.getInstance("fvs.png"));
-                celula1.setBorder(-1);
-                celula1.setIndent(150);
-                tabela.addCell(celula1);
-                document.add(tabela);
-            } catch (BadElementException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (MalformedURLException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (DocumentException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                Paragraph titulo = new Paragraph("VESTIBULAR FVS - " + r.getGabarito().getProcessoSeletivo().getProcessoSeletivo(), boldFont);
-                titulo.setAlignment(Element.ALIGN_CENTER);
-                document.add(titulo);
-
-                Paragraph linha0 = new Paragraph("________________________________", fontLinhaMenor);
-                linha0.setAlignment(Element.ALIGN_CENTER);
-                linha0.setSpacingAfter(-21);
-                document.add(linha0);
-
-                Paragraph linha2 = new Paragraph("______________________________________________", fontLinha);
-                linha2.setAlignment(Element.ALIGN_CENTER);
-                document.add(linha2);
-
-                Paragraph linha3 = new Paragraph("________________________________", fontLinhaMenor);
-                linha3.setAlignment(Element.ALIGN_CENTER);
-                linha3.setSpacingBefore(-16);
-                document.add(linha3);
-
-                Paragraph linha = new Paragraph();
-                linha.setAlignment(Element.ALIGN_CENTER);
-                document.add(linha);
-                document.add(new Paragraph(" "));
-
-            } catch (com.itextpdf.text.DocumentException ex) {
-                Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            gerarCabecalho(r, document);
 
             try {
                 for (Object obj : respAds) {
@@ -211,6 +167,7 @@ public class Relatorios {
                     document.add(linha);
                 }
                 document.newPage();
+                gerarCabecalho(r, document);
                 for (Object obj : respAds) {
 
                     Respostas resp = (Respostas) obj;
@@ -221,6 +178,7 @@ public class Relatorios {
                     document.add(linha);
                 }
                 document.newPage();
+                gerarCabecalho(r, document);
                 for (Object obj : respAds) {
 
                     Respostas resp = (Respostas) obj;
@@ -231,6 +189,7 @@ public class Relatorios {
                     document.add(linha);
                 }
                 document.newPage();
+                gerarCabecalho(r, document);
                 for (Object obj : respAds) {
 
                     Respostas resp = (Respostas) obj;
@@ -240,7 +199,7 @@ public class Relatorios {
                     linha.setIndentationLeft(25);
                     document.add(linha);
                 }
-                document.newPage();
+                //document.newPage();
             } catch (com.itextpdf.text.DocumentException ex) {
                 Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
             }
